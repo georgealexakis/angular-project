@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- About Section -->\n<!-- <section class=\"bg-primary text-white mb-0\" id=\"about\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-white\">Learn Maths Through Quiz</h2>\n    <hr class=\"star-light mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-12 ml-auto\">\n        <p class=\"lead\">Math Quiz Game is a game that help junior high school student to improve their knowledge in maths while playing a quiz game. The game provide learning material with videos, text and image.</p>\n      </div>\n    </div>\n  </div>\n</section> -->\n\n<!-- Footer -->\n<footer class=\"footer text-center\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-12 ml-auto\">\n  <h4><i class=\"fa fa-plus\"></i> <i class=\"fa fa-minus\"></i></h4>\n      </div>\n    </div>\n  </div>\n</footer>"
+module.exports = "<footer class=\"footer text-center\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-12 ml-auto\">\n        <h4>\n          <i class=\"fa fa-plus\"></i>\n          <i class=\"fa fa-minus\"></i>\n        </h4>\n      </div>\n    </div>\n  </div>\n</footer>"
 
 /***/ }),
 
@@ -104,7 +104,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Navigation -->\n<nav class=\"navbar navbar-expand-lg bg-secondary fixed-top text-uppercase\" id=\"mainNav\">\n  <div class=\"container\">\n    <a class=\"navbar-brand js-scroll-trigger\" routerLink=\"/\">Quiz Game</a>\n    <div class=\"navbar navbar-fixed-top\" id=\"navbarResponsive\">\n      <ul class=\"navbar-nav ml-auto\">\n        <li class=\"nav-item mx-0 mx-lg-1\">\n          <a class=\"nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger\" routerLink=\"/dashboard\">\n            <i class=\"fa fa-user fa-2x\"></i>\n          </a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<!-- Header -->\n<header class=\"masthead bg-primary text-white text-center\">\n  <div class=\"container\">\n    <h1 class=\"text-uppercase mb-0\">Learn Maths</h1>\n    <hr class=\"star-light\">\n    <h2 class=\"font-weight-light mb-0\">Amazing learning material and practice through quiz. Play now!</h2>\n  </div>\n</header>"
+module.exports = "<nav class=\"navbar navbar-expand-lg bg-secondary fixed-top text-uppercase\" id=\"mainNav\">\n  <div class=\"container\">\n    <a class=\"navbar-brand js-scroll-trigger\" routerLink=\"/quiz-levels\">Quiz Game</a>\n    <div class=\"navbar navbar-fixed-top\" id=\"navbarResponsive\">\n      <ul class=\"navbar-nav ml-auto\">\n        <li class=\"nav-item mx-0 mx-lg-1\">\n          <a class=\"nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger\" routerLink=\"/dashboard\">\n            <i class=\"fa fa-user fa-2x\"></i>\n          </a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<header class=\"masthead bg-primary text-white text-center\">\n  <div class=\"container\">\n    <h1 class=\"text-uppercase mb-0\">Learn Maths</h1>\n    <hr class=\"star-light\">\n    <h2 class=\"font-weight-light mb-0\">Amazing learning material and practice through quiz. Play now!</h2>\n  </div>\n</header>"
 
 /***/ }),
 
@@ -236,6 +236,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dashboard_material_list_material_list_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./dashboard/material-list/material-list.component */ "./src/app/dashboard/material-list/material-list.component.ts");
 /* harmony import */ var _dashboard_material_form_material_form_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./dashboard/material-form/material-form.component */ "./src/app/dashboard/material-form/material-form.component.ts");
 /* harmony import */ var _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./quiz-test/quiz-test.component */ "./src/app/quiz-test/quiz-test.component.ts");
+/* harmony import */ var _quiz_levels_material_tile_material_tile_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./quiz-levels/material-tile/material-tile.component */ "./src/app/quiz-levels/material-tile/material-tile.component.ts");
+/* harmony import */ var _quiz_levels_quiz_tile_quiz_tile_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./quiz-levels/quiz-tile/quiz-tile.component */ "./src/app/quiz-levels/quiz-tile/quiz-tile.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -262,11 +265,15 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
 var appRoutes = [
-    { path: '', component: _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_15__["QuizLevelsComponent"] },
+    { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_22__["LoginComponent"] },
+    { path: 'quiz-levels', component: _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_15__["QuizLevelsComponent"] },
     { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_11__["DashboardComponent"] },
-    { path: 'material', component: _material_material_component__WEBPACK_IMPORTED_MODULE_16__["MaterialComponent"] },
-    { path: 'quiz-test', component: _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_19__["QuizTestComponent"] }
+    { path: 'material/:key', component: _material_material_component__WEBPACK_IMPORTED_MODULE_16__["MaterialComponent"] },
+    { path: 'quiz-test/:key', component: _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_19__["QuizTestComponent"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -284,7 +291,10 @@ var AppModule = /** @class */ (function () {
                 _material_material_component__WEBPACK_IMPORTED_MODULE_16__["MaterialComponent"],
                 _dashboard_material_list_material_list_component__WEBPACK_IMPORTED_MODULE_17__["MaterialListComponent"],
                 _dashboard_material_form_material_form_component__WEBPACK_IMPORTED_MODULE_18__["MaterialFormComponent"],
-                _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_19__["QuizTestComponent"]
+                _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_19__["QuizTestComponent"],
+                _quiz_levels_material_tile_material_tile_component__WEBPACK_IMPORTED_MODULE_20__["MaterialTileComponent"],
+                _quiz_levels_quiz_tile_quiz_tile_component__WEBPACK_IMPORTED_MODULE_21__["QuizTileComponent"],
+                _login_login_component__WEBPACK_IMPORTED_MODULE_22__["LoginComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -916,6 +926,69 @@ var Quiz = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/login/login.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/login/login.component.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/login/login.component.html":
+/*!********************************************!*\
+  !*** ./src/app/login/login.component.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"contact\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Login</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form name=\"sentMessage\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" placeholder=\"Email Address\" required=\"required\" data-validation-required-message=\"Please enter your email address.\">\n              <p class=\"help-block text-danger\"></p>\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"name\" type=\"text\" placeholder=\"Name\" required=\"required\" data-validation-required-message=\"Please enter your password.\">\n              <p class=\"help-block text-danger\"></p>\n            </div>\n          </div>\n          <br>\n          <div id=\"success\"></div>\n          <div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-primary btn-xl\">Login</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/login/login.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/login/login.component.ts ***!
+  \******************************************/
+/*! exports provided: LoginComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LoginComponent = /** @class */ (function () {
+    function LoginComponent() {
+    }
+    LoginComponent.prototype.ngOnInit = function () {
+    };
+    LoginComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-login',
+            template: __webpack_require__(/*! ./login.component.html */ "./src/app/login/login.component.html"),
+            styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/login/login.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], LoginComponent);
+    return LoginComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/material/material.component.css":
 /*!*************************************************!*\
   !*** ./src/app/material/material.component.css ***!
@@ -934,7 +1007,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"mb-0\" *ngFor=\"let material of materiallist\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase\">Let's Study</h2>\n    <br>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Material for level {{material.level}}</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"material.image1\" width=\"400px\" class=\"img-responsive img-rounded\" [alt]=\"material.image1\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"material.image2\" width=\"400px\" class=\"img-responsive img-rounded\" [alt]=\"material.image2\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{material.text1}}</p>\n        <p class=\"lead\">{{material.text2}}</p>\n      </div>\n      <div class=\"col-lg-12 text-center\">\n        <img [src]=\"material.image3\" class=\"img-responsive img-rounded\" [alt]=\"material.image3\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-6 ml-auto\">\n        <p class=\"lead\">{{material.text3}}</p>\n      </div>\n      <div class=\"col-lg-6 mr-auto\">\n        <p class=\"lead\">{{material.text4}}</p>\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"material.image4\" width=\"400px\" class=\"img-responsive img-rounded\" [alt]=\"material.image4\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"material.image5\" width=\"400px\" class=\"img-responsive img-rounded\" [alt]=\"material.image5\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{material.text5}}</p>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section class=\"mb-0\">\n  <div class=\"container\" *ngIf=\"materialElement\">\n    <h2 class=\"text-center text-uppercase\">Let's Study</h2>\n    <br>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Study material for level {{materialElement.level}}</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image1\" width=\"400px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image1\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image2\" width=\"400px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image2\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{materialElement.text1}}</p>\n        <p class=\"lead\">{{materialElement.text2}}</p>\n      </div>\n      <div class=\"col-lg-12 text-center\">\n        <img [src]=\"materialElement.image3\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image3\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-6 ml-auto\">\n        <p class=\"lead\">{{materialElement.text3}}</p>\n      </div>\n      <div class=\"col-lg-6 mr-auto\">\n        <p class=\"lead\">{{materialElement.text4}}</p>\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image4\" width=\"400px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image4\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image5\" width=\"400px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image5\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{materialElement.text5}}</p>\n      </div>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -949,7 +1022,9 @@ module.exports = "<section class=\"mb-0\" *ngFor=\"let material of materiallist\
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterialComponent", function() { return MaterialComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var _dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dashboard/services/material.service */ "./src/app/dashboard/services/material.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var _dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dashboard/services/material.service */ "./src/app/dashboard/services/material.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -961,19 +1036,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
+
 var MaterialComponent = /** @class */ (function () {
-    function MaterialComponent(materialService) {
+    function MaterialComponent(route, materialService, location) {
+        this.route = route;
         this.materialService = materialService;
+        this.location = location;
     }
     MaterialComponent.prototype.ngOnInit = function () {
+        var urlKey = this.route.snapshot.params['key'];
+        this.getSingleMaterial(urlKey);
+    };
+    MaterialComponent.prototype.getSingleMaterial = function (urlKey) {
         var _this = this;
         var x = this.materialService.getData();
         x.snapshotChanges().subscribe(function (item) {
-            _this.materiallist = [];
             item.forEach(function (element) {
                 var y = element.payload.toJSON();
                 y["key"] = element.key;
-                _this.materiallist.push(y);
+                if (element.key === urlKey) {
+                    _this.materialElement = y;
+                }
             });
         });
     };
@@ -982,11 +1066,101 @@ var MaterialComponent = /** @class */ (function () {
             selector: 'app-material',
             template: __webpack_require__(/*! ./material.component.html */ "./src/app/material/material.component.html"),
             styles: [__webpack_require__(/*! ./material.component.css */ "./src/app/material/material.component.css")],
-            providers: [_dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_1__["MaterialService"]]
+            providers: [_dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_3__["MaterialService"]]
         }),
-        __metadata("design:paramtypes", [_dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_1__["MaterialService"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_3__["MaterialService"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"]])
     ], MaterialComponent);
     return MaterialComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/quiz-levels/material-tile/material-tile.component.css":
+/*!***********************************************************************!*\
+  !*** ./src/app/quiz-levels/material-tile/material-tile.component.css ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/quiz-levels/material-tile/material-tile.component.html":
+/*!************************************************************************!*\
+  !*** ./src/app/quiz-levels/material-tile/material-tile.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<a class=\"portfolio-item d-block mx-auto\" routerLink=\"/material/{{materialElement.key}}\">\n  <div class=\"portfolio-item-caption d-flex position-absolute h-100 w-100\">\n    <div class=\"portfolio-item-caption-content my-auto w-100 text-center text-white\">\n      <i class=\"fa fa-star fa-3x\"> {{materialElement.level}}</i>\n    </div>\n  </div>\n  <img class=\"img-fluid\" [src]=\"imageList[index]\" alt=\"material {{index}}\">\n</a>"
+
+/***/ }),
+
+/***/ "./src/app/quiz-levels/material-tile/material-tile.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/quiz-levels/material-tile/material-tile.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: MaterialTileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterialTileComponent", function() { return MaterialTileComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _dashboard_services_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../dashboard/services/material */ "./src/app/dashboard/services/material.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MaterialTileComponent = /** @class */ (function () {
+    function MaterialTileComponent() {
+        this.index = 0;
+        this.imageList = [
+            "assets/img/portfolio/algebra.png",
+            "assets/img/portfolio/statistics.png",
+            "assets/img/portfolio/teacher.png",
+            "assets/img/portfolio/maths.png",
+            "assets/img/portfolio/cabin.png",
+            "assets/img/portfolio/cake.png",
+            "assets/img/portfolio/circus.png",
+            "assets/img/portfolio/game.png",
+            "assets/img/portfolio/safe.png",
+            "assets/img/portfolio/submarine.png"
+        ];
+    }
+    MaterialTileComponent.prototype.ngOnInit = function () {
+        this.index = this.getRandomInt(0, 9);
+    };
+    MaterialTileComponent.prototype.getRandomInt = function (min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", _dashboard_services_material__WEBPACK_IMPORTED_MODULE_1__["Material"])
+    ], MaterialTileComponent.prototype, "materialElement", void 0);
+    MaterialTileComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-material-tile',
+            template: __webpack_require__(/*! ./material-tile.component.html */ "./src/app/quiz-levels/material-tile/material-tile.component.html"),
+            styles: [__webpack_require__(/*! ./material-tile.component.css */ "./src/app/quiz-levels/material-tile/material-tile.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MaterialTileComponent);
+    return MaterialTileComponent;
 }());
 
 
@@ -1011,7 +1185,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"portfolio\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Material</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div *ngFor=\"let material of materiallist\" class=\"col-md-6 col-lg-3\">\n        <a class=\"portfolio-item d-block mx-auto\"routerLink=\"/material\">\n          <div class=\"portfolio-item-caption d-flex position-absolute h-100 w-100\">\n            <div class=\"portfolio-item-caption-content my-auto w-100 text-center text-white\">\n              <i class=\"fa fa-star fa-3x\"> {{material.level}}</i>\n            </div>\n          </div>\n          <img class=\"img-fluid\" src=\"assets/img/portfolio/submarine.png\" alt=\"\">\n        </a>\n      </div>\n    </div>\n  </div>\n</section>\n<section class=\"portfolio\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Quizzes</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div *ngFor=\"let quiz of quizlevels\" class=\"col-md-6 col-lg-3\">\n        <a class=\"portfolio-item d-block mx-auto\" routerLink=\"/quiz-test\">\n          <div class=\"portfolio-item-caption d-flex position-absolute h-100 w-100\">\n            <div class=\"portfolio-item-caption-content my-auto w-100 text-center text-white\">\n              <i class=\"fa fa-star fa-3x\"> {{quiz.level}}</i>\n            </div>\n          </div>\n          <img class=\"img-fluid\" src=\"assets/img/portfolio/safe.png\" alt=\"\">\n        </a>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section class=\"portfolio\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Material</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <app-material-tile class=\"col-lg-3\" *ngFor=\"let material of materialList\" [materialElement]=\"material\"></app-material-tile>\n    </div>\n  </div>\n</section>\n<section class=\"portfolio\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Quizzes</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <app-quiz-tile class=\"col-lg-3\" *ngFor=\"let quiz of quizList\" [quizElement]=\"quiz\"></app-quiz-tile>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -1047,22 +1221,22 @@ var QuizLevelsComponent = /** @class */ (function () {
     }
     QuizLevelsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var x = this.quizService.getData();
-        x.snapshotChanges().subscribe(function (item) {
-            _this.quizlevels = [];
+        var q = this.quizService.getData();
+        q.snapshotChanges().subscribe(function (item) {
+            _this.quizList = [];
             item.forEach(function (element) {
-                var y = element.payload.toJSON();
-                y["key"] = element.key;
-                _this.quizlevels.push(y);
+                var q1 = element.payload.toJSON();
+                q1["key"] = element.key;
+                _this.quizList.push(q1);
             });
         });
         var m = this.materialService.getData();
         m.snapshotChanges().subscribe(function (item) {
-            _this.materiallist = [];
+            _this.materialList = [];
             item.forEach(function (element) {
                 var ml = element.payload.toJSON();
                 ml["key"] = element.key;
-                _this.materiallist.push(ml);
+                _this.materialList.push(ml);
             });
         });
     };
@@ -1082,6 +1256,100 @@ var QuizLevelsComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/quiz-levels/quiz-tile/quiz-tile.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/quiz-levels/quiz-tile/quiz-tile.component.css ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/quiz-levels/quiz-tile/quiz-tile.component.html":
+/*!****************************************************************!*\
+  !*** ./src/app/quiz-levels/quiz-tile/quiz-tile.component.html ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<a class=\"portfolio-item d-block mx-auto\" routerLink=\"/quiz-test/{{quizElement.key}}\">\n  <div class=\"portfolio-item-caption d-flex position-absolute h-100 w-100\">\n    <div class=\"portfolio-item-caption-content my-auto w-100 text-center text-white\">\n      <i class=\"fa fa-star fa-3x\"> {{quizElement.level}}</i>\n    </div>\n  </div>\n  <img class=\"img-fluid\" [src]=\"imageList[index]\" alt=\"quiz {{index}}\">\n</a>"
+
+/***/ }),
+
+/***/ "./src/app/quiz-levels/quiz-tile/quiz-tile.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/quiz-levels/quiz-tile/quiz-tile.component.ts ***!
+  \**************************************************************/
+/*! exports provided: QuizTileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuizTileComponent", function() { return QuizTileComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _dashboard_services_quiz__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../dashboard/services/quiz */ "./src/app/dashboard/services/quiz.ts");
+/* harmony import */ var _dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../dashboard/services/quiz.service */ "./src/app/dashboard/services/quiz.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var QuizTileComponent = /** @class */ (function () {
+    function QuizTileComponent(quizService) {
+        this.quizService = quizService;
+        this.index = 0;
+        this.imageList = [
+            "assets/img/portfolio/algebra.png",
+            "assets/img/portfolio/statistics.png",
+            "assets/img/portfolio/teacher.png",
+            "assets/img/portfolio/maths.png",
+            "assets/img/portfolio/cabin.png",
+            "assets/img/portfolio/cake.png",
+            "assets/img/portfolio/circus.png",
+            "assets/img/portfolio/game.png",
+            "assets/img/portfolio/safe.png",
+            "assets/img/portfolio/submarine.png"
+        ];
+    }
+    QuizTileComponent.prototype.ngOnInit = function () {
+        this.index = this.getRandomInt(0, 9);
+    };
+    QuizTileComponent.prototype.getRandomInt = function (min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    };
+    QuizTileComponent.prototype.onItemClick = function (emp) {
+        this.quizService.selectedQuiz = Object.assign({}, emp);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", _dashboard_services_quiz__WEBPACK_IMPORTED_MODULE_1__["Quiz"])
+    ], QuizTileComponent.prototype, "quizElement", void 0);
+    QuizTileComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-quiz-tile',
+            template: __webpack_require__(/*! ./quiz-tile.component.html */ "./src/app/quiz-levels/quiz-tile/quiz-tile.component.html"),
+            styles: [__webpack_require__(/*! ./quiz-tile.component.css */ "./src/app/quiz-levels/quiz-tile/quiz-tile.component.css")]
+        }),
+        __metadata("design:paramtypes", [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__["QuizService"]])
+    ], QuizTileComponent);
+    return QuizTileComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/quiz-test/quiz-test.component.css":
 /*!***************************************************!*\
   !*** ./src/app/quiz-test/quiz-test.component.css ***!
@@ -1089,7 +1357,7 @@ var QuizLevelsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#quiz-test {\r\n    padding: 50px;\r\n    border-width:5px;  \r\n    border-style:dashed;\r\n}"
+module.exports = "#quiz-test {\r\n    padding: 50px;\r\n    border-width:5px;  \r\n    border-style:dashed;\r\n}\r\n\r\nbutton{\r\n    width: 15em;\r\n    height: auto;\r\n}"
 
 /***/ }),
 
@@ -1100,7 +1368,7 @@ module.exports = "#quiz-test {\r\n    padding: 50px;\r\n    border-width:5px;  \
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"mb-0\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase\">Quiz 1 - 10 Points</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-2 text-center\"></div>\n      <div class=\"col-lg-8  text-center\" id=\"quiz-test\">\n        <p class=\"lead\">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files\n          including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>\n      </div>\n      <div class=\"col-lg-2 text-center\"></div>\n    </div>\n    <div class=\"row\">\n      <div class=\"text-center col-lg-6 mt-4\">\n        <a class=\"btn btn-xl btn-outline-dark\" href=\"#\">\n          Answer 1\n        </a>\n      </div>\n      <div class=\"text-center col-lg-6 mt-4\">\n        <a class=\"btn btn-xl btn-outline-dark\" href=\"#\">\n          Answer 2\n        </a>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"text-center col-lg-6 mt-4\">\n        <a class=\"btn btn-xl btn-outline-dark\" href=\"#\">\n          Answer 3\n        </a>\n      </div>\n      <div class=\"text-center col-lg-6 mt-4\">\n        <a class=\"btn btn-xl btn-outline-dark\" href=\"#\">\n          Answer 4\n        </a>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section class=\"mb-0\">\n  <div class=\"container\" *ngIf=\"quizElement\">\n    <h2 class=\"text-center text-uppercase\">{{quizElement.level}} Level - {{quizElement.points}} Points</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-2 text-center\"></div>\n      <div class=\"col-lg-8  text-center\" id=\"quiz-test\">\n        <p class=\"lead\">{{quizElement.question}}</p>\n      </div>\n      <div class=\"col-lg-2 text-center\"></div>\n    </div>\n    <div class=\"row\">\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl btn-outline-dark\" [ngStyle]=\"{'background-color':right === 1 ? 'green' : 'default' }\" (click)=\"checkAnswer(quizElement.answer1, 1)\">{{quizElement.answer1}}</button>\n      </div>\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl btn-outline-dark\" [ngStyle]=\"{'background-color':right === 2 ? 'green' : 'default' }\" (click)=\"checkAnswer(quizElement.answer2, 2)\">{{quizElement.answer2}}</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl btn-outline-dark\" [ngStyle]=\"{'background-color':right === 3 ? 'green' : 'default' }\" (click)=\"checkAnswer(quizElement.answer3, 3)\">{{quizElement.answer3}}</button>\n      </div>\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl btn-outline-dark\" [ngStyle]=\"{'background-color':right === 4 ? 'green' : 'default' }\" (click)=\"checkAnswer(quizElement.answer4, 4)\">{{quizElement.answer4}}</button>\n      </div>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -1115,6 +1383,9 @@ module.exports = "<section class=\"mb-0\">\n  <div class=\"container\">\n    <h2
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuizTestComponent", function() { return QuizTestComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var _dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dashboard/services/quiz.service */ "./src/app/dashboard/services/quiz.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1125,18 +1396,53 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var QuizTestComponent = /** @class */ (function () {
-    function QuizTestComponent() {
+    function QuizTestComponent(renderer, route, quizService, location) {
+        this.renderer = renderer;
+        this.route = route;
+        this.quizService = quizService;
+        this.location = location;
     }
     QuizTestComponent.prototype.ngOnInit = function () {
+        var urlKey = this.route.snapshot.params['key'];
+        this.getSingleQuiz(urlKey);
+    };
+    QuizTestComponent.prototype.getSingleQuiz = function (urlKey) {
+        var _this = this;
+        var x = this.quizService.getData();
+        x.snapshotChanges().subscribe(function (item) {
+            item.forEach(function (element) {
+                var y = element.payload.toJSON();
+                y["key"] = element.key;
+                if (element.key === urlKey) {
+                    _this.quizElement = y;
+                }
+            });
+        });
+    };
+    QuizTestComponent.prototype.checkAnswer = function (answer, x) {
+        if (answer === this.quizElement.rightAnswer) {
+            this.right = x;
+            alert("Right answer");
+        }
+        else {
+            alert("Wrong answer");
+        }
     };
     QuizTestComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-quiz-test',
             template: __webpack_require__(/*! ./quiz-test.component.html */ "./src/app/quiz-test/quiz-test.component.html"),
-            styles: [__webpack_require__(/*! ./quiz-test.component.css */ "./src/app/quiz-test/quiz-test.component.css")]
+            styles: [__webpack_require__(/*! ./quiz-test.component.css */ "./src/app/quiz-test/quiz-test.component.css")],
+            providers: [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_3__["QuizService"]]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_3__["QuizService"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"]])
     ], QuizTestComponent);
     return QuizTestComponent;
 }());
