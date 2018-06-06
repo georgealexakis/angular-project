@@ -96,30 +96,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/esm5/forms.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angularfire2 */ "./node_modules/angularfire2/index.js");
-/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
-/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
-/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var _dashboard_quiz_form_quiz_form_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./dashboard/quiz-form/quiz-form.component */ "./src/app/dashboard/quiz-form/quiz-form.component.ts");
-/* harmony import */ var _dashboard_quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./dashboard/quiz-list/quiz-list.component */ "./src/app/dashboard/quiz-list/quiz-list.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
-/* harmony import */ var _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./quiz-levels/quiz-levels.component */ "./src/app/quiz-levels/quiz-levels.component.ts");
-/* harmony import */ var _material_material_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./material/material.component */ "./src/app/material/material.component.ts");
-/* harmony import */ var _dashboard_material_list_material_list_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./dashboard/material-list/material-list.component */ "./src/app/dashboard/material-list/material-list.component.ts");
-/* harmony import */ var _dashboard_material_form_material_form_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./dashboard/material-form/material-form.component */ "./src/app/dashboard/material-form/material-form.component.ts");
-/* harmony import */ var _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./quiz-test/quiz-test.component */ "./src/app/quiz-test/quiz-test.component.ts");
-/* harmony import */ var _quiz_levels_material_tile_material_tile_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./quiz-levels/material-tile/material-tile.component */ "./src/app/quiz-levels/material-tile/material-tile.component.ts");
-/* harmony import */ var _quiz_levels_quiz_tile_quiz_tile_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./quiz-levels/quiz-tile/quiz-tile.component */ "./src/app/quiz-levels/quiz-tile/quiz-tile.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
+/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./quiz-levels/quiz-levels.component */ "./src/app/quiz-levels/quiz-levels.component.ts");
+/* harmony import */ var _quiz_levels_material_tile_material_tile_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./quiz-levels/material-tile/material-tile.component */ "./src/app/quiz-levels/material-tile/material-tile.component.ts");
+/* harmony import */ var _quiz_levels_quiz_tile_quiz_tile_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./quiz-levels/quiz-tile/quiz-tile.component */ "./src/app/quiz-levels/quiz-tile/quiz-tile.component.ts");
+/* harmony import */ var _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./quiz-test/quiz-test.component */ "./src/app/quiz-test/quiz-test.component.ts");
+/* harmony import */ var _material_material_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./material/material.component */ "./src/app/material/material.component.ts");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _dashboard_quiz_form_quiz_form_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./dashboard/quiz-form/quiz-form.component */ "./src/app/dashboard/quiz-form/quiz-form.component.ts");
+/* harmony import */ var _dashboard_quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./dashboard/quiz-list/quiz-list.component */ "./src/app/dashboard/quiz-list/quiz-list.component.ts");
+/* harmony import */ var _dashboard_material_form_material_form_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./dashboard/material-form/material-form.component */ "./src/app/dashboard/material-form/material-form.component.ts");
+/* harmony import */ var _dashboard_material_list_material_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./dashboard/material-list/material-list.component */ "./src/app/dashboard/material-list/material-list.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./core/auth.service */ "./src/app/core/auth.service.ts");
+/* harmony import */ var _dashboard_user_user_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./dashboard/user/user.component */ "./src/app/dashboard/user/user.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -145,11 +153,12 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var appRoutes = [
-    { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_22__["LoginComponent"] },
-    { path: 'quiz-levels', component: _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_15__["QuizLevelsComponent"] },
-    { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_11__["DashboardComponent"] },
-    { path: 'material/:key', component: _material_material_component__WEBPACK_IMPORTED_MODULE_16__["MaterialComponent"] },
-    { path: 'quiz-test/:key', component: _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_19__["QuizTestComponent"] }
+    { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_24__["LoginComponent"] },
+    { path: 'register', component: _register_register_component__WEBPACK_IMPORTED_MODULE_25__["RegisterComponent"] },
+    { path: 'quiz-levels', component: _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_14__["QuizLevelsComponent"] },
+    { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_19__["DashboardComponent"] },
+    { path: 'quiz-test', component: _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__["QuizTestComponent"] },
+    { path: 'material', component: _material_material_component__WEBPACK_IMPORTED_MODULE_18__["MaterialComponent"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -157,37 +166,225 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
-                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__["NavbarComponent"],
-                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_11__["DashboardComponent"],
-                _dashboard_quiz_form_quiz_form_component__WEBPACK_IMPORTED_MODULE_12__["QuizFormComponent"],
-                _dashboard_quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_13__["QuizListComponent"],
-                _footer_footer_component__WEBPACK_IMPORTED_MODULE_14__["FooterComponent"],
-                _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_15__["QuizLevelsComponent"],
-                _material_material_component__WEBPACK_IMPORTED_MODULE_16__["MaterialComponent"],
-                _dashboard_material_list_material_list_component__WEBPACK_IMPORTED_MODULE_17__["MaterialListComponent"],
-                _dashboard_material_form_material_form_component__WEBPACK_IMPORTED_MODULE_18__["MaterialFormComponent"],
-                _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_19__["QuizTestComponent"],
-                _quiz_levels_material_tile_material_tile_component__WEBPACK_IMPORTED_MODULE_20__["MaterialTileComponent"],
-                _quiz_levels_quiz_tile_quiz_tile_component__WEBPACK_IMPORTED_MODULE_21__["QuizTileComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_22__["LoginComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_23__["HeaderComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
+                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_11__["NavbarComponent"],
+                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_19__["DashboardComponent"],
+                _dashboard_quiz_form_quiz_form_component__WEBPACK_IMPORTED_MODULE_20__["QuizFormComponent"],
+                _dashboard_quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_21__["QuizListComponent"],
+                _header_header_component__WEBPACK_IMPORTED_MODULE_12__["HeaderComponent"],
+                _footer_footer_component__WEBPACK_IMPORTED_MODULE_13__["FooterComponent"],
+                _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_14__["QuizLevelsComponent"],
+                _material_material_component__WEBPACK_IMPORTED_MODULE_18__["MaterialComponent"],
+                _dashboard_user_user_component__WEBPACK_IMPORTED_MODULE_27__["UserComponent"],
+                _quiz_levels_material_tile_material_tile_component__WEBPACK_IMPORTED_MODULE_15__["MaterialTileComponent"],
+                _quiz_levels_quiz_tile_quiz_tile_component__WEBPACK_IMPORTED_MODULE_16__["QuizTileComponent"],
+                _dashboard_material_list_material_list_component__WEBPACK_IMPORTED_MODULE_23__["MaterialListComponent"],
+                _dashboard_material_form_material_form_component__WEBPACK_IMPORTED_MODULE_22__["MaterialFormComponent"],
+                _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__["QuizTestComponent"],
+                _quiz_levels_material_tile_material_tile_component__WEBPACK_IMPORTED_MODULE_15__["MaterialTileComponent"],
+                _quiz_levels_quiz_tile_quiz_tile_component__WEBPACK_IMPORTED_MODULE_16__["QuizTileComponent"],
+                _login_login_component__WEBPACK_IMPORTED_MODULE_24__["LoginComponent"],
+                _register_register_component__WEBPACK_IMPORTED_MODULE_25__["RegisterComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                angularfire2__WEBPACK_IMPORTED_MODULE_5__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].firebase),
-                angularfire2_auth__WEBPACK_IMPORTED_MODULE_7__["AngularFireAuthModule"],
-                angularfire2_database__WEBPACK_IMPORTED_MODULE_6__["AngularFireDatabaseModule"],
+                angularfire2__WEBPACK_IMPORTED_MODULE_5__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].firebase),
+                angularfire2_firestore__WEBPACK_IMPORTED_MODULE_6__["AngularFirestoreModule"],
+                angularfire2_auth__WEBPACK_IMPORTED_MODULE_8__["AngularFireAuthModule"],
+                angularfire2_database__WEBPACK_IMPORTED_MODULE_7__["AngularFireDatabaseModule"],
                 angularfire2__WEBPACK_IMPORTED_MODULE_5__["AngularFireModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModule"].forRoot(),
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(appRoutes, { enableTracing: true })
             ],
-            providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
+            providers: [_core_auth_service__WEBPACK_IMPORTED_MODULE_26__["AuthService"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/core/auth.service.ts":
+/*!**************************************!*\
+  !*** ./src/app/core/auth.service.ts ***!
+  \**************************************/
+/*! exports provided: AuthService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/add/operator/toPromise */ "./node_modules/rxjs/_esm5/add/operator/toPromise.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_3__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var AuthService = /** @class */ (function () {
+    function AuthService(afAuth) {
+        this.afAuth = afAuth;
+    }
+    AuthService.prototype.doGoogleLogin = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"].GoogleAuthProvider();
+            provider.addScope('profile');
+            provider.addScope('email');
+            _this.afAuth.auth
+                .signInWithPopup(provider)
+                .then(function (res) {
+                resolve(res);
+            }, function (err) {
+                console.log(err);
+                reject(err);
+            });
+        });
+    };
+    AuthService.prototype.doRegister = function (value) {
+        return new Promise(function (resolve, reject) {
+            firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().createUserWithEmailAndPassword(value.email, value.password)
+                .then(function (res) {
+                resolve(res);
+            }, function (err) { return reject(err); });
+        });
+    };
+    AuthService.prototype.doLogin = function (value) {
+        return new Promise(function (resolve, reject) {
+            firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().signInWithEmailAndPassword(value.email, value.password)
+                .then(function (res) {
+                resolve(res);
+            }, function (err) { return reject(err); });
+        });
+    };
+    AuthService.prototype.doLogout = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            if (firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser) {
+                _this.afAuth.auth.signOut();
+                resolve();
+            }
+            else {
+                reject();
+            }
+        });
+    };
+    AuthService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [angularfire2_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"]])
+    ], AuthService);
+    return AuthService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/core/user.model.ts":
+/*!************************************!*\
+  !*** ./src/app/core/user.model.ts ***!
+  \************************************/
+/*! exports provided: FirebaseUserModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FirebaseUserModel", function() { return FirebaseUserModel; });
+var FirebaseUserModel = /** @class */ (function () {
+    function FirebaseUserModel() {
+        this.image = "";
+        this.name = "";
+        this.provider = "";
+    }
+    return FirebaseUserModel;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/core/user.service.ts":
+/*!**************************************!*\
+  !*** ./src/app/core/user.service.ts ***!
+  \**************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/add/operator/toPromise */ "./node_modules/rxjs/_esm5/add/operator/toPromise.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_4__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var UserService = /** @class */ (function () {
+    function UserService(db, afAuth) {
+        this.db = db;
+        this.afAuth = afAuth;
+    }
+    UserService.prototype.getCurrentUser = function () {
+        return new Promise(function (resolve, reject) {
+            var user = firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().onAuthStateChanged(function (user) {
+                if (user) {
+                    resolve(user);
+                }
+                else {
+                    reject('No user logged in');
+                }
+            });
+        });
+    };
+    UserService.prototype.updateCurrentUser = function (value) {
+        return new Promise(function (resolve, reject) {
+            var user = firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().currentUser;
+            user.updateProfile({
+                displayName: value.name,
+                photoURL: user.photoURL
+            }).then(function (res) {
+                resolve(res);
+            }, function (err) { return reject(err); });
+        });
+    };
+    UserService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"],
+            angularfire2_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuth"]])
+    ], UserService);
+    return UserService;
 }());
 
 
@@ -201,7 +398,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#dashboard{\r\n    padding-top: 150px;\r\n}"
+module.exports = "#dashboard{\r\n    padding-top: 150px;\r\n}\r\n.float{\r\n\tposition:fixed;\r\n\twidth:60px;\r\n\theight:60px;\r\n\tbottom:40px;\r\n\tright:40px;\r\n\tbackground-color:#18BC9C;\r\n\tcolor:#FFF;\r\n\tborder-radius:50px;\r\n\ttext-align:center;\r\n\tbox-shadow: 2px 2px 3px #2C3E50 ;\r\n}\r\n.my-float{\r\n\tmargin-top:22px;\r\n}"
 
 /***/ }),
 
@@ -212,7 +409,7 @@ module.exports = "#dashboard{\r\n    padding-top: 150px;\r\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<section id=\"dashboard\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Teacher Dashboard</h2>\n    <br>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Students Statistics</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 mx-auto\">\n        <div class=\"table-responsive\">\n          <table class=\"table\">\n            <thead>\n              <tr>\n                <th>ID</th>\n                <th>Firstname</th>\n                <th>Lastname</th>\n                <th>email</th>\n                <th>Points</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>1</td>\n                <td>Anna</td>\n                <td>Pitt</td>\n                <td>example@gmail.com</td>\n                <td>100</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Questions</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 mx-auto\">\n        <app-quiz-form></app-quiz-form>\n      </div>\n      <div class=\"col-lg-6 mx-auto\">\n        <app-quiz-list></app-quiz-list>\n      </div>\n    </div>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Material</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 mx-auto\">\n        <app-material-form></app-material-form>\n      </div>\n      <div class=\"col-lg-6 mx-auto\">\n        <app-material-list></app-material-list>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n<section id=\"dashboard\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Teacher Dashboard</h2>\n    <br>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Students Statistics</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 mx-auto\">\n        <div class=\"table-responsive\">\n          <table class=\"table\">\n            <thead>\n              <tr>\n                <th>ID</th>\n                <th>Firstname</th>\n                <th>Lastname</th>\n                <th>email</th>\n                <th>Points</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>1</td>\n                <td>Anna</td>\n                <td>Pitt</td>\n                <td>example@gmail.com</td>\n                <td>100</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n    <br>\n    <h3 class=\"text-secondary mb-0\">User details</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 mx-auto\">\n        <app-user></app-user>\n      </div>\n    </div>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Questions</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 mx-auto\">\n        <app-quiz-form></app-quiz-form>\n      </div>\n      <div class=\"col-lg-6 mx-auto\">\n        <app-quiz-list></app-quiz-list>\n      </div>\n    </div>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Material</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 mx-auto\">\n        <app-material-form></app-material-form>\n      </div>\n      <div class=\"col-lg-6 mx-auto\">\n        <app-material-list></app-material-list>\n      </div>\n    </div>\n  </div>\n</section>\n<a href=\"#\" (click)=\"logout()\" class=\"float\">\n  <i class=\"fa fa-sign-out my-float\"></i>\n</a>\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -228,7 +425,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return DashboardComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var _services_quiz_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/quiz.service */ "./src/app/dashboard/services/quiz.service.ts");
-/* harmony import */ var _services_material_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/material.service */ "./src/app/dashboard/services/material.service.ts");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/core/auth.service.ts");
+/* harmony import */ var _services_material_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/material.service */ "./src/app/dashboard/services/material.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -241,21 +440,34 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent(quizService, materialService) {
+    function DashboardComponent(quizService, materialService, router, authService) {
         this.quizService = quizService;
         this.materialService = materialService;
+        this.router = router;
+        this.authService = authService;
     }
     DashboardComponent.prototype.ngOnInit = function () {
+    };
+    DashboardComponent.prototype.logout = function () {
+        var _this = this;
+        this.authService.doLogout()
+            .then(function (res) {
+            _this.router.navigate(['/']);
+        }, function (error) {
+            console.log("Logout error", error);
+        });
     };
     DashboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-dashboard',
             template: __webpack_require__(/*! ./dashboard.component.html */ "./src/app/dashboard/dashboard.component.html"),
             styles: [__webpack_require__(/*! ./dashboard.component.css */ "./src/app/dashboard/dashboard.component.css")],
-            providers: [_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"], _services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"]]
+            providers: [_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"], _services_material_service__WEBPACK_IMPORTED_MODULE_3__["MaterialService"]]
         }),
-        __metadata("design:paramtypes", [_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"], _services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"]])
+        __metadata("design:paramtypes", [_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"], _services_material_service__WEBPACK_IMPORTED_MODULE_3__["MaterialService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _core_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
     ], DashboardComponent);
     return DashboardComponent;
 }());
@@ -803,6 +1015,109 @@ var Quiz = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/dashboard/user/user.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/dashboard/user/user.component.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/dashboard/user/user.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/dashboard/user/user.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "  <div *ngIf='user.provider == \"password\"' class=\"card-body\">\n    <h4 class=\"card-title\">{{user.email}}</h4>\n  </div>\n  <div *ngIf='user.provider == \"password\"' class=\"card-body\">\n    <form [formGroup]=\"profileForm\">\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>Your name</label>\n          <input class=\"form-control\" id=\"name\" type=\"text\" formControlName=\"name\" placeholder=\"name\" required=\"required\" data-validation-required-message=\"Please enter your name.\">\n        </div>\n      </div>\n      <br>\n      <div class=\"form-group\">\n        <button type=\"submit\" (click)=\"save(profileForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">Save</button>\n      </div>\n    </form>\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/dashboard/user/user.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/dashboard/user/user.component.ts ***!
+  \**************************************************/
+/*! exports provided: UserComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserComponent", function() { return UserComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _core_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core/user.service */ "./src/app/core/user.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var _core_user_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../core/user.model */ "./src/app/core/user.model.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var UserComponent = /** @class */ (function () {
+    function UserComponent(userService, route, location, router, fb) {
+        this.userService = userService;
+        this.route = route;
+        this.location = location;
+        this.router = router;
+        this.fb = fb;
+        this.user = new _core_user_model__WEBPACK_IMPORTED_MODULE_5__["FirebaseUserModel"]();
+    }
+    UserComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.data.subscribe(function (routeData) {
+            var data = routeData['data'];
+            if (data) {
+                _this.user = data;
+                _this.createForm(_this.user.name);
+            }
+        });
+    };
+    UserComponent.prototype.createForm = function (name) {
+        this.profileForm = this.fb.group({
+            name: [name, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]
+        });
+    };
+    UserComponent.prototype.save = function (value) {
+        this.userService.updateCurrentUser(value)
+            .then(function (res) {
+            console.log(res);
+        }, function (err) { return console.log(err); });
+    };
+    UserComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-user',
+            template: __webpack_require__(/*! ./user.component.html */ "./src/app/dashboard/user/user.component.html"),
+            styles: [__webpack_require__(/*! ./user.component.css */ "./src/app/dashboard/user/user.component.css")],
+            providers: [_core_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"]]
+        }),
+        __metadata("design:paramtypes", [_core_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"]])
+    ], UserComponent);
+    return UserComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/footer/footer.component.css":
 /*!*********************************************!*\
   !*** ./src/app/footer/footer.component.css ***!
@@ -936,7 +1251,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n\r\n.error{\r\n  color: red;\r\n}\r\n\r\n.success{\r\n  color: green;\r\n}"
 
 /***/ }),
 
@@ -947,7 +1262,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"contact\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Login</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form name=\"sentMessage\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" placeholder=\"Email Address\" required=\"required\" data-validation-required-message=\"Please enter your email address.\">\n              <p class=\"help-block text-danger\"></p>\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"name\" type=\"text\" placeholder=\"Name\" required=\"required\" data-validation-required-message=\"Please enter your password.\">\n              <p class=\"help-block text-danger\"></p>\n            </div>\n          </div>\n          <br>\n          <div id=\"success\"></div>\n          <div class=\"form-group\">\n            <button type=\"submit\" routerLink=\"/quiz-levels\" class=\"btn btn-primary btn-xl col-lg-12\">Login</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section>\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Login</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"loginForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\"\n                data-validation-required-message=\"Please enter your email address.\">\n              <p class=\"help-block text-danger\"></p>\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"text\" formControlName=\"password\" placeholder=\"Password\" required=\"required\" data-validation-required-message=\"Please enter your password.\">\n            </div>\n          </div>\n          <p class=\"help-block text-danger\">{{errorMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryLogin(loginForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">Login</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleLogin()\">Login with Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>No account yet?\n          <a routerLink=\"/register\">Create an account</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -962,6 +1277,9 @@ module.exports = "<section id=\"contact\">\n  <div class=\"container\">\n    <h2
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/core/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/esm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -972,10 +1290,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent() {
+    function LoginComponent(authService, router, fb) {
+        this.authService = authService;
+        this.router = router;
+        this.fb = fb;
+        this.errorMessage = '';
+        this.createForm();
     }
-    LoginComponent.prototype.ngOnInit = function () {
+    LoginComponent.prototype.createForm = function () {
+        this.loginForm = this.fb.group({
+            email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
+        });
+    };
+    LoginComponent.prototype.tryGoogleLogin = function () {
+        var _this = this;
+        this.authService.doGoogleLogin()
+            .then(function (res) {
+            _this.router.navigate(['/quiz-levels']);
+        });
+    };
+    LoginComponent.prototype.tryLogin = function (value) {
+        var _this = this;
+        this.authService.doLogin(value)
+            .then(function (res) {
+            _this.router.navigate(['/quiz-levels']);
+        }, function (err) {
+            console.log(err);
+            _this.errorMessage = err.message;
+        });
     };
     LoginComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -983,7 +1330,9 @@ var LoginComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./login.component.html */ "./src/app/login/login.component.html"),
             styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/login/login.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_core_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -1511,6 +1860,107 @@ var QuizTestComponent = /** @class */ (function () {
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"]])
     ], QuizTestComponent);
     return QuizTestComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/register/register.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/register/register.component.css ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".row{\r\n    margin-top: 10px;\r\n  }\r\n  \r\n  .error{\r\n    color: red;\r\n  }\r\n  \r\n  .success{\r\n    color: green;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/register/register.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/register/register.component.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section>\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Register</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"registerForm\">\n          <div class=\"form-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\"\n                data-validation-required-message=\"Please enter your email address.\">\n            </div>\n          </div>\n          <div class=\"form-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"text\" formControlName=\"password\" placeholder=\"Password\" required=\"required\" data-validation-required-message=\"Please enter your password.\">\n            </div>\n          </div>\n          <p class=\"help-block text-danger\">{{errorMessage}}</p>\n          <p class=\"help-block text-success\">{{successMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryRegister(registerForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">Register</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleLogin()\">Register with Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>Already have an account?\n          <a routerLink=\"/\">Login</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/register/register.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/register/register.component.ts ***!
+  \************************************************/
+/*! exports provided: RegisterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterComponent", function() { return RegisterComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/core/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/esm5/forms.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var RegisterComponent = /** @class */ (function () {
+    function RegisterComponent(authService, router, fb) {
+        this.authService = authService;
+        this.router = router;
+        this.fb = fb;
+        this.errorMessage = '';
+        this.successMessage = '';
+        this.createForm();
+    }
+    RegisterComponent.prototype.createForm = function () {
+        this.registerForm = this.fb.group({
+            email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
+        });
+    };
+    RegisterComponent.prototype.tryGoogleLogin = function () {
+        var _this = this;
+        this.authService.doGoogleLogin()
+            .then(function (res) {
+            _this.router.navigate(['/quiz-levels']);
+        }, function (err) { return console.log(err); });
+    };
+    RegisterComponent.prototype.tryRegister = function (value) {
+        var _this = this;
+        this.authService.doRegister(value)
+            .then(function (res) {
+            console.log(res);
+            _this.errorMessage = "";
+            _this.successMessage = "Your account has been created";
+        }, function (err) {
+            console.log(err);
+            _this.errorMessage = err.message;
+            _this.successMessage = "";
+        });
+    };
+    RegisterComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'register',
+            template: __webpack_require__(/*! ./register.component.html */ "./src/app/register/register.component.html"),
+            styles: [__webpack_require__(/*! ./register.component.css */ "./src/app/register/register.component.css")]
+        }),
+        __metadata("design:paramtypes", [_core_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]])
+    ], RegisterComponent);
+    return RegisterComponent;
 }());
 
 
