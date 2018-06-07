@@ -117,6 +117,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
 /* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
 /* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./core/auth.service */ "./src/app/core/auth.service.ts");
+/* harmony import */ var _information_information_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./information/information.component */ "./src/app/information/information.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -150,11 +151,13 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var appRoutes = [
     { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_24__["LoginComponent"] },
     { path: 'register', component: _register_register_component__WEBPACK_IMPORTED_MODULE_25__["RegisterComponent"] },
     { path: 'quiz-levels', component: _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_14__["QuizLevelsComponent"] },
     { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_19__["DashboardComponent"] },
+    { path: 'information', component: _information_information_component__WEBPACK_IMPORTED_MODULE_27__["InformationComponent"] },
     { path: 'quiz-test/:key', component: _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__["QuizTestComponent"] },
     { path: 'material/:key', component: _material_material_component__WEBPACK_IMPORTED_MODULE_18__["MaterialComponent"] }
 ];
@@ -178,10 +181,9 @@ var AppModule = /** @class */ (function () {
                 _dashboard_material_list_material_list_component__WEBPACK_IMPORTED_MODULE_23__["MaterialListComponent"],
                 _dashboard_material_form_material_form_component__WEBPACK_IMPORTED_MODULE_22__["MaterialFormComponent"],
                 _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__["QuizTestComponent"],
-                _quiz_levels_material_tile_material_tile_component__WEBPACK_IMPORTED_MODULE_15__["MaterialTileComponent"],
-                _quiz_levels_quiz_tile_quiz_tile_component__WEBPACK_IMPORTED_MODULE_16__["QuizTileComponent"],
                 _login_login_component__WEBPACK_IMPORTED_MODULE_24__["LoginComponent"],
-                _register_register_component__WEBPACK_IMPORTED_MODULE_25__["RegisterComponent"]
+                _register_register_component__WEBPACK_IMPORTED_MODULE_25__["RegisterComponent"],
+                _information_information_component__WEBPACK_IMPORTED_MODULE_27__["InformationComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -951,7 +953,7 @@ var Quiz = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "button{\r\n    color: #fff;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\nbutton:hover{\r\n    color: #18BC9C;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}"
+module.exports = "button{\r\n    color: #fff;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\nbutton:hover{\r\n    color: #18BC9C;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\nbutton:active{\r\n    color: #18BC9C;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\n.foot{\r\n    font-size: 70px;\r\n}"
 
 /***/ }),
 
@@ -962,7 +964,7 @@ module.exports = "button{\r\n    color: #fff;\r\n    background-color:#2C3E50;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<footer class=\"footer text-center\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-12 ml-auto\">\n        <button (click)=\"logout()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"fa fa-frown-o\" style=\"font-size: 70px;\"></i>\n        </button>\n      </div>\n    </div>\n  </div>\n</footer>"
+module.exports = "<footer class=\"footer text-center\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-6 col-xs-6 col-sm-6 ml-auto\">\n        <button (click)=\"logout()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"foot fa fa-frown-o\"></i>\n        </button>\n      </div>\n      <div class=\"col-lg-6 col-xs-6 col-sm-6 ml-auto\">\n        <button (click)=\"goInfo()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"foot fa fa-question\"></i>\n        </button>\n      </div>\n    </div>\n  </div>\n</footer>"
 
 /***/ }),
 
@@ -1006,6 +1008,9 @@ var FooterComponent = /** @class */ (function () {
         }, function (error) {
             console.log("Logout error", error);
         });
+    };
+    FooterComponent.prototype.goInfo = function () {
+        this.router.navigate(['/information']);
     };
     FooterComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1085,6 +1090,69 @@ var HeaderComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/information/information.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/information/information.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/information/information.component.html":
+/*!********************************************************!*\
+  !*** ./src/app/information/information.component.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-navbar></app-navbar>\n<section>\n  <div class=\"container\">\n    <br>\n    <br>\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Information about Quiz Game</h2>\n    <hr class=\"star-dark mb-5\">\n    <br>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 col-md-12 text-center\">\n        <p class=\"lead\">Lorem ipsum dolor sit amet, ad vix assum semper, ei vim argumentum necessitatibus. Aeque conceptam sit ex, ea eam\n          illum nonumes antiopam. Qui ut melius aliquando. Et sed primis eligendi repudiandae, ut assueverit scriptorem vis.\n          Lucilius eleifend vim cu, bonorum iudicabit duo cu. Option albucius mentitum in ius, mea doctus nostrud eu, an\n          urbanitas torquatos voluptatum nec. Deserunt salutandi maluisset eum ad, iisque philosophia ad pri. Sea no virtute\n          appellantur vituperatoribus, autem sanctus eleifend ei vim. Cu mentitum reformidans duo. Perfecto indoctum quaerendum\n          qui id. Meis melius consulatu an ius, quodsi intellegebat est id. At sit posse oporteat maluisset, quod porro invenire\n          ei sea, no cum duis atqui. Oratio legimus singulis mea ad, tota inimicus vulputate qui an, his an tota luptatum\n          sadipscing. Oratio fuisset efficiantur in nam, volumus consetetur no has. Sale porro errem ius no, duo scripta\n          vivendum comprehensam id. Mundi placerat hendrerit nec ne, his eu dolore electram voluptatibus, ut cum eripuit\n          propriae menandri. Wisi mollis ne usu, ex labore ancillae duo. Omnes liberavisse has et, ex nec essent aliquid.\n          Odio brute cu per. Ad usu possim ancillae omnesque. Vim et dolore persequeris. Et sed diam aliquid consequuntur,\n          vim possim inermis perfecto te.</p>\n        <p class=\"lead\">Lorem ipsum dolor sit amet, ad vix assum semper, ei vim argumentum necessitatibus. Aeque conceptam sit ex, ea eam\n          illum nonumes antiopam. Qui ut melius aliquando. Et sed primis eligendi repudiandae, ut assueverit scriptorem vis.\n          Lucilius eleifend vim cu, bonorum iudicabit duo cu. Option albucius mentitum in ius, mea doctus nostrud eu, an\n          urbanitas torquatos voluptatum nec. Deserunt salutandi maluisset eum ad, iisque philosophia ad pri. Sea no virtute\n          appellantur vituperatoribus, autem sanctus eleifend ei vim. Cu mentitum reformidans duo. Perfecto indoctum quaerendum\n          qui id. Meis melius consulatu an ius, quodsi intellegebat est id. At sit posse oporteat maluisset, quod porro invenire\n          ei sea, no cum duis atqui. Oratio legimus singulis mea ad, tota inimicus vulputate qui an, his an tota luptatum\n          sadipscing. Oratio fuisset efficiantur in nam, volumus consetetur no has. Sale porro errem ius no, duo scripta\n          vivendum comprehensam id. Mundi placerat hendrerit nec ne, his eu dolore electram voluptatibus, ut cum eripuit\n          propriae menandri. Wisi mollis ne usu, ex labore ancillae duo. Omnes liberavisse has et, ex nec essent aliquid.\n          Odio brute cu per. Ad usu possim ancillae omnesque. Vim et dolore persequeris. Et sed diam aliquid consequuntur,\n          vim possim inermis perfecto te.</p>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
+
+/***/ }),
+
+/***/ "./src/app/information/information.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/information/information.component.ts ***!
+  \******************************************************/
+/*! exports provided: InformationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InformationComponent", function() { return InformationComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var InformationComponent = /** @class */ (function () {
+    function InformationComponent() {
+    }
+    InformationComponent.prototype.ngOnInit = function () {
+    };
+    InformationComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-information',
+            template: __webpack_require__(/*! ./information.component.html */ "./src/app/information/information.component.html"),
+            styles: [__webpack_require__(/*! ./information.component.css */ "./src/app/information/information.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], InformationComponent);
+    return InformationComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/login/login.component.css":
 /*!*******************************************!*\
   !*** ./src/app/login/login.component.css ***!
@@ -1103,7 +1171,7 @@ module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section>\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Login</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"loginForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\"\n                data-validation-required-message=\"Please enter your email address.\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\"\n                data-validation-required-message=\"Please enter your password.\">\n            </div>\n          </div>\n          <p class=\"help-block text-danger\">{{errorMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryLogin(loginForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> Login</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleLogin()\"><i class=\"fa fa-google\" aria-hidden=\"true\"></i> Login with Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>No account yet?\n          <a routerLink=\"/register\">Create an account</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section>\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Login</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"loginForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\"\n                data-validation-required-message=\"Please enter your email address.\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\"\n                data-validation-required-message=\"Please enter your password.\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryLogin(loginForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Login</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleLogin()\">\n          <i class=\"fa fa-google\" aria-hidden=\"true\"></i> Login with Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>No account yet?\n          <a routerLink=\"/register\">Create an account</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -1200,7 +1268,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<app-header></app-header>\n<section class=\"mb-0\">\n  <div class=\"container\" *ngIf=\"materialElement\">\n    <h2 class=\"text-center text-uppercase\">Let's Study</h2>\n    <br>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Study material for level {{materialElement.level}}</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image1\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image1\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image2\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image2\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{materialElement.text1}}</p>\n        <p class=\"lead\">{{materialElement.text2}}</p>\n      </div>\n      <div class=\"col-lg-12 text-center\">\n        <img [src]=\"materialElement.image3\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image3\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-6 ml-auto\">\n        <p class=\"lead\">{{materialElement.text3}}</p>\n      </div>\n      <div class=\"col-lg-6 mr-auto\">\n        <p class=\"lead\">{{materialElement.text4}}</p>\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image4\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image4\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image5\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image5\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{materialElement.text5}}</p>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n<app-header></app-header>\n<section class=\"mb-0\">\n  <div class=\"container\" *ngIf=\"materialElement\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Let's Study</h2>\n    <br>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Study material for level {{materialElement.level}}</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image1\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image1\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image2\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image2\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{materialElement.text1}}</p>\n        <p class=\"lead\">{{materialElement.text2}}</p>\n      </div>\n      <div class=\"col-lg-12 text-center\">\n        <img [src]=\"materialElement.image3\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image3\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-6 ml-auto\">\n        <p class=\"lead\">{{materialElement.text3}}</p>\n      </div>\n      <div class=\"col-lg-6 mr-auto\">\n        <p class=\"lead\">{{materialElement.text4}}</p>\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image4\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image4\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image5\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image5\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{materialElement.text5}}</p>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -1613,7 +1681,7 @@ var QuizTileComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#quiz-test {\r\n    padding: 50px;\r\n    border-width:5px;  \r\n    border-style:dashed;\r\n}\r\n\r\nbutton{\r\n    width: 15em;\r\n    height: auto;\r\n}"
+module.exports = "#quiz-test {\r\n    padding: 50px;\r\n    border-width:5px;  \r\n    border-style: dashed;\r\n    border-color: #2C3E50;\r\n}\r\n\r\nbutton{\r\n    width: 15em;\r\n    height: auto;\r\n}"
 
 /***/ }),
 
@@ -1624,7 +1692,7 @@ module.exports = "#quiz-test {\r\n    padding: 50px;\r\n    border-width:5px;  \
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<app-header></app-header>\n<section class=\"mb-0\">\n  <div class=\"container\" *ngIf=\"quizElement\">\n    <h2 class=\"text-center text-uppercase\">{{quizElement.level}} Level - {{quizElement.points}} Points</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-2 text-center\"></div>\n      <div class=\"col-lg-8  text-center\" id=\"quiz-test\">\n        <p class=\"lead\">{{quizElement.question}}</p>\n      </div>\n      <div class=\"col-lg-2 text-center\"></div>\n    </div>\n    <div class=\"row\">\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 1, 'btn-outline-dark': right!==1}\" (click)=\"checkAnswer(quizElement.answer1, 1)\">{{quizElement.answer1}}</button>\n      </div>\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 2, 'btn-outline-dark': right!==2}\" (click)=\"checkAnswer(quizElement.answer2, 2)\">{{quizElement.answer2}}</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 3, 'btn-outline-dark': right!==3}\" (click)=\"checkAnswer(quizElement.answer3, 3)\">{{quizElement.answer3}}</button>\n      </div>\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 4, 'btn-outline-dark': right!==4}\" (click)=\"checkAnswer(quizElement.answer4, 4)\">{{quizElement.answer4}}</button>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n<app-header></app-header>\n<section class=\"mb-0\">\n  <div class=\"container\" *ngIf=\"quizElement\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">{{quizElement.level}} Level - {{quizElement.points}} Points</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-2 text-center\"></div>\n      <div class=\"col-lg-8  text-center\" id=\"quiz-test\">\n        <p class=\"lead\">{{quizElement.question}}</p>\n      </div>\n      <div class=\"col-lg-2 text-center\"></div>\n    </div>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 text-center\">\n        <p class=\"lead text-danger\">{{errorMessage}}</p>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 1, 'btn-outline-dark': right!==1}\" (click)=\"checkAnswer(quizElement.answer1, 1, quizElement)\">{{quizElement.answer1}}</button>\n      </div>\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 2, 'btn-outline-dark': right!==2}\" (click)=\"checkAnswer(quizElement.answer2, 2, quizElement)\">{{quizElement.answer2}}</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 3, 'btn-outline-dark': right!==3}\" (click)=\"checkAnswer(quizElement.answer3, 3, quizElement)\">{{quizElement.answer3}}</button>\n      </div>\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 4, 'btn-outline-dark': right!==4}\" (click)=\"checkAnswer(quizElement.answer4, 4, quizElement)\">{{quizElement.answer4}}</button>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -1661,6 +1729,8 @@ var QuizTestComponent = /** @class */ (function () {
         this.route = route;
         this.quizService = quizService;
         this.location = location;
+        this.errorMessage = '';
+        this.counter = 0;
     }
     QuizTestComponent.prototype.ngOnInit = function () {
         var urlKey = this.route.snapshot.params['key'];
@@ -1679,13 +1749,19 @@ var QuizTestComponent = /** @class */ (function () {
             });
         });
     };
-    QuizTestComponent.prototype.checkAnswer = function (answer, x) {
+    QuizTestComponent.prototype.checkAnswer = function (answer, x, quiz) {
         if (answer === this.quizElement.rightAnswer) {
             this.right = x;
-            alert("Right answer");
+            if (this.counter > 0) {
+                this.errorMessage = "This is the right answer! You have already answer this right.";
+            }
+            else {
+                this.errorMessage = "Well done! You gain " + quiz.points + " points!";
+                this.counter++;
+            }
         }
         else {
-            alert("Wrong answer");
+            this.errorMessage = "You must read study more material level " + quiz.level + ". Do not give up!";
         }
     };
     QuizTestComponent = __decorate([
@@ -1725,7 +1801,7 @@ module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section>\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Register</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"registerForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\"\n                data-validation-required-message=\"Please enter your email address.\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\"\n                data-validation-required-message=\"Please enter your password.\">\n            </div>\n          </div>\n          <p class=\"help-block text-danger\">{{errorMessage}}</p>\n          <p class=\"help-block text-success\">{{successMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryRegister(registerForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> Register</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>Already have an account?\n          <a routerLink=\"/\">Login</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section>\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Register</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"registerForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\"\n                data-validation-required-message=\"Please enter your email address.\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\"\n                data-validation-required-message=\"Please enter your password.\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <p class=\"lead text-success\">{{successMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryRegister(registerForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Register</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>Already have an account?\n          <a routerLink=\"/\">Login</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
