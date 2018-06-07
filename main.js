@@ -953,7 +953,7 @@ var Quiz = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "button{\r\n    color: #fff;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\nbutton:hover{\r\n    color: #18BC9C;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\nbutton:active{\r\n    color: #18BC9C;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\n.foot{\r\n    font-size: 70px;\r\n}"
+module.exports = "button{\r\n    color: #fff;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\nbutton:hover{\r\n    color: #18BC9C;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\nbutton:active{\r\n    color: #18BC9C;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\n.foot{\r\n    font-size: 40px;\r\n}\r\n@media (min-width: 992px) {\r\n    .foot{\r\n        font-size: 60px;\r\n    }  \r\n}"
 
 /***/ }),
 
@@ -964,7 +964,7 @@ module.exports = "button{\r\n    color: #fff;\r\n    background-color:#2C3E50;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<footer class=\"footer text-center\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-6 col-xs-6 col-sm-6 ml-auto\">\n        <button (click)=\"logout()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"foot fa fa-frown-o\"></i>\n        </button>\n      </div>\n      <div class=\"col-lg-6 col-xs-6 col-sm-6 ml-auto\">\n        <button (click)=\"goInfo()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"foot fa fa-question\"></i>\n        </button>\n      </div>\n    </div>\n  </div>\n</footer>"
+module.exports = "<footer class=\"footer text-center\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-4 col-xs-4 col-sm-4 ml-auto\">\n        <button (click)=\"goBack()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"foot fa fa-home\"></i>\n        </button>\n      </div>\n      <div class=\"col-lg-4 col-xs-4 col-sm-4 ml-auto\">\n        <button (click)=\"logout()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"foot fa fa-frown-o\"></i>\n        </button>\n      </div>\n      <div class=\"col-lg-4 col-xs-4 col-sm-4 ml-auto\">\n        <button (click)=\"goInfo()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"foot fa fa-question\"></i>\n        </button>\n      </div>\n    </div>\n  </div>\n</footer>"
 
 /***/ }),
 
@@ -1009,6 +1009,9 @@ var FooterComponent = /** @class */ (function () {
             console.log("Logout error", error);
         });
     };
+    FooterComponent.prototype.goBack = function () {
+        this.router.navigate(['/quiz-levels']);
+    };
     FooterComponent.prototype.goInfo = function () {
         this.router.navigate(['/information']);
     };
@@ -1045,7 +1048,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"masthead bg-primary text-white text-center\">\n  <div class=\"container\">\n    <h1 class=\"text-uppercase mb-0\">Learn Maths</h1>\n    <hr class=\"star-light\">\n    <h2 class=\"font-weight-light mb-0\">Amazing learning material and practice through quiz. Play now!</h2>\n  </div>\n</header>"
+module.exports = "<header class=\"masthead bg-primary text-white text-center\">\n  <div class=\"container\">\n    <h1 class=\"text-uppercase mb-0\">Learn Maths</h1>\n    <hr class=\"star-light\">\n    <h2 class=\"font-weight-light mb-0\">Play and learn through quiz. Play now!</h2>\n  </div>\n</header>"
 
 /***/ }),
 
