@@ -117,13 +117,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
 /* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
 /* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./core/auth.service */ "./src/app/core/auth.service.ts");
-/* harmony import */ var _information_information_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./information/information.component */ "./src/app/information/information.component.ts");
+/* harmony import */ var _core_auth_guard__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./core/auth.guard */ "./src/app/core/auth.guard.ts");
+/* harmony import */ var _core_user_service__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./core/user.service */ "./src/app/core/user.service.ts");
+/* harmony import */ var _information_information_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./information/information.component */ "./src/app/information/information.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -155,11 +159,11 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var appRoutes = [
     { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_24__["LoginComponent"] },
     { path: 'register', component: _register_register_component__WEBPACK_IMPORTED_MODULE_25__["RegisterComponent"] },
-    { path: 'quiz-levels', component: _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_14__["QuizLevelsComponent"] },
-    { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_19__["DashboardComponent"] },
-    { path: 'information', component: _information_information_component__WEBPACK_IMPORTED_MODULE_27__["InformationComponent"] },
-    { path: 'quiz-test/:key', component: _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__["QuizTestComponent"] },
-    { path: 'material/:key', component: _material_material_component__WEBPACK_IMPORTED_MODULE_18__["MaterialComponent"] }
+    { path: 'quiz-levels', component: _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_14__["QuizLevelsComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] },
+    { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_19__["DashboardComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] },
+    { path: 'information', component: _information_information_component__WEBPACK_IMPORTED_MODULE_29__["InformationComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] },
+    { path: 'quiz-test/:key', component: _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__["QuizTestComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] },
+    { path: 'material/:key', component: _material_material_component__WEBPACK_IMPORTED_MODULE_18__["MaterialComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -183,7 +187,7 @@ var AppModule = /** @class */ (function () {
                 _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__["QuizTestComponent"],
                 _login_login_component__WEBPACK_IMPORTED_MODULE_24__["LoginComponent"],
                 _register_register_component__WEBPACK_IMPORTED_MODULE_25__["RegisterComponent"],
-                _information_information_component__WEBPACK_IMPORTED_MODULE_27__["InformationComponent"]
+                _information_information_component__WEBPACK_IMPORTED_MODULE_29__["InformationComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -197,7 +201,7 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(appRoutes, { enableTracing: true })
             ],
-            providers: [_core_auth_service__WEBPACK_IMPORTED_MODULE_26__["AuthService"]],
+            providers: [_core_auth_service__WEBPACK_IMPORTED_MODULE_26__["AuthService"], _core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"], _core_user_service__WEBPACK_IMPORTED_MODULE_28__["UserService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
         })
     ], AppModule);
@@ -208,25 +212,23 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/core/auth.service.ts":
-/*!**************************************!*\
-  !*** ./src/app/core/auth.service.ts ***!
-  \**************************************/
-/*! exports provided: AuthService */
+/***/ "./src/app/core/auth.guard.ts":
+/*!************************************!*\
+  !*** ./src/app/core/auth.guard.ts ***!
+  \************************************/
+/*! exports provided: AuthGuard */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuard", function() { return AuthGuard; });
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
-/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var rxjs_observable_of__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/observable/of */ "./node_modules/rxjs-compat/_esm5/observable/of.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var rxjs_add_operator_switchMap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/add/operator/switchMap */ "./node_modules/rxjs-compat/_esm5/add/operator/switchMap.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/Rx */ "./node_modules/rxjs-compat/_esm5/Rx.js");
+/* harmony import */ var rxjs_add_operator_do__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/add/operator/do */ "./node_modules/rxjs-compat/_esm5/add/operator/do.js");
+/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
+/* harmony import */ var rxjs_add_operator_take__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/add/operator/take */ "./node_modules/rxjs-compat/_esm5/add/operator/take.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -243,49 +245,79 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-var AuthService = /** @class */ (function () {
-    function AuthService(afAuth, afs, router) {
-        var _this = this;
-        this.afAuth = afAuth;
-        this.afs = afs;
+var AuthGuard = /** @class */ (function () {
+    function AuthGuard(auth, router) {
+        this.auth = auth;
         this.router = router;
-        this.user = this.afAuth.authState.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["switchMap"])(function (user) {
-            if (user) {
-                return _this.afs.doc("users/" + user.uid).valueChanges();
-            }
-            else {
-                return Object(rxjs_observable_of__WEBPACK_IMPORTED_MODULE_4__["of"])(null);
-            }
-        }));
     }
-    //Test
-    AuthService.prototype.googleLogin = function () {
-        var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"].GoogleAuthProvider();
-        return this.oAuthLogin(provider);
-    };
-    AuthService.prototype.oAuthLogin = function (provider) {
+    AuthGuard.prototype.canActivate = function () {
         var _this = this;
-        return this.afAuth.auth.signInWithPopup(provider)
-            .then(function (credential) {
-            _this.updateUserData(credential.user);
+        return rxjs_Rx__WEBPACK_IMPORTED_MODULE_3__["Observable"].from(this.auth.authState)
+            .take(1)
+            .map(function (state) { return !!state; })
+            .do(function (authenticated) {
+            if (!authenticated)
+                _this.router.navigate(['/']);
         });
     };
-    AuthService.prototype.updateUserData = function (user) {
-        var userRef = this.afs.doc("users/" + user.uid);
-        var data = {
-            uid: user.uid,
-            email: user.email,
-            displayName: user.displayName,
-            photoURL: user.photoURL
-        };
-        return userRef.set(data, { merge: true });
-    };
-    //Test
+    AuthGuard = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),
+        __metadata("design:paramtypes", [angularfire2_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_0__["Router"]])
+    ], AuthGuard);
+    return AuthGuard;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/core/auth.service.ts":
+/*!**************************************!*\
+  !*** ./src/app/core/auth.service.ts ***!
+  \**************************************/
+/*! exports provided: User, AuthService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var rxjs_add_operator_switchMap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/switchMap */ "./node_modules/rxjs-compat/_esm5/add/operator/switchMap.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var User = /** @class */ (function () {
+    function User(uid, username, email) {
+        this.uid = uid;
+        this.username = username;
+        this.email = email;
+    }
+    return User;
+}());
+
+var AuthService = /** @class */ (function () {
+    function AuthService(afAuth) {
+        this.afAuth = afAuth;
+    }
     AuthService.prototype.doGoogleLogin = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"].GoogleAuthProvider();
+            var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"].GoogleAuthProvider();
             provider.addScope('profile');
             provider.addScope('email');
             _this.afAuth.auth
@@ -300,7 +332,7 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.doRegister = function (value) {
         return new Promise(function (resolve, reject) {
-            firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().createUserWithEmailAndPassword(value.email, value.password)
+            firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().createUserWithEmailAndPassword(value.email, value.password)
                 .then(function (res) {
                 resolve(res);
             }, function (err) { return reject(err); });
@@ -308,7 +340,7 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.doLogin = function (value) {
         return new Promise(function (resolve, reject) {
-            firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().signInWithEmailAndPassword(value.email, value.password)
+            firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().signInWithEmailAndPassword(value.email, value.password)
                 .then(function (res) {
                 resolve(res);
             }, function (err) { return reject(err); });
@@ -317,7 +349,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.doLogout = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            if (firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser) {
+            if (firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().currentUser) {
                 _this.afAuth.auth.signOut();
                 resolve();
             }
@@ -328,9 +360,80 @@ var AuthService = /** @class */ (function () {
     };
     AuthService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [angularfire2_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"], angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]])
+        __metadata("design:paramtypes", [angularfire2_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"]])
     ], AuthService);
     return AuthService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/core/user.service.ts":
+/*!**************************************!*\
+  !*** ./src/app/core/user.service.ts ***!
+  \**************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/add/operator/toPromise */ "./node_modules/rxjs-compat/_esm5/add/operator/toPromise.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_4__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var UserService = /** @class */ (function () {
+    function UserService(db, afAuth) {
+        this.db = db;
+        this.afAuth = afAuth;
+    }
+    UserService.prototype.getCurrentUser = function () {
+        return new Promise(function (resolve, reject) {
+            var user = firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().onAuthStateChanged(function (user) {
+                if (user) {
+                    resolve(user);
+                }
+                else {
+                    reject('No user logged in');
+                }
+            });
+        });
+    };
+    UserService.prototype.updateCurrentUser = function (value) {
+        return new Promise(function (resolve, reject) {
+            var user = firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().currentUser;
+            user.updateProfile({
+                displayName: value.name,
+                photoURL: user.photoURL
+            }).then(function (res) {
+                resolve(res);
+            }, function (err) { return reject(err); });
+        });
+    };
+    UserService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"],
+            angularfire2_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuth"]])
+    ], UserService);
+    return UserService;
 }());
 
 
@@ -1048,7 +1151,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"masthead bg-primary text-white text-center\">\n  <div class=\"container\">\n    <h1 class=\"text-uppercase mb-0\">Learn Maths</h1>\n    <hr class=\"star-light\">\n    <h2 class=\"font-weight-light mb-0\">Play and learn through quiz. Play now!</h2>\n  </div>\n</header>"
+module.exports = "<header class=\"masthead bg-primary text-white text-center\">\n  <div class=\"container\">\n    <h1 class=\"text-uppercase mb-0\">{{test}}Learn Maths</h1>\n    <hr class=\"star-light\">\n    <h2 class=\"font-weight-light mb-0\">Hi {{name}}</h2>\n    <h2 class=\"font-weight-light mb-0\">Play and learn through quiz. Play now!</h2>\n  </div>\n</header>"
 
 /***/ }),
 
@@ -1063,6 +1166,8 @@ module.exports = "<header class=\"masthead bg-primary text-white text-center\">\
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderComponent", function() { return HeaderComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_1__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1073,10 +1178,29 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var HeaderComponent = /** @class */ (function () {
     function HeaderComponent() {
+        this.uid = "";
+        this.name = "";
+        this.email = "";
+        this.photoUrl = "";
     }
     HeaderComponent.prototype.ngOnInit = function () {
+        var user = firebase_app__WEBPACK_IMPORTED_MODULE_1__["auth"]().currentUser;
+        var uid, name, email, photoUrl;
+        if (user != null) {
+            user.providerData.forEach(function (profile) {
+                uid = profile.providerId;
+                name = profile.displayName;
+                email = profile.email;
+                photoUrl = profile.photoURL;
+            });
+        }
+        this.uid = uid;
+        this.name = name;
+        this.email = email;
+        this.photoUrl = photoUrl;
     };
     HeaderComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1711,8 +1835,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuizTestComponent", function() { return QuizTestComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dashboard/services/quiz.service */ "./src/app/dashboard/services/quiz.service.ts");
+/* harmony import */ var _dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dashboard/services/quiz.service */ "./src/app/dashboard/services/quiz.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1725,13 +1848,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var QuizTestComponent = /** @class */ (function () {
-    function QuizTestComponent(renderer, route, quizService, location) {
-        this.renderer = renderer;
+    function QuizTestComponent(route, quizService) {
         this.route = route;
         this.quizService = quizService;
-        this.location = location;
         this.errorMessage = '';
         this.counter = 0;
     }
@@ -1772,12 +1892,10 @@ var QuizTestComponent = /** @class */ (function () {
             selector: 'app-quiz-test',
             template: __webpack_require__(/*! ./quiz-test.component.html */ "./src/app/quiz-test/quiz-test.component.html"),
             styles: [__webpack_require__(/*! ./quiz-test.component.css */ "./src/app/quiz-test/quiz-test.component.css")],
-            providers: [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_3__["QuizService"]]
+            providers: [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__["QuizService"]]
         }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
-            _dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_3__["QuizService"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__["QuizService"]])
     ], QuizTestComponent);
     return QuizTestComponent;
 }());
