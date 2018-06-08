@@ -120,12 +120,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_auth_guard__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./core/auth.guard */ "./src/app/core/auth.guard.ts");
 /* harmony import */ var _core_user_service__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./core/user.service */ "./src/app/core/user.service.ts");
 /* harmony import */ var _information_information_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./information/information.component */ "./src/app/information/information.component.ts");
+/* harmony import */ var _dashboard_user_user_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./dashboard/user/user.component */ "./src/app/dashboard/user/user.component.ts");
+/* harmony import */ var _dashboard_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./dashboard/statistics/statistics.component */ "./src/app/dashboard/statistics/statistics.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -187,7 +191,9 @@ var AppModule = /** @class */ (function () {
                 _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__["QuizTestComponent"],
                 _login_login_component__WEBPACK_IMPORTED_MODULE_24__["LoginComponent"],
                 _register_register_component__WEBPACK_IMPORTED_MODULE_25__["RegisterComponent"],
-                _information_information_component__WEBPACK_IMPORTED_MODULE_29__["InformationComponent"]
+                _information_information_component__WEBPACK_IMPORTED_MODULE_29__["InformationComponent"],
+                _dashboard_user_user_component__WEBPACK_IMPORTED_MODULE_30__["UserComponent"],
+                _dashboard_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_31__["StatisticsComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -440,6 +446,26 @@ var UserService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/core/user.ts":
+/*!******************************!*\
+  !*** ./src/app/core/user.ts ***!
+  \******************************/
+/*! exports provided: User */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
+var User = /** @class */ (function () {
+    function User() {
+    }
+    return User;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/dashboard/dashboard.component.css":
 /*!***************************************************!*\
   !*** ./src/app/dashboard/dashboard.component.css ***!
@@ -458,7 +484,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<section id=\"dashboard\">\n  <div class=\"container\">\n    <br>\n    <br>\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Teacher Dashboard</h2>\n    <br>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Students Statistics</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 mx-auto\">\n        <div class=\"table-responsive\">\n          <table class=\"table\">\n            <thead>\n              <tr>\n                <th>ID</th>\n                <th>Firstname</th>\n                <th>Lastname</th>\n                <th>email</th>\n                <th>Points</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>1</td>\n                <td>Anna</td>\n                <td>Pitt</td>\n                <td>example@gmail.com</td>\n                <td>100</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Questions</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 mx-auto\">\n        <app-quiz-form></app-quiz-form>\n      </div>\n      <div class=\"col-lg-6 mx-auto\">\n        <app-quiz-list></app-quiz-list>\n      </div>\n    </div>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Material</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 mx-auto\">\n        <app-material-form></app-material-form>\n      </div>\n      <div class=\"col-lg-6 mx-auto\">\n        <app-material-list></app-material-list>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n<section>\n  <div class=\"container\">\n    <br>\n    <br>\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Dashboard</h2>\n    <br>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 mx-auto\">\n        <app-user></app-user>\n      </div>\n    </div>\n    <br>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Students Statistics</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 mx-auto\">\n        <app-statistics></app-statistics>\n      </div>\n    </div>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Questions</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 mx-auto\">\n        <app-quiz-form></app-quiz-form>\n      </div>\n      <div class=\"col-lg-6 mx-auto\">\n        <app-quiz-list></app-quiz-list>\n      </div>\n    </div>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Material</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 mx-auto\">\n        <app-material-form></app-material-form>\n      </div>\n      <div class=\"col-lg-6 mx-auto\">\n        <app-material-list></app-material-list>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -1049,6 +1075,194 @@ var Quiz = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/dashboard/statistics/statistics.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/dashboard/statistics/statistics.component.css ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/dashboard/statistics/statistics.component.html":
+/*!****************************************************************!*\
+  !*** ./src/app/dashboard/statistics/statistics.component.html ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"table-responsive\">\n  <table class=\"table\">\n    <thead>\n      <tr>\n        <th>ID</th>\n        <th>Firstname</th>\n        <th>Lastname</th>\n        <th>email</th>\n        <th>Points</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>1</td>\n        <td>Anna</td>\n        <td>Pitt</td>\n        <td>example@gmail.com</td>\n        <td>100</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/dashboard/statistics/statistics.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/dashboard/statistics/statistics.component.ts ***!
+  \**************************************************************/
+/*! exports provided: StatisticsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StatisticsComponent", function() { return StatisticsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var StatisticsComponent = /** @class */ (function () {
+    function StatisticsComponent() {
+    }
+    StatisticsComponent.prototype.ngOnInit = function () {
+    };
+    StatisticsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-statistics',
+            template: __webpack_require__(/*! ./statistics.component.html */ "./src/app/dashboard/statistics/statistics.component.html"),
+            styles: [__webpack_require__(/*! ./statistics.component.css */ "./src/app/dashboard/statistics/statistics.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], StatisticsComponent);
+    return StatisticsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/dashboard/user/user.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/dashboard/user/user.component.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  max-width: 18rem;\r\n  margin: auto;\r\n  text-align: center;\r\n}\r\n.info{\r\n  max-width: 30rem;\r\n  box-shadow: none;\r\n  border: none;\r\n  text-align: left;\r\n  margin: 5px;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/dashboard/user/user.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/dashboard/user/user.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"card-group\">\n  <div class=\"card\">\n    <img [src]=\"user.photoURL\" [alt]=\"user.displayName\" style=\"width:100%\">\n    <h1>{{user.displayName}}</h1>\n    <p>Email: {{user.email}}</p>\n    <p>Id: {{user.uid}}</p>\n    <p>Points: {{user.points}} / Level: {{user.level}}</p>\n  </div>\n  <div class=\"card info\">\n    <h3 class=\"text-secondary mb-0\">Update user</h3>\n    <form [formGroup]=\"userForm\">\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>Name</label>\n          <input class=\"form-control\" id=\"name\" type=\"text\" formControlName=\"name\" placeholder=\"User name\" required=\"required\" data-validation-required-message=\"Please enter your user name.\">\n        </div>\n      </div>\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>Photo URL</label>\n          <input class=\"form-control\" id=\"photoURL\" type=\"text\" formControlName=\"photoURL\" placeholder=\"Photo URL\" required=\"required\"\n            data-validation-required-message=\"Please enter your photo URL.\">\n        </div>\n      </div>\n      <p class=\"lead text-danger\">{{errorMessage}}</p>\n      <p class=\"lead text-success\">{{successMessage}}</p>\n      <br>\n      <div class=\"form-group\">\n        <button type=\"submit\" (click)=\"updateUser(userForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n          <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Update</button>\n      </div>\n    </form>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/dashboard/user/user.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/dashboard/user/user.component.ts ***!
+  \**************************************************/
+/*! exports provided: UserComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserComponent", function() { return UserComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _core_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../core/user */ "./src/app/core/user.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var UserComponent = /** @class */ (function () {
+    function UserComponent(fb) {
+        this.fb = fb;
+        this.errorMessage = "";
+        this.successMessage = "";
+        this.user = new _core_user__WEBPACK_IMPORTED_MODULE_2__["User"];
+        this.createForm();
+        this.user.providerId = "";
+        this.user.uid = "";
+        this.user.displayName = "";
+        this.user.email = "";
+        this.user.photoURL = "assets/img/portfolio/avatar.png";
+        this.user.points = 0;
+        this.user.level = 0;
+    }
+    UserComponent.prototype.ngOnInit = function () {
+        var user = firebase_app__WEBPACK_IMPORTED_MODULE_1__["auth"]().currentUser;
+        var providerId, uid, displayName, email, photoUrl;
+        if (user != null) {
+            user.providerData.forEach(function (profile) {
+                providerId = profile.providerId;
+                uid = profile.uid;
+                displayName = profile.displayName;
+                email = profile.email;
+                photoUrl = profile.photoURL;
+            });
+            this.user.providerId = providerId;
+            this.user.uid = uid;
+            if (displayName) {
+                this.user.displayName = displayName;
+            }
+            if (photoUrl) {
+                this.user.photoURL = photoUrl;
+            }
+            this.user.email = email;
+        }
+    };
+    UserComponent.prototype.ngOnChanges = function () {
+    };
+    UserComponent.prototype.createForm = function () {
+        this.userForm = this.fb.group({
+            name: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            photoURL: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
+        });
+    };
+    UserComponent.prototype.updateUser = function (value) {
+        var user = firebase_app__WEBPACK_IMPORTED_MODULE_1__["auth"]().currentUser;
+        var s = "";
+        var e = "";
+        user.updateProfile({
+            displayName: value.name,
+            photoURL: value.photoURL
+        }).then(function () {
+            s = "Update successfully!";
+        }).catch(function (error) {
+            e = error;
+        });
+        this.successMessage = s;
+        this.errorMessage = e;
+    };
+    UserComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-user',
+            template: __webpack_require__(/*! ./user.component.html */ "./src/app/dashboard/user/user.component.html"),
+            styles: [__webpack_require__(/*! ./user.component.css */ "./src/app/dashboard/user/user.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]])
+    ], UserComponent);
+    return UserComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/footer/footer.component.css":
 /*!*********************************************!*\
   !*** ./src/app/footer/footer.component.css ***!
@@ -1067,7 +1281,7 @@ module.exports = "button{\r\n    color: #fff;\r\n    background-color:#2C3E50;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<footer class=\"footer text-center\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-4 col-xs-4 col-sm-4 ml-auto\">\n        <button (click)=\"goBack()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"foot fa fa-home\"></i>\n        </button>\n      </div>\n      <div class=\"col-lg-4 col-xs-4 col-sm-4 ml-auto\">\n        <button (click)=\"logout()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"foot fa fa-frown-o\"></i>\n        </button>\n      </div>\n      <div class=\"col-lg-4 col-xs-4 col-sm-4 ml-auto\">\n        <button (click)=\"goInfo()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"foot fa fa-question\"></i>\n        </button>\n      </div>\n    </div>\n  </div>\n</footer>"
+module.exports = "<footer class=\"footer text-center\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-4 col-4 col-sm-4 ml-auto\">\n        <button (click)=\"goBack()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"foot fa fa-home\"></i>\n        </button>\n      </div>\n      <div class=\"col-lg-4 col-4 col-sm-4 ml-auto\">\n        <button (click)=\"logout()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"foot fa fa-frown-o\"></i>\n        </button>\n      </div>\n      <div class=\"col-lg-4 col-4 col-sm-4 ml-auto\">\n        <button (click)=\"goInfo()\" type=\"submit\" class=\"btn btn-outline-primary btn-xl\">\n          <i class=\"foot fa fa-question\"></i>\n        </button>\n      </div>\n    </div>\n  </div>\n</footer>"
 
 /***/ }),
 
@@ -1884,7 +2098,7 @@ var QuizTestComponent = /** @class */ (function () {
             }
         }
         else {
-            this.errorMessage = "You must read study more material level " + quiz.level + ". Do not give up!";
+            this.errorMessage = "You must read material level " + quiz.level + ". Do not give up!";
         }
     };
     QuizTestComponent = __decorate([
