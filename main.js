@@ -1153,7 +1153,7 @@ var StatisticsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  max-width: 18rem;\r\n  margin: auto;\r\n  text-align: center;\r\n}\r\n.info{\r\n  max-width: 30rem;\r\n  box-shadow: none;\r\n  border: none;\r\n  text-align: left;\r\n  margin: 5px;\r\n}\r\n.card-group {\r\n  padding: 50px;\r\n  border-width:5px;  \r\n  border-style: dashed;\r\n  border-color: #2C3E50;\r\n}"
+module.exports = ".card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  max-width: 18rem;\r\n  text-align: center;\r\n}\r\n@media (min-width: 992px) {\r\n  .card{\r\n    margin: auto;\r\n  }  \r\n}\r\n.info{\r\n  max-width: 30rem;\r\n  box-shadow: none;\r\n  border: none;\r\n  text-align: left;\r\n  margin: 5px;\r\n}\r\n.card-group {\r\n  padding: 50px;\r\n  border-width:5px;  \r\n  border-style: dashed;\r\n  border-color: #2C3E50;\r\n}"
 
 /***/ }),
 
