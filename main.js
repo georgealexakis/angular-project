@@ -291,6 +291,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var rxjs_add_operator_switchMap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/switchMap */ "./node_modules/rxjs-compat/_esm5/add/operator/switchMap.js");
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user */ "./src/app/core/user.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -304,11 +305,29 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AuthService = /** @class */ (function () {
     function AuthService(afAuth) {
         this.afAuth = afAuth;
+        this.user = new _user__WEBPACK_IMPORTED_MODULE_4__["User"];
     }
     AuthService.prototype.doGoogleLogin = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"].GoogleAuthProvider();
+            provider.addScope('profile');
+            provider.addScope('email');
+            _this.afAuth.auth
+                .signInWithPopup(provider)
+                .then(function (res) {
+                resolve(res);
+            }, function (err) {
+                console.log(err);
+                reject(err);
+            });
+        });
+    };
+    AuthService.prototype.doGoogleRegister = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"].GoogleAuthProvider();
@@ -328,10 +347,11 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.writeUserDataGoogle = function (provider) {
         firebase_app__WEBPACK_IMPORTED_MODULE_2__["database"]().ref('users/' + provider.uid).set({
-            providerId: provider.providerId,
             displayName: provider.displayName,
             email: provider.email,
             photoURL: provider.photoURL,
+            loginProvider: "google",
+            userRole: "student",
             points: 0,
             level: 0
         });
@@ -343,17 +363,17 @@ var AuthService = /** @class */ (function () {
                 .then(function (res) {
                 resolve(res);
                 var userId = firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().currentUser.uid;
-                var providerId = firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().currentUser.providerId;
-                _this.writeUserData(userId, providerId, value.email);
+                _this.writeUserData(userId, value.email);
             }, function (err) { return reject(err); });
         });
     };
-    AuthService.prototype.writeUserData = function (userId, providerId, email) {
+    AuthService.prototype.writeUserData = function (userId, email) {
         firebase_app__WEBPACK_IMPORTED_MODULE_2__["database"]().ref('users/' + userId).set({
-            providerId: providerId,
             displayName: "",
             email: email,
-            photoURL: "",
+            photoURL: "assets/img/portfolio/avatar.png",
+            loginProvider: "anonymous",
+            userRole: "student",
             points: 0,
             level: 0
         });
@@ -427,7 +447,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<section>\n  <div class=\"container\">\n    <br>\n    <br>\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Dashboard</h2>\n    <br>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 mx-auto\">\n        <app-user></app-user>\n      </div>\n    </div>\n    <br>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Students Statistics</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 mx-auto\">\n        <app-statistics></app-statistics>\n      </div>\n    </div>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Questions</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 mx-auto\">\n        <app-quiz-form></app-quiz-form>\n      </div>\n      <div class=\"col-lg-6 mx-auto\">\n        <app-quiz-list></app-quiz-list>\n      </div>\n    </div>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Material</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 mx-auto\">\n        <app-material-form></app-material-form>\n      </div>\n      <div class=\"col-lg-6 mx-auto\">\n        <app-material-list></app-material-list>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n<section>\n  <div class=\"container\">\n    <br>\n    <br>\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Dashboard</h2>\n    <br>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 mx-auto\">\n        <app-user></app-user>\n      </div>\n    </div>\n    <ng-template [ngIf]=\"user.userRole === 'teacher'\">\n      <br>\n      <br>\n      <h3 class=\"text-secondary mb-0\">Students Statistics</h3>\n      <br>\n      <div class=\"row\">\n        <div class=\"col-lg-12 mx-auto\">\n          <app-statistics></app-statistics>\n        </div>\n      </div>\n      <br>\n      <h3 class=\"text-secondary mb-0\">Questions</h3>\n      <br>\n      <div class=\"row\">\n        <div class=\"col-lg-6 mx-auto\">\n          <app-quiz-form></app-quiz-form>\n        </div>\n        <div class=\"col-lg-6 mx-auto\">\n          <app-quiz-list></app-quiz-list>\n        </div>\n      </div>\n      <br>\n      <h3 class=\"text-secondary mb-0\">Material</h3>\n      <br>\n      <div class=\"row\">\n        <div class=\"col-lg-6 mx-auto\">\n          <app-material-form></app-material-form>\n        </div>\n        <div class=\"col-lg-6 mx-auto\">\n          <app-material-list></app-material-list>\n        </div>\n      </div>\n    </ng-template>\n  </div>\n</section>\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -444,6 +464,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_quiz_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/quiz.service */ "./src/app/dashboard/services/quiz.service.ts");
 /* harmony import */ var _services_material_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/material.service */ "./src/app/dashboard/services/material.service.ts");
+/* harmony import */ var _core_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/user */ "./src/app/core/user.ts");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -456,12 +480,33 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent(quizService, materialService) {
+    function DashboardComponent(quizService, materialService, firebase) {
         this.quizService = quizService;
         this.materialService = materialService;
+        this.firebase = firebase;
+        this.user = new _core_user__WEBPACK_IMPORTED_MODULE_3__["User"];
+        this.getUser();
     }
     DashboardComponent.prototype.ngOnInit = function () {
+        this.getUser();
+    };
+    DashboardComponent.prototype.getUser = function () {
+        var _this = this;
+        this.users = this.firebase.list('users');
+        var user = firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().currentUser;
+        this.users.snapshotChanges().subscribe(function (item) {
+            item.forEach(function (element) {
+                var y = element.payload.toJSON();
+                y["uid"] = element.key;
+                if (element.key === user.uid) {
+                    _this.user = y;
+                }
+            });
+        });
     };
     DashboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -470,7 +515,9 @@ var DashboardComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./dashboard.component.css */ "./src/app/dashboard/dashboard.component.css")],
             providers: [_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"], _services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"]]
         }),
-        __metadata("design:paramtypes", [_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"], _services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"]])
+        __metadata("design:paramtypes", [_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"],
+            _services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"],
+            angularfire2_database__WEBPACK_IMPORTED_MODULE_5__["AngularFireDatabase"]])
     ], DashboardComponent);
     return DashboardComponent;
 }());
@@ -1036,7 +1083,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"table-responsive\">\n  <table class=\"table\">\n    <thead>\n      <tr>\n        <th>ID</th>\n        <th>Firstname</th>\n        <th>Lastname</th>\n        <th>email</th>\n        <th>Points</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>1</td>\n        <td>Anna</td>\n        <td>Pitt</td>\n        <td>example@gmail.com</td>\n        <td>100</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<div class=\"table-responsive\">\n  <table class=\"table\">\n    <thead>\n      <tr>\n        <th>ID</th>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Points</th>\n        <th>Level</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let user of userList\">\n        <td>{{user.uid}}</td>\n        <td *ngIf=\"user.displayName !== '' else emtpyName\">{{user.displayName}}</td>\n        <ng-template #emtpyName>\n          <td>-</td>\n        </ng-template>\n        <td>{{user.email}}</td>\n        <td>{{user.points}}</td>\n        <td>{{user.level}}</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
 
 /***/ }),
 
@@ -1051,6 +1098,7 @@ module.exports = "<div class=\"table-responsive\">\n  <table class=\"table\">\n 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StatisticsComponent", function() { return StatisticsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1061,10 +1109,27 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var StatisticsComponent = /** @class */ (function () {
-    function StatisticsComponent() {
+    function StatisticsComponent(firebase) {
+        this.firebase = firebase;
+        this.users = this.firebase.list('users');
     }
+    StatisticsComponent.prototype.getData = function () {
+        this.users = this.firebase.list('users');
+        return this.users;
+    };
     StatisticsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var x = this.getData();
+        x.snapshotChanges().subscribe(function (item) {
+            _this.userList = [];
+            item.forEach(function (element) {
+                var y = element.payload.toJSON();
+                y["uid"] = element.key;
+                _this.userList.push(y);
+            });
+        });
     };
     StatisticsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1072,7 +1137,7 @@ var StatisticsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./statistics.component.html */ "./src/app/dashboard/statistics/statistics.component.html"),
             styles: [__webpack_require__(/*! ./statistics.component.css */ "./src/app/dashboard/statistics/statistics.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [angularfire2_database__WEBPACK_IMPORTED_MODULE_1__["AngularFireDatabase"]])
     ], StatisticsComponent);
     return StatisticsComponent;
 }());
@@ -1099,7 +1164,7 @@ module.exports = ".card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card-group\">\n  <div class=\"card\">\n    <img *ngIf=\"user.photoURL\" [src]=\"user.photoURL\" [alt]=\"user.displayName\" style=\"width:100%\">\n    <h1>{{user.displayName}}</h1>\n    <p>Email: {{user.email}}</p>\n    <p>Id: {{user.uid}}</p>\n    <p>Points: {{user?.points}} / Level: {{user?.level}}</p>\n  </div>\n  <div *ngIf=\"user.providerId !== 'google.com'\" class=\"card info\">\n    <h3 class=\"text-secondary mb-0\">Update user</h3>\n    <form #userForm=\"ngForm\" (ngSubmit)=\"onSubmit(userForm)\">\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>User Name</label>\n          <input class=\"form-control\" name=\"displayName\" #displayName=\"ngModel\" [(ngModel)]=\"user.displayName\" type=\"text\" placeholder=\"User name\">\n        </div>\n      </div>\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>Photo URL</label>\n          <input class=\"form-control\" name=\"photoURL\" #photoURL=\"ngModel\" [(ngModel)]=\"user.photoURL\" type=\"text\" placeholder=\"Photo URL\">\n        </div>\n      </div>\n      <p class=\"lead text-success\">{{successMessage}}</p>\n      <br>\n      <div class=\"form-group\">\n        <button type=\"submit\" class=\"btn btn-dark btn-lg col-lg-12\">\n          <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Update</button>\n      </div>\n    </form>\n  </div>\n</div>"
+module.exports = "<div class=\"card-group\">\n  <div class=\"card\">\n    <img *ngIf=\"user.photoURL\" [src]=\"user.photoURL\" [alt]=\"user.displayName\" style=\"width:100%\">\n    <h1>{{user.displayName}}</h1>\n    <p>Email: {{user.email}}</p>\n    <p>Id: {{user.uid}}</p>\n    <p>Points: {{tempUser.points}} - Level: {{tempUser.level}}</p>\n  </div>\n  <div *ngIf=\"user.providerId !== 'google.com'\" class=\"card info\">\n    <h3 class=\"text-secondary mb-0\">Update user</h3>\n    <form #userForm=\"ngForm\" (ngSubmit)=\"onSubmit(userForm)\">\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>User Name</label>\n          <input class=\"form-control\" name=\"displayName\" #displayName=\"ngModel\" [(ngModel)]=\"user.displayName\" type=\"text\" placeholder=\"User name\">\n        </div>\n      </div>\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>Photo URL</label>\n          <input class=\"form-control\" name=\"photoURL\" #photoURL=\"ngModel\" [(ngModel)]=\"user.photoURL\" type=\"text\" placeholder=\"Photo URL\">\n        </div>\n      </div>\n      <p class=\"lead text-success\">{{successMessage}}</p>\n      <br>\n      <div class=\"form-group\">\n        <button type=\"submit\" class=\"btn btn-dark btn-lg col-lg-12\">\n          <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Update</button>\n      </div>\n    </form>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1117,6 +1182,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _core_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../core/user */ "./src/app/core/user.ts");
+/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1129,10 +1195,13 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var UserComponent = /** @class */ (function () {
-    function UserComponent() {
+    function UserComponent(firebase) {
+        this.firebase = firebase;
         this.successMessage = "";
         this.user = new _core_user__WEBPACK_IMPORTED_MODULE_2__["User"];
+        this.tempUser = new _core_user__WEBPACK_IMPORTED_MODULE_2__["User"];
         this.user.providerId = "";
         this.user.uid = "";
         this.user.displayName = "";
@@ -1142,24 +1211,39 @@ var UserComponent = /** @class */ (function () {
         this.user.level = 0;
     }
     UserComponent.prototype.ngOnInit = function () {
+        this.retrivePointsAndLevel();
+        this.resetForm();
+    };
+    UserComponent.prototype.getData = function () {
+        this.users = this.firebase.list('users');
+        return this.users;
+    };
+    UserComponent.prototype.retrivePointsAndLevel = function () {
+        var _this = this;
+        var x = this.getData();
+        var id = this.initData();
+        x.snapshotChanges().subscribe(function (item) {
+            item.forEach(function (element) {
+                var y = element.payload.toJSON();
+                y["uid"] = element.key;
+                if (element.key === id) {
+                    _this.tempUser = y;
+                }
+            });
+        });
+    };
+    UserComponent.prototype.initData = function () {
         var user = firebase_app__WEBPACK_IMPORTED_MODULE_1__["auth"]().currentUser;
-        var providerId, uid, displayName, email, photoUrl, level, points;
+        var providerId, displayName, email, photoUrl;
         if (user != null) {
+            this.user.uid = user.uid;
             user.providerData.forEach(function (profile) {
                 providerId = profile.providerId;
-                uid = profile.uid;
                 displayName = profile.displayName;
                 email = profile.email;
                 photoUrl = profile.photoURL;
-                //
-                return firebase_app__WEBPACK_IMPORTED_MODULE_1__["database"]().ref('/users/' + user.uid).once('value').then(function (snapshot) {
-                    var x = (snapshot.val() && snapshot.val().points) || 'Anonymous';
-                    var y = (snapshot.val() && snapshot.val().level) || 'Anonymous';
-                });
-                //
             });
             this.user.providerId = providerId;
-            this.user.uid = uid;
             if (displayName) {
                 this.user.displayName = displayName;
             }
@@ -1167,8 +1251,11 @@ var UserComponent = /** @class */ (function () {
                 this.user.photoURL = photoUrl;
             }
             this.user.email = email;
+            return this.user.uid;
         }
-        this.resetForm();
+        else {
+            return null;
+        }
     };
     UserComponent.prototype.resetForm = function (form) {
         if (form != null) {
@@ -1197,7 +1284,7 @@ var UserComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./user.component.html */ "./src/app/dashboard/user/user.component.html"),
             styles: [__webpack_require__(/*! ./user.component.css */ "./src/app/dashboard/user/user.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [angularfire2_database__WEBPACK_IMPORTED_MODULE_3__["AngularFireDatabase"]])
     ], UserComponent);
     return UserComponent;
 }());
@@ -1993,6 +2080,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dashboard/services/quiz.service */ "./src/app/dashboard/services/quiz.service.ts");
+/* harmony import */ var _core_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/user */ "./src/app/core/user.ts");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2005,16 +2096,26 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var QuizTestComponent = /** @class */ (function () {
-    function QuizTestComponent(route, quizService) {
+    function QuizTestComponent(route, quizService, firebase) {
         this.route = route;
         this.quizService = quizService;
+        this.firebase = firebase;
+        this.user = new _core_user__WEBPACK_IMPORTED_MODULE_3__["User"];
+        this.tempUser = new _core_user__WEBPACK_IMPORTED_MODULE_3__["User"];
         this.errorMessage = '';
         this.counter = 0;
+        this.userPoints = 0;
+        this.userLevel = 0;
+        this.usersList = this.firebase.list('users');
     }
     QuizTestComponent.prototype.ngOnInit = function () {
         var urlKey = this.route.snapshot.params['key'];
         this.getSingleQuiz(urlKey);
+        this.retriveData();
     };
     QuizTestComponent.prototype.getSingleQuiz = function (urlKey) {
         var _this = this;
@@ -2037,12 +2138,44 @@ var QuizTestComponent = /** @class */ (function () {
             }
             else {
                 this.errorMessage = "Well done! You gain " + quiz.points + " points!";
+                this.updatePointsAndLevel(this.user, quiz.points, quiz.level);
                 this.counter++;
             }
         }
         else {
             this.errorMessage = "You must read material level " + quiz.level + ". Do not give up!";
         }
+    };
+    QuizTestComponent.prototype.retriveData = function () {
+        var _this = this;
+        this.users = this.getData();
+        var user = firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().currentUser;
+        this.users.snapshotChanges().subscribe(function (item) {
+            item.forEach(function (element) {
+                var y = element.payload.toJSON();
+                y["uid"] = element.key;
+                if (element.key === user.uid) {
+                    _this.user = y;
+                }
+            });
+        });
+    };
+    QuizTestComponent.prototype.getData = function () {
+        this.usersList = this.firebase.list('users');
+        return this.usersList;
+    };
+    QuizTestComponent.prototype.updatePointsAndLevel = function (user, points, level) {
+        this.userPoints = user.points;
+        this.userLevel = user.level;
+        var newPoints = parseInt(points, 10) + this.userPoints;
+        var newLevel = parseInt(level, 10);
+        if (newLevel < this.userLevel) {
+            newLevel = this.userLevel;
+        }
+        this.usersList.update(user.uid, {
+            points: newPoints,
+            level: newLevel
+        });
     };
     QuizTestComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2052,7 +2185,8 @@ var QuizTestComponent = /** @class */ (function () {
             providers: [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__["QuizService"]]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
-            _dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__["QuizService"]])
+            _dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__["QuizService"],
+            angularfire2_database__WEBPACK_IMPORTED_MODULE_5__["AngularFireDatabase"]])
     ], QuizTestComponent);
     return QuizTestComponent;
 }());
@@ -2079,7 +2213,7 @@ module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section>\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Register</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"registerForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <p class=\"lead text-success\">{{successMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryRegister(registerForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Register</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>Already have an account?\n          <a routerLink=\"/\">Login</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section>\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Register</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"registerForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <p class=\"lead text-success\">{{successMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryRegister(registerForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Register</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleRegister()\">\n          <i class=\"fa fa-google\" aria-hidden=\"true\"></i> Register with Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>Already have an account?\n          <a routerLink=\"/\">Login</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -2120,6 +2254,14 @@ var RegisterComponent = /** @class */ (function () {
         this.registerForm = this.formBuilder.group({
             email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+        });
+    };
+    RegisterComponent.prototype.tryGoogleRegister = function () {
+        var _this = this;
+        this.authService.doGoogleLogin()
+            .then(function (res) {
+            _this.errorMessage = "";
+            _this.successMessage = "Your account has been created";
         });
     };
     RegisterComponent.prototype.tryRegister = function (value) {
