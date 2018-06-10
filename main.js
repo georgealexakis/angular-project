@@ -118,10 +118,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
 /* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./core/auth.service */ "./src/app/core/auth.service.ts");
 /* harmony import */ var _core_auth_guard__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./core/auth.guard */ "./src/app/core/auth.guard.ts");
-/* harmony import */ var _core_user_service__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./core/user.service */ "./src/app/core/user.service.ts");
-/* harmony import */ var _information_information_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./information/information.component */ "./src/app/information/information.component.ts");
-/* harmony import */ var _dashboard_user_user_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./dashboard/user/user.component */ "./src/app/dashboard/user/user.component.ts");
-/* harmony import */ var _dashboard_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./dashboard/statistics/statistics.component */ "./src/app/dashboard/statistics/statistics.component.ts");
+/* harmony import */ var _information_information_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./information/information.component */ "./src/app/information/information.component.ts");
+/* harmony import */ var _dashboard_user_user_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./dashboard/user/user.component */ "./src/app/dashboard/user/user.component.ts");
+/* harmony import */ var _dashboard_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./dashboard/statistics/statistics.component */ "./src/app/dashboard/statistics/statistics.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -159,13 +158,12 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
 var appRoutes = [
     { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_24__["LoginComponent"] },
     { path: 'register', component: _register_register_component__WEBPACK_IMPORTED_MODULE_25__["RegisterComponent"] },
     { path: 'quiz-levels', component: _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_14__["QuizLevelsComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] },
     { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_19__["DashboardComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] },
-    { path: 'information', component: _information_information_component__WEBPACK_IMPORTED_MODULE_29__["InformationComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] },
+    { path: 'information', component: _information_information_component__WEBPACK_IMPORTED_MODULE_28__["InformationComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] },
     { path: 'quiz-test/:key', component: _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__["QuizTestComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] },
     { path: 'material/:key', component: _material_material_component__WEBPACK_IMPORTED_MODULE_18__["MaterialComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] }
 ];
@@ -191,9 +189,9 @@ var AppModule = /** @class */ (function () {
                 _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__["QuizTestComponent"],
                 _login_login_component__WEBPACK_IMPORTED_MODULE_24__["LoginComponent"],
                 _register_register_component__WEBPACK_IMPORTED_MODULE_25__["RegisterComponent"],
-                _information_information_component__WEBPACK_IMPORTED_MODULE_29__["InformationComponent"],
-                _dashboard_user_user_component__WEBPACK_IMPORTED_MODULE_30__["UserComponent"],
-                _dashboard_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_31__["StatisticsComponent"]
+                _information_information_component__WEBPACK_IMPORTED_MODULE_28__["InformationComponent"],
+                _dashboard_user_user_component__WEBPACK_IMPORTED_MODULE_29__["UserComponent"],
+                _dashboard_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_30__["StatisticsComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -207,7 +205,7 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(appRoutes, { enableTracing: true })
             ],
-            providers: [_core_auth_service__WEBPACK_IMPORTED_MODULE_26__["AuthService"], _core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"], _core_user_service__WEBPACK_IMPORTED_MODULE_28__["UserService"]],
+            providers: [_core_auth_service__WEBPACK_IMPORTED_MODULE_26__["AuthService"], _core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
         })
     ], AppModule);
@@ -282,12 +280,11 @@ var AuthGuard = /** @class */ (function () {
 /*!**************************************!*\
   !*** ./src/app/core/auth.service.ts ***!
   \**************************************/
-/*! exports provided: User, AuthService */
+/*! exports provided: AuthService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
@@ -307,15 +304,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var User = /** @class */ (function () {
-    function User(uid, username, email) {
-        this.uid = uid;
-        this.username = username;
-        this.email = email;
-    }
-    return User;
-}());
-
 var AuthService = /** @class */ (function () {
     function AuthService(afAuth) {
         this.afAuth = afAuth;
@@ -330,18 +318,44 @@ var AuthService = /** @class */ (function () {
                 .signInWithPopup(provider)
                 .then(function (res) {
                 resolve(res);
+                var provider = firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().currentUser;
+                _this.writeUserDataGoogle(provider);
             }, function (err) {
                 console.log(err);
                 reject(err);
             });
         });
     };
+    AuthService.prototype.writeUserDataGoogle = function (provider) {
+        firebase_app__WEBPACK_IMPORTED_MODULE_2__["database"]().ref('users/' + provider.uid).set({
+            providerId: provider.providerId,
+            displayName: provider.displayName,
+            email: provider.email,
+            photoURL: provider.photoURL,
+            points: 0,
+            level: 0
+        });
+    };
     AuthService.prototype.doRegister = function (value) {
+        var _this = this;
         return new Promise(function (resolve, reject) {
             firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().createUserWithEmailAndPassword(value.email, value.password)
                 .then(function (res) {
                 resolve(res);
+                var userId = firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().currentUser.uid;
+                var providerId = firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().currentUser.providerId;
+                _this.writeUserData(userId, providerId, value.email);
             }, function (err) { return reject(err); });
+        });
+    };
+    AuthService.prototype.writeUserData = function (userId, providerId, email) {
+        firebase_app__WEBPACK_IMPORTED_MODULE_2__["database"]().ref('users/' + userId).set({
+            providerId: providerId,
+            displayName: "",
+            email: email,
+            photoURL: "",
+            points: 0,
+            level: 0
         });
     };
     AuthService.prototype.doLogin = function (value) {
@@ -369,77 +383,6 @@ var AuthService = /** @class */ (function () {
         __metadata("design:paramtypes", [angularfire2_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"]])
     ], AuthService);
     return AuthService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/core/user.service.ts":
-/*!**************************************!*\
-  !*** ./src/app/core/user.service.ts ***!
-  \**************************************/
-/*! exports provided: UserService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/add/operator/toPromise */ "./node_modules/rxjs-compat/_esm5/add/operator/toPromise.js");
-/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
-/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_4__);
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var UserService = /** @class */ (function () {
-    function UserService(db, afAuth) {
-        this.db = db;
-        this.afAuth = afAuth;
-    }
-    UserService.prototype.getCurrentUser = function () {
-        return new Promise(function (resolve, reject) {
-            var user = firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().onAuthStateChanged(function (user) {
-                if (user) {
-                    resolve(user);
-                }
-                else {
-                    reject('No user logged in');
-                }
-            });
-        });
-    };
-    UserService.prototype.updateCurrentUser = function (value) {
-        return new Promise(function (resolve, reject) {
-            var user = firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().currentUser;
-            user.updateProfile({
-                displayName: value.name,
-                photoURL: user.photoURL
-            }).then(function (res) {
-                resolve(res);
-            }, function (err) { return reject(err); });
-        });
-    };
-    UserService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"],
-            angularfire2_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuth"]])
-    ], UserService);
-    return UserService;
 }());
 
 
@@ -543,7 +486,7 @@ var DashboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "button{\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}"
 
 /***/ }),
 
@@ -554,7 +497,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form #materialForm=\"ngForm\" (ngSubmit)=\"onSubmit(materialForm)\" id=\"contactForm\">\n  <input type=\"hidden\" name=\"key\" #key=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.key\">\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>1st text</label>\n      <textarea rows=\"3\" class=\"form-control\" name=\"text1\" #text1=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text1\"\n        placeholder=\"1st Text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>2nd text</label>\n      <textarea rows=\"3\" class=\"form-control\" name=\"text2\" #text2=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text2\"\n        placeholder=\"2nd text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>3d text</label>\n      <textarea rows=\"3\" class=\"form-control\" name=\"text3\" #text3=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text3\"\n        placeholder=\"3d text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>4th text</label>\n      <textarea rows=\"3\" class=\"form-control\" name=\"text4\" #text4=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text4\"\n        placeholder=\"4th text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>5th text</label>\n      <textarea rows=\"3\" class=\"form-control\" name=\"text5\" #text5=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text5\"\n        placeholder=\"5th text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>1st image</label>\n      <input class=\"form-control\" name=\"image1\" #image1=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image1\" placeholder=\"1st image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>2nd image</label>\n      <input class=\"form-control\" name=\"image2\" #image2=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image2\" placeholder=\"2nd image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>3rd image</label>\n      <input class=\"form-control\" name=\"image3\" #image3=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image3\" placeholder=\"3rd image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>4th image</label>\n      <input class=\"form-control\" name=\"image4\" #image4=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image4\" placeholder=\"4th image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>5th image</label>\n      <input class=\"form-control\" name=\"image5\" #image5=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image5\" placeholder=\"5th image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Level</label>\n      <input type=\"number\" class=\"form-control\" name=\"level\" #level=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.level\"\n        placeholder=\"Level\">\n    </div>\n  </div>\n  <br>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-xl\" [disabled]=\"!materialForm.valid\">Submit</button>\n    <button type=\"button\" class=\"btn btn-danger btn-xl\" *ngIf=\"materialService.selectedMaterial.key!=null\" (click)=\"onDelete(materialForm)\">Delete</button>\n    <button type=\"button\" class=\"btn btn-warning btn-xl\" (click)=\"resetForm(materialForm)\">Reset</button>\n  </div>\n</form>"
+module.exports = "<form #materialForm=\"ngForm\" (ngSubmit)=\"onSubmit(materialForm)\" id=\"contactForm\">\n  <input type=\"hidden\" name=\"key\" #key=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.key\">\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>1st text</label>\n      <textarea rows=\"3\" class=\"form-control\" name=\"text1\" #text1=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text1\"\n        placeholder=\"1st Text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>2nd text</label>\n      <textarea rows=\"3\" class=\"form-control\" name=\"text2\" #text2=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text2\"\n        placeholder=\"2nd text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>3d text</label>\n      <textarea rows=\"3\" class=\"form-control\" name=\"text3\" #text3=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text3\"\n        placeholder=\"3d text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>4th text</label>\n      <textarea rows=\"3\" class=\"form-control\" name=\"text4\" #text4=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text4\"\n        placeholder=\"4th text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>5th text</label>\n      <textarea rows=\"3\" class=\"form-control\" name=\"text5\" #text5=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text5\"\n        placeholder=\"5th text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>1st image</label>\n      <input class=\"form-control\" name=\"image1\" #image1=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image1\" placeholder=\"1st image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>2nd image</label>\n      <input class=\"form-control\" name=\"image2\" #image2=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image2\" placeholder=\"2nd image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>3rd image</label>\n      <input class=\"form-control\" name=\"image3\" #image3=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image3\" placeholder=\"3rd image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>4th image</label>\n      <input class=\"form-control\" name=\"image4\" #image4=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image4\" placeholder=\"4th image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>5th image</label>\n      <input class=\"form-control\" name=\"image5\" #image5=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image5\" placeholder=\"5th image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Level</label>\n      <input type=\"number\" class=\"form-control\" name=\"level\" #level=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.level\"\n        placeholder=\"Level\">\n    </div>\n  </div>\n  <br>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg\" [disabled]=\"!materialForm.valid\">\n      <i class=\"fa fa-floppy-o\"></i> Submit</button>\n    <button type=\"button\" class=\"btn btn-danger btn-lg\" *ngIf=\"materialService.selectedMaterial.key!=null\" (click)=\"onDelete(materialForm)\">\n      <i class=\"fa fa-trash\"></i> Delete</button>\n    <button type=\"button\" class=\"btn btn-dark btn-lg\" (click)=\"resetForm(materialForm)\">\n      <i class=\"fa fa-undo\"></i> Reset</button>\n  </div>\n</form>"
 
 /***/ }),
 
@@ -718,7 +661,7 @@ var MaterialListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "button{\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}"
 
 /***/ }),
 
@@ -729,7 +672,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form #quizForm=\"ngForm\" (ngSubmit)=\"onSubmit(quizForm)\" id=\"contactForm\">\n  <input type=\"hidden\" name=\"key\" #key=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.key\">\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Question</label>\n      <input class=\"form-control\" name=\"question\" #question=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.question\" placeholder=\"Question\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 1</label>\n      <input class=\"form-control\" name=\"answer1\" #answer1=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer1\" placeholder=\"Answer 1\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 2</label>\n      <input class=\"form-control\" name=\"answer2\" #answer2=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer2\" placeholder=\"Answer 2\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 3</label>\n      <input class=\"form-control\" name=\"answer3\" #answer3=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer3\" placeholder=\"Answer 3\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 4</label>\n      <input class=\"form-control\" name=\"answer4\" #answer4=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer4\" placeholder=\"Answer 4\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Right Answer</label>\n      <input class=\"form-control\" name=\"rightAnswer\" #rightAnswer=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.rightAnswer\"\n        placeholder=\"Right Answer\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Points</label>\n      <input type=\"number\" class=\"form-control\" name=\"points\" #points=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.points\" placeholder=\"Points\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Level</label>\n      <input type=\"number\" class=\"form-control\" name=\"level\" #level=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.level\" placeholder=\"Level\">\n    </div>\n  </div>\n  <br>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-xl\" [disabled]=\"!quizForm.valid\">Submit</button>\n    <button type=\"button\" class=\"btn btn-danger btn-xl\" *ngIf=\"quizService.selectedQuiz.key!=null\" (click)=\"onDelete(quizForm)\">Delete</button>\n    <button type=\"button\" class=\"btn btn-warning btn-xl\" (click)=\"resetForm(quizForm)\">Reset</button>\n  </div>\n</form>"
+module.exports = "<form #quizForm=\"ngForm\" (ngSubmit)=\"onSubmit(quizForm)\" id=\"contactForm\">\n  <input type=\"hidden\" name=\"key\" #key=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.key\">\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Question</label>\n      <input class=\"form-control\" name=\"question\" #question=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.question\" placeholder=\"Question\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 1</label>\n      <input class=\"form-control\" name=\"answer1\" #answer1=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer1\" placeholder=\"Answer 1\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 2</label>\n      <input class=\"form-control\" name=\"answer2\" #answer2=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer2\" placeholder=\"Answer 2\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 3</label>\n      <input class=\"form-control\" name=\"answer3\" #answer3=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer3\" placeholder=\"Answer 3\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 4</label>\n      <input class=\"form-control\" name=\"answer4\" #answer4=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer4\" placeholder=\"Answer 4\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Right Answer</label>\n      <input class=\"form-control\" name=\"rightAnswer\" #rightAnswer=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.rightAnswer\"\n        placeholder=\"Right Answer\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Points</label>\n      <input type=\"number\" class=\"form-control\" name=\"points\" #points=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.points\" placeholder=\"Points\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Level</label>\n      <input type=\"number\" class=\"form-control\" name=\"level\" #level=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.level\" placeholder=\"Level\">\n    </div>\n  </div>\n  <br>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg\" [disabled]=\"!quizForm.valid\">\n      <i class=\"fa fa-floppy-o\"></i> Submit</button>\n    <button type=\"button\" class=\"btn btn-danger btn-lg\" *ngIf=\"quizService.selectedQuiz.key!=null\" (click)=\"onDelete(quizForm)\">\n      <i class=\"fa fa-trash\"></i> Delete</button>\n    <button type=\"button\" class=\"btn btn-dark btn-lg\" (click)=\"resetForm(quizForm)\">\n      <i class=\"fa fa-undo\"></i> Reset</button>\n  </div>\n</form>"
 
 /***/ }),
 
@@ -1145,7 +1088,7 @@ var StatisticsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  max-width: 18rem;\r\n  margin: auto;\r\n  text-align: center;\r\n}\r\n.info{\r\n  max-width: 30rem;\r\n  box-shadow: none;\r\n  border: none;\r\n  text-align: left;\r\n  margin: 5px;\r\n}"
+module.exports = ".card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  max-width: 18rem;\r\n  margin: auto;\r\n  text-align: center;\r\n}\r\n.info{\r\n  max-width: 30rem;\r\n  box-shadow: none;\r\n  border: none;\r\n  text-align: left;\r\n  margin: 5px;\r\n}\r\n.card-group {\r\n  padding: 50px;\r\n  border-width:5px;  \r\n  border-style: dashed;\r\n  border-color: #2C3E50;\r\n}"
 
 /***/ }),
 
@@ -1156,7 +1099,7 @@ module.exports = ".card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card-group\">\n  <div class=\"card\">\n    <img [src]=\"user.photoURL\" [alt]=\"user.displayName\" style=\"width:100%\">\n    <h1>{{user.displayName}}</h1>\n    <p>Email: {{user.email}}</p>\n    <p>Id: {{user.uid}}</p>\n    <p>Points: {{user.points}} / Level: {{user.level}}</p>\n  </div>\n  <div class=\"card info\">\n    <h3 class=\"text-secondary mb-0\">Update user</h3>\n    <form [formGroup]=\"userForm\">\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>Name</label>\n          <input class=\"form-control\" id=\"name\" type=\"text\" formControlName=\"name\" placeholder=\"User name\" required=\"required\" data-validation-required-message=\"Please enter your user name.\">\n        </div>\n      </div>\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>Photo URL</label>\n          <input class=\"form-control\" id=\"photoURL\" type=\"text\" formControlName=\"photoURL\" placeholder=\"Photo URL\" required=\"required\"\n            data-validation-required-message=\"Please enter your photo URL.\">\n        </div>\n      </div>\n      <p class=\"lead text-danger\">{{errorMessage}}</p>\n      <p class=\"lead text-success\">{{successMessage}}</p>\n      <br>\n      <div class=\"form-group\">\n        <button type=\"submit\" (click)=\"updateUser(userForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n          <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Update</button>\n      </div>\n    </form>\n  </div>\n</div>"
+module.exports = "<div class=\"card-group\">\n  <div class=\"card\">\n    <img *ngIf=\"user.photoURL\" [src]=\"user.photoURL\" [alt]=\"user.displayName\" style=\"width:100%\">\n    <h1>{{user.displayName}}</h1>\n    <p>Email: {{user.email}}</p>\n    <p>Id: {{user.uid}}</p>\n    <p>Points: {{user?.points}} / Level: {{user?.level}}</p>\n  </div>\n  <div *ngIf=\"user.providerId !== 'google.com'\" class=\"card info\">\n    <h3 class=\"text-secondary mb-0\">Update user</h3>\n    <form #userForm=\"ngForm\" (ngSubmit)=\"onSubmit(userForm)\">\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>User Name</label>\n          <input class=\"form-control\" name=\"displayName\" #displayName=\"ngModel\" [(ngModel)]=\"user.displayName\" type=\"text\" placeholder=\"User name\">\n        </div>\n      </div>\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>Photo URL</label>\n          <input class=\"form-control\" name=\"photoURL\" #photoURL=\"ngModel\" [(ngModel)]=\"user.photoURL\" type=\"text\" placeholder=\"Photo URL\">\n        </div>\n      </div>\n      <p class=\"lead text-success\">{{successMessage}}</p>\n      <br>\n      <div class=\"form-group\">\n        <button type=\"submit\" class=\"btn btn-dark btn-lg col-lg-12\">\n          <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Update</button>\n      </div>\n    </form>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1174,7 +1117,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _core_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../core/user */ "./src/app/core/user.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1187,14 +1129,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var UserComponent = /** @class */ (function () {
-    function UserComponent(fb) {
-        this.fb = fb;
-        this.errorMessage = "";
+    function UserComponent() {
         this.successMessage = "";
         this.user = new _core_user__WEBPACK_IMPORTED_MODULE_2__["User"];
-        this.createForm();
         this.user.providerId = "";
         this.user.uid = "";
         this.user.displayName = "";
@@ -1205,7 +1143,7 @@ var UserComponent = /** @class */ (function () {
     }
     UserComponent.prototype.ngOnInit = function () {
         var user = firebase_app__WEBPACK_IMPORTED_MODULE_1__["auth"]().currentUser;
-        var providerId, uid, displayName, email, photoUrl;
+        var providerId, uid, displayName, email, photoUrl, level, points;
         if (user != null) {
             user.providerData.forEach(function (profile) {
                 providerId = profile.providerId;
@@ -1213,6 +1151,12 @@ var UserComponent = /** @class */ (function () {
                 displayName = profile.displayName;
                 email = profile.email;
                 photoUrl = profile.photoURL;
+                //
+                return firebase_app__WEBPACK_IMPORTED_MODULE_1__["database"]().ref('/users/' + user.uid).once('value').then(function (snapshot) {
+                    var x = (snapshot.val() && snapshot.val().points) || 'Anonymous';
+                    var y = (snapshot.val() && snapshot.val().level) || 'Anonymous';
+                });
+                //
             });
             this.user.providerId = providerId;
             this.user.uid = uid;
@@ -1224,29 +1168,28 @@ var UserComponent = /** @class */ (function () {
             }
             this.user.email = email;
         }
+        this.resetForm();
     };
-    UserComponent.prototype.ngOnChanges = function () {
+    UserComponent.prototype.resetForm = function (form) {
+        if (form != null) {
+            form.reset();
+        }
     };
-    UserComponent.prototype.createForm = function () {
-        this.userForm = this.fb.group({
-            name: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            photoURL: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
-        });
-    };
-    UserComponent.prototype.updateUser = function (value) {
+    UserComponent.prototype.onSubmit = function (form) {
         var user = firebase_app__WEBPACK_IMPORTED_MODULE_1__["auth"]().currentUser;
-        var s = "";
-        var e = "";
-        user.updateProfile({
-            displayName: value.name,
-            photoURL: value.photoURL
-        }).then(function () {
-            s = "Update successfully!";
-        }).catch(function (error) {
-            e = error;
-        });
-        this.successMessage = s;
-        this.errorMessage = e;
+        if (form.value.key == null) {
+            user.updateProfile({
+                displayName: form.value.displayName,
+                photoURL: form.value.photoURL
+            }).then(function () {
+                console.log("Success");
+            }).catch(function (error) {
+                console.log(error);
+            });
+            this.successMessage = "Update successfully";
+        }
+        else
+            this.resetForm(form);
     };
     UserComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1254,7 +1197,7 @@ var UserComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./user.component.html */ "./src/app/dashboard/user/user.component.html"),
             styles: [__webpack_require__(/*! ./user.component.css */ "./src/app/dashboard/user/user.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]])
+        __metadata("design:paramtypes", [])
     ], UserComponent);
     return UserComponent;
 }());
@@ -1512,7 +1455,7 @@ module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section>\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Login</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"loginForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\"\n                data-validation-required-message=\"Please enter your email address.\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\"\n                data-validation-required-message=\"Please enter your password.\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryLogin(loginForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Login</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleLogin()\">\n          <i class=\"fa fa-google\" aria-hidden=\"true\"></i> Login with Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>No account yet?\n          <a routerLink=\"/register\">Create an account</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section>\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Login</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"loginForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryLogin(loginForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Login</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleLogin()\">\n          <i class=\"fa fa-google\" aria-hidden=\"true\"></i> Login with Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>No account yet?\n          <a routerLink=\"/register\">Create an account</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -2022,7 +1965,7 @@ var QuizTileComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#quiz-test {\r\n    padding: 50px;\r\n    border-width:5px;  \r\n    border-style: dashed;\r\n    border-color: #2C3E50;\r\n}\r\n\r\nbutton{\r\n    width: 15em;\r\n    height: auto;\r\n}"
+module.exports = "#quiz-test {\r\n    padding: 50px;\r\n    border-width:5px;  \r\n    border-style: dashed;\r\n    border-color: #2C3E50;\r\n}\r\nbutton{\r\n    width: 15em;\r\n    height: auto;\r\n}"
 
 /***/ }),
 
@@ -2136,7 +2079,7 @@ module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section>\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Register</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"registerForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\"\n                data-validation-required-message=\"Please enter your email address.\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\"\n                data-validation-required-message=\"Please enter your password.\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <p class=\"lead text-success\">{{successMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryRegister(registerForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Register</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>Already have an account?\n          <a routerLink=\"/\">Login</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section>\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Register</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"registerForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <p class=\"lead text-success\">{{successMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryRegister(registerForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Register</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>Already have an account?\n          <a routerLink=\"/\">Login</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -2166,15 +2109,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var RegisterComponent = /** @class */ (function () {
-    function RegisterComponent(authService, fb) {
+    function RegisterComponent(authService, formBuilder) {
         this.authService = authService;
-        this.fb = fb;
+        this.formBuilder = formBuilder;
         this.errorMessage = '';
         this.successMessage = '';
         this.createForm();
     }
     RegisterComponent.prototype.createForm = function () {
-        this.registerForm = this.fb.group({
+        this.registerForm = this.formBuilder.group({
             email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
         });
