@@ -1531,7 +1531,7 @@ var InformationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\r\n}\r\n.success{\r\n  color: green;\r\n}\r\n.login{\r\n  padding-top: 3rem;\r\n  padding-bottom: 3rem;\r\n}"
+module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\r\n}\r\n.success{\r\n  color: green;\r\n}\r\n.login{\r\n  padding-top: 0.5rem;\r\n  padding-bottom: 0.5rem;\r\n}\r\n@media (min-width: 992px) {\r\n  .login{\r\n    padding-top: 3rem;\r\n    padding-bottom: 3rem;\r\n  }\r\n}"
 
 /***/ }),
 
@@ -2202,7 +2202,7 @@ var QuizTestComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\r\n}\r\n.success{\r\n  color: green;\r\n}\r\n.register{\r\n  padding-top: 3rem;\r\n  padding-bottom: 3rem;\r\n}"
+module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\r\n}\r\n.success{\r\n  color: green;\r\n}\r\n.register{\r\n  padding-top: 0.5rem;\r\n  padding-bottom: 0.5rem;\r\n}\r\n@media (min-width: 992px) {\r\n  .register{\r\n    padding-top: 3rem;\r\n    padding-bottom: 3rem;\r\n  }\r\n}"
 
 /***/ }),
 
