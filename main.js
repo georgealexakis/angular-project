@@ -2258,7 +2258,7 @@ var RegisterComponent = /** @class */ (function () {
     };
     RegisterComponent.prototype.tryGoogleRegister = function () {
         var _this = this;
-        this.authService.doGoogleLogin()
+        this.authService.doGoogleRegister()
             .then(function (res) {
             _this.errorMessage = "";
             _this.successMessage = "Your account has been created";
