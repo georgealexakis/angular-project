@@ -1880,7 +1880,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<app-header></app-header>\n<section class=\"portfolio\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Material</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <app-material-tile class=\"col-lg-3\" *ngFor=\"let material of materialList\" [materialElement]=\"material\"></app-material-tile>\n    </div>\n  </div>\n</section>\n<section class=\"portfolio\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Quizzes</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <app-quiz-tile class=\"col-lg-3\" *ngFor=\"let quiz of quizList\" [quizElement]=\"quiz\"></app-quiz-tile>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n<app-header></app-header>\n<section class=\"portfolio\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Material</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <app-material-tile class=\"col-lg-3 col-6\" *ngFor=\"let material of materialList\" [materialElement]=\"material\"></app-material-tile>\n    </div>\n  </div>\n</section>\n<section class=\"portfolio\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Quizzes</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <app-quiz-tile class=\"col-lg-3 col-6\" *ngFor=\"let quiz of quizList\" [quizElement]=\"quiz\"></app-quiz-tile>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
 
 /***/ }),
 
