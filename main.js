@@ -318,17 +318,15 @@ var AuthService = /** @class */ (function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"].FacebookAuthProvider();
-            provider.addScope('profile');
-            provider.addScope('email');
             _this.afAuth.auth
                 .signInWithPopup(provider)
                 .then(function (res) {
                 resolve(res);
                 var provider = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
                 _this.writeUserDataGF(provider);
-            }, function (err) {
-                console.log(err);
-                reject(err);
+            }, function (error) {
+                console.log(error);
+                reject(error);
             });
         });
     };
@@ -336,17 +334,15 @@ var AuthService = /** @class */ (function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"].GoogleAuthProvider();
-            provider.addScope('profile');
-            provider.addScope('email');
             _this.afAuth.auth
                 .signInWithPopup(provider)
                 .then(function (res) {
                 resolve(res);
                 var provider = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
                 _this.writeUserDataGF(provider);
-            }, function (err) {
-                console.log(err);
-                reject(err);
+            }, function (error) {
+                console.log(error);
+                reject(error);
             });
         });
     };
@@ -358,7 +354,7 @@ var AuthService = /** @class */ (function () {
                     displayName: provider.displayName,
                     email: provider.email,
                     photoURL: provider.photoURL,
-                    loginProvider: "google",
+                    loginProvider: "google-facebook",
                     userRole: "student",
                     points: 0,
                     level: 0
@@ -570,7 +566,7 @@ module.exports = "button{\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form #materialForm=\"ngForm\" (ngSubmit)=\"onSubmit(materialForm)\">\n  <input type=\"hidden\" name=\"key\" #key=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.key\">\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>1st text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text1\" #text1=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text1\"\n        placeholder=\"1st Text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>2nd text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text2\" #text2=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text2\"\n        placeholder=\"2nd text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>3rd text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text3\" #text3=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text3\"\n        placeholder=\"3d text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>4th text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text4\" #text4=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text4\"\n        placeholder=\"4th text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>5th text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text5\" #text5=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text5\"\n        placeholder=\"5th text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>1st image</label>\n      <input class=\"form-control\" name=\"image1\" #image1=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image1\" placeholder=\"1st image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>2nd image</label>\n      <input class=\"form-control\" name=\"image2\" #image2=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image2\" placeholder=\"2nd image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>3rd image</label>\n      <input class=\"form-control\" name=\"image3\" #image3=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image3\" placeholder=\"3rd image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>4th image</label>\n      <input class=\"form-control\" name=\"image4\" #image4=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image4\" placeholder=\"4th image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>5th image</label>\n      <input class=\"form-control\" name=\"image5\" #image5=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image5\" placeholder=\"5th image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Level</label>\n      <input type=\"number\" class=\"form-control\" name=\"level\" #level=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.level\"\n        placeholder=\"Level\" required>\n    </div>\n  </div>\n  <br>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg\" [disabled]=\"!materialForm.valid\">\n      <i class=\"fa fa-floppy-o\"></i> Submit</button>\n    <button type=\"button\" class=\"btn btn-danger btn-lg\" *ngIf=\"materialService.selectedMaterial.key!=null\" (click)=\"onDelete(materialForm)\">\n      <i class=\"fa fa-trash\"></i> Delete</button>\n    <button type=\"button\" class=\"btn btn-dark btn-lg\" (click)=\"resetForm(materialForm)\">\n      <i class=\"fa fa-undo\"></i> Reset</button>\n  </div>\n</form>"
+module.exports = "<form #materialForm=\"ngForm\" (ngSubmit)=\"onSubmit(materialForm)\">\n  <input type=\"hidden\" name=\"key\" #key=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.key\">\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Title</label>\n      <input class=\"form-control\" name=\"title\" #title=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.title\" placeholder=\"Title\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>1st text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text1\" #text1=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text1\"\n        placeholder=\"1st Text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>2nd text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text2\" #text2=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text2\"\n        placeholder=\"2nd text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>3rd text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text3\" #text3=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text3\"\n        placeholder=\"3d text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>4th text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text4\" #text4=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text4\"\n        placeholder=\"4th text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>5th text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text5\" #text5=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text5\"\n        placeholder=\"5th text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>1st image</label>\n      <input class=\"form-control\" name=\"image1\" #image1=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image1\" placeholder=\"1st image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>2nd image</label>\n      <input class=\"form-control\" name=\"image2\" #image2=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image2\" placeholder=\"2nd image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>3rd image</label>\n      <input class=\"form-control\" name=\"image3\" #image3=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image3\" placeholder=\"3rd image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>4th image</label>\n      <input class=\"form-control\" name=\"image4\" #image4=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image4\" placeholder=\"4th image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>5th image</label>\n      <input class=\"form-control\" name=\"image5\" #image5=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image5\" placeholder=\"5th image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Level</label>\n      <input type=\"number\" class=\"form-control\" name=\"level\" #level=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.level\"\n        placeholder=\"Level\" required>\n    </div>\n  </div>\n  <br>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg\" [disabled]=\"!materialForm.valid\">\n      <i class=\"fa fa-floppy-o\"></i> Submit</button>\n    <button type=\"button\" class=\"btn btn-danger btn-lg\" *ngIf=\"materialService.selectedMaterial.key!=null\" (click)=\"onDelete(materialForm)\">\n      <i class=\"fa fa-trash\"></i> Delete</button>\n    <button type=\"button\" class=\"btn btn-dark btn-lg\" (click)=\"resetForm(materialForm)\">\n      <i class=\"fa fa-undo\"></i> Reset</button>\n  </div>\n</form>"
 
 /***/ }),
 
@@ -616,6 +612,7 @@ var MaterialFormComponent = /** @class */ (function () {
             form.reset();
         this.materialService.selectedMaterial = {
             key: null,
+            title: '',
             text1: '',
             text2: '',
             text3: '',
@@ -666,7 +663,7 @@ module.exports = ".list-group-item{\r\n    height: 81px;\r\n}\r\ndiv {\r\n    he
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"list-group hover\">\n  <div>\n    <li class=\"form-group list-group-item\" *ngFor=\"let material of materiallist\" (click)=\"onItemClick(material)\">\n      <p>Material for level {{material.level}}</p>\n    </li>\n  </div>\n</ul>"
+module.exports = "<ul class=\"list-group hover\">\n  <div>\n    <li class=\"form-group list-group-item\" *ngFor=\"let material of materiallist\" (click)=\"onItemClick(material)\">\n      <p>{{material.title}} - Material for level {{material.level}}</p>\n    </li>\n  </div>\n</ul>"
 
 /***/ }),
 
@@ -827,7 +824,7 @@ var QuizFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".list-group-item{\r\n    height: 81px;\r\n}\r\ndiv {\r\n    height: 650px;\r\n    overflow: auto;\r\n}\r\n.quiz{\r\n    overflow: hidden;\r\n}"
+module.exports = ".list-group-item{\r\n    height: 81px;\r\n    padding-top: 0rem;\r\n}\r\ndiv {\r\n    height: 650px;\r\n    overflow: auto;\r\n}\r\n.quiz{\r\n    overflow: hidden;\r\n}"
 
 /***/ }),
 
@@ -936,6 +933,7 @@ var MaterialService = /** @class */ (function () {
     };
     MaterialService.prototype.insertMaterial = function (material) {
         this.materialList.push({
+            title: material.title,
             text1: material.text1,
             text2: material.text2,
             text3: material.text3,
@@ -951,6 +949,7 @@ var MaterialService = /** @class */ (function () {
     };
     MaterialService.prototype.updateMaterial = function (emp) {
         this.materialList.update(emp.key, {
+            title: emp.title,
             text1: emp.text1,
             text2: emp.text2,
             text3: emp.text3,
@@ -1190,7 +1189,7 @@ module.exports = ".card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card-group\">\n  <div class=\"card\">\n    <img *ngIf=\"user.photoURL\" [src]=\"user.photoURL\" [alt]=\"user.displayName\" style=\"width:100%\">\n    <h1>{{user.displayName}}</h1>\n    <p>Email: {{user.email}}</p>\n    <p>Id: {{user.uid}}</p>\n    <p>Points: {{tempUser.points}} - Level: {{tempUser.level}}</p>\n  </div>\n  <div *ngIf=\"user.providerId !== 'google.com'\" class=\"card info\">\n    <h3 class=\"text-secondary mb-0\">Update user</h3>\n    <form #userForm=\"ngForm\" (ngSubmit)=\"onSubmit(userForm)\">\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>User Name</label>\n          <input class=\"form-control\" name=\"displayName\" #displayName=\"ngModel\" [(ngModel)]=\"user.displayName\" type=\"text\" placeholder=\"User name\">\n        </div>\n      </div>\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>Photo URL</label>\n          <input class=\"form-control\" name=\"photoURL\" #photoURL=\"ngModel\" [(ngModel)]=\"user.photoURL\" type=\"text\" placeholder=\"Photo URL\">\n        </div>\n      </div>\n      <p class=\"lead text-success\">{{successMessage}}</p>\n      <br>\n      <div class=\"form-group\">\n        <button type=\"submit\" class=\"btn btn-dark btn-lg col-lg-12\">\n          <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Update</button>\n      </div>\n    </form>\n  </div>\n</div>"
+module.exports = "<div class=\"card-group\">\n  <div class=\"card\">\n    <img *ngIf=\"user.photoURL\" [src]=\"user.photoURL\" [alt]=\"user.displayName\" style=\"width:100%\">\n    <h1>{{user.displayName}}</h1>\n    <p>Email: {{user.email}}</p>\n    <p>Id: {{user.uid}}</p>\n    <p>Points: {{tempUser.points}} - Level: {{tempUser.level}}</p>\n  </div>\n  <div *ngIf=\"(user.providerId !== 'google.com') && (user.providerId !== 'facebook.com')\" class=\"card info\">\n    <h3 class=\"text-secondary mb-0\">Update user</h3>\n    <form #userForm=\"ngForm\" (ngSubmit)=\"onSubmit(userForm)\">\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>User Name</label>\n          <input class=\"form-control\" name=\"displayName\" #displayName=\"ngModel\" [(ngModel)]=\"user.displayName\" type=\"text\" placeholder=\"User name\">\n        </div>\n      </div>\n      <div class=\"control-group\">\n        <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n          <label>Photo URL</label>\n          <input class=\"form-control\" name=\"photoURL\" #photoURL=\"ngModel\" [(ngModel)]=\"user.photoURL\" type=\"text\" placeholder=\"Photo URL\">\n        </div>\n      </div>\n      <p class=\"lead text-success\">{{successMessage}}</p>\n      <br>\n      <div class=\"form-group\">\n        <button type=\"submit\" class=\"btn btn-dark btn-lg col-lg-12\">\n          <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Update</button>\n      </div>\n    </form>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1557,7 +1556,7 @@ var InformationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\r\n}\r\n.success{\r\n  color: green;\r\n}\r\n.login{\r\n  padding-top: 0.5rem;\r\n  padding-bottom: 0.5rem;\r\n}\r\n@media (min-width: 992px) {\r\n  .login{\r\n    padding-top: 3rem;\r\n    padding-bottom: 3rem;\r\n  }\r\n}"
+module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\r\n}\r\n.success{\r\n  color: green;\r\n}\r\n.login{\r\n  padding-top: 0.5rem;\r\n  padding-bottom: 0.5rem;\r\n}\r\n@media (min-width: 992px) {\r\n  .login{\r\n    padding-top: 2rem;\r\n    padding-bottom: 3rem;\r\n  }\r\n}\r\n.fb{\r\n  background-color: #3B5998;\r\n  border-color: #3B5998;\r\n}"
 
 /***/ }),
 
@@ -1568,7 +1567,7 @@ module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"login\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Login</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"loginForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryLogin(loginForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Login</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleLogin()\">\n          <i class=\"fa fa-google\" aria-hidden=\"true\"></i> Login with Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button style=\"background-color: #3B5998\" type=\"button\" class=\"btn btn-primary btn-xl col-lg-12\" (click)=\"tryFacebookLogin()\">\n          <i class=\"fa fa-facebook\" aria-hidden=\"true\"></i> Login with Facebook</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>No account yet?\n          <a routerLink=\"/register\">Create an account</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section class=\"login\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Login</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"loginForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryLogin(loginForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Login</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-info btn-xl col-lg-12 fb\" (click)=\"tryFacebookLogin()\">\n          <i class=\"fa fa-facebook\" aria-hidden=\"true\"></i> Login with facebook</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleLogin()\">\n          <i class=\"fa fa-google\" aria-hidden=\"true\"></i> Login with Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>No account yet?\n          <a routerLink=\"/register\">Create an account</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -1672,7 +1671,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<app-header></app-header>\n<section class=\"mb-0\">\n  <div class=\"container\" *ngIf=\"materialElement\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Let's Study</h2>\n    <br>\n    <br>\n    <h3 class=\"text-secondary mb-0\">Study material for level {{materialElement.level}}</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image1\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image1\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image2\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image2\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{materialElement.text1}}</p>\n        <p class=\"lead\">{{materialElement.text2}}</p>\n      </div>\n      <div class=\"col-lg-12 text-center\">\n        <img [src]=\"materialElement.image3\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image3\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-6 ml-auto\">\n        <p class=\"lead\">{{materialElement.text3}}</p>\n      </div>\n      <div class=\"col-lg-6 mr-auto\">\n        <p class=\"lead\">{{materialElement.text4}}</p>\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image4\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image4\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image5\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image5\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{materialElement.text5}}</p>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n<app-header></app-header>\n<section class=\"mb-0\">\n  <div class=\"container\" *ngIf=\"materialElement\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Let's Study</h2>\n    <br>\n    <br>\n    <h3 class=\"text-secondary mb-0\">{{materialElement.title}}</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image1\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image1\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image2\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image2\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{materialElement.text1}}</p>\n        <p class=\"lead\">{{materialElement.text2}}</p>\n      </div>\n      <div class=\"col-lg-12 text-center\">\n        <img [src]=\"materialElement.image3\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image3\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-6 ml-auto\">\n        <p class=\"lead\">{{materialElement.text3}}</p>\n      </div>\n      <div class=\"col-lg-6 mr-auto\">\n        <p class=\"lead\">{{materialElement.text4}}</p>\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image4\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image4\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image5\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image5\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{materialElement.text5}}</p>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -2235,7 +2234,7 @@ var QuizTestComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\r\n}\r\n.success{\r\n  color: green;\r\n}\r\n.register{\r\n  padding-top: 0.5rem;\r\n  padding-bottom: 0.5rem;\r\n}\r\n@media (min-width: 992px) {\r\n  .register{\r\n    padding-top: 3rem;\r\n    padding-bottom: 3rem;\r\n  }\r\n}"
+module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\r\n}\r\n.success{\r\n  color: green;\r\n}\r\n.register{\r\n  padding-top: 1rem;\r\n  padding-bottom: 1rem;\r\n}\r\n@media (min-width: 992px) {\r\n  .register{\r\n    padding-top: 2rem;\r\n    padding-bottom: 3rem;\r\n  }\r\n}"
 
 /***/ }),
 
