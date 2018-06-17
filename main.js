@@ -288,10 +288,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var rxjs_add_operator_switchMap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/switchMap */ "./node_modules/rxjs-compat/_esm5/add/operator/switchMap.js");
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user */ "./src/app/core/user.ts");
+/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var rxjs_add_operator_switchMap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/add/operator/switchMap */ "./node_modules/rxjs-compat/_esm5/add/operator/switchMap.js");
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user */ "./src/app/core/user.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -306,69 +307,93 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AuthService = /** @class */ (function () {
-    function AuthService(afAuth) {
+    function AuthService(afAuth, firebase) {
         this.afAuth = afAuth;
-        this.user = new _user__WEBPACK_IMPORTED_MODULE_4__["User"];
+        this.firebase = firebase;
+        this.user = new _user__WEBPACK_IMPORTED_MODULE_5__["User"];
     }
+    AuthService.prototype.doFacebookLogin = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"].FacebookAuthProvider();
+            provider.addScope('profile');
+            provider.addScope('email');
+            _this.afAuth.auth
+                .signInWithPopup(provider)
+                .then(function (res) {
+                resolve(res);
+                var provider = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
+                _this.writeUserDataGF(provider);
+            }, function (err) {
+                console.log(err);
+                reject(err);
+            });
+        });
+    };
     AuthService.prototype.doGoogleLogin = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"].GoogleAuthProvider();
+            var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"].GoogleAuthProvider();
             provider.addScope('profile');
             provider.addScope('email');
             _this.afAuth.auth
                 .signInWithPopup(provider)
                 .then(function (res) {
                 resolve(res);
+                var provider = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
+                _this.writeUserDataGF(provider);
             }, function (err) {
                 console.log(err);
                 reject(err);
             });
         });
     };
-    AuthService.prototype.doGoogleRegister = function () {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"].GoogleAuthProvider();
-            provider.addScope('profile');
-            provider.addScope('email');
-            _this.afAuth.auth
-                .signInWithPopup(provider)
-                .then(function (res) {
-                resolve(res);
-                var provider = firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().currentUser;
-                _this.writeUserDataGoogle(provider);
-            }, function (err) {
-                console.log(err);
-                reject(err);
-            });
-        });
-    };
-    AuthService.prototype.writeUserDataGoogle = function (provider) {
-        firebase_app__WEBPACK_IMPORTED_MODULE_2__["database"]().ref('users/' + provider.uid).set({
-            displayName: provider.displayName,
-            email: provider.email,
-            photoURL: provider.photoURL,
-            loginProvider: "google",
-            userRole: "student",
-            points: 0,
-            level: 0
+    AuthService.prototype.writeUserDataGF = function (provider) {
+        var newUser = firebase_app__WEBPACK_IMPORTED_MODULE_3__["database"]().ref('users/' + provider.uid);
+        newUser.transaction(function (currentData) {
+            if (currentData === null) {
+                return {
+                    displayName: provider.displayName,
+                    email: provider.email,
+                    photoURL: provider.photoURL,
+                    loginProvider: "google",
+                    userRole: "student",
+                    points: 0,
+                    level: 0
+                };
+            }
+            else {
+                console.log('User already exists.');
+                return;
+            }
+        }, function (error, committed, snapshot) {
+            if (error) {
+                console.log('Transaction failed abnormally!', error);
+            }
+            else if (!committed) {
+                console.log('We aborted the transaction (because ada already exists).');
+            }
+            else {
+                console.log('User ada added!');
+            }
+            console.log("Ada's data: ", snapshot.val());
         });
     };
     AuthService.prototype.doRegister = function (value) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().createUserWithEmailAndPassword(value.email, value.password)
+            firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().createUserWithEmailAndPassword(value.email, value.password)
                 .then(function (res) {
                 resolve(res);
-                var userId = firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().currentUser.uid;
+                var userId = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser.uid;
                 _this.writeUserData(userId, value.email);
             }, function (err) { return reject(err); });
         });
     };
     AuthService.prototype.writeUserData = function (userId, email) {
-        firebase_app__WEBPACK_IMPORTED_MODULE_2__["database"]().ref('users/' + userId).set({
+        firebase_app__WEBPACK_IMPORTED_MODULE_3__["database"]().ref('users/' + userId).set({
             displayName: "",
             email: email,
             photoURL: "assets/img/portfolio/avatar.png",
@@ -380,7 +405,7 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.doLogin = function (value) {
         return new Promise(function (resolve, reject) {
-            firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().signInWithEmailAndPassword(value.email, value.password)
+            firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().signInWithEmailAndPassword(value.email, value.password)
                 .then(function (res) {
                 resolve(res);
             }, function (err) { return reject(err); });
@@ -389,7 +414,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.doLogout = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            if (firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().currentUser) {
+            if (firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser) {
                 _this.afAuth.auth.signOut();
                 resolve();
             }
@@ -400,7 +425,8 @@ var AuthService = /** @class */ (function () {
     };
     AuthService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [angularfire2_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"]])
+        __metadata("design:paramtypes", [angularfire2_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"],
+            angularfire2_database__WEBPACK_IMPORTED_MODULE_2__["AngularFireDatabase"]])
     ], AuthService);
     return AuthService;
 }());
@@ -1542,7 +1568,7 @@ module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"login\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Login</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"loginForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryLogin(loginForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Login</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleLogin()\">\n          <i class=\"fa fa-google\" aria-hidden=\"true\"></i> Login with Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>No account yet?\n          <a routerLink=\"/register\">Create an account</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section class=\"login\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Login</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"loginForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryLogin(loginForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Login</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleLogin()\">\n          <i class=\"fa fa-google\" aria-hidden=\"true\"></i> Login with Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button style=\"background-color: #3B5998\" type=\"button\" class=\"btn btn-primary btn-xl col-lg-12\" (click)=\"tryFacebookLogin()\">\n          <i class=\"fa fa-facebook\" aria-hidden=\"true\"></i> Login with Facebook</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>No account yet?\n          <a routerLink=\"/register\">Create an account</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -1585,6 +1611,13 @@ var LoginComponent = /** @class */ (function () {
         this.loginForm = this.fb.group({
             email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
             password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
+        });
+    };
+    LoginComponent.prototype.tryFacebookLogin = function () {
+        var _this = this;
+        this.authService.doFacebookLogin()
+            .then(function (res) {
+            _this.router.navigate(['/quiz-levels']);
         });
     };
     LoginComponent.prototype.tryGoogleLogin = function () {
@@ -2213,7 +2246,7 @@ module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"register\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Register</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"registerForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <p class=\"lead text-success\">{{successMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryRegister(registerForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Register</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleRegister()\">\n          <i class=\"fa fa-google\" aria-hidden=\"true\"></i> Register with Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>Already have an account?\n          <a routerLink=\"/\">Login</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section class=\"register\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Register</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"registerForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <p class=\"lead text-success\">{{successMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryRegister(registerForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Register</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>Already have an account?\n          <a routerLink=\"/\">Login</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -2254,14 +2287,6 @@ var RegisterComponent = /** @class */ (function () {
         this.registerForm = this.formBuilder.group({
             email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
-        });
-    };
-    RegisterComponent.prototype.tryGoogleRegister = function () {
-        var _this = this;
-        this.authService.doGoogleRegister()
-            .then(function (res) {
-            _this.errorMessage = "";
-            _this.successMessage = "Your account has been created";
         });
     };
     RegisterComponent.prototype.tryRegister = function (value) {
