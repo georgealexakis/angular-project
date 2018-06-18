@@ -164,8 +164,8 @@ var appRoutes = [
     { path: 'quiz-levels', component: _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_14__["QuizLevelsComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] },
     { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_19__["DashboardComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] },
     { path: 'information', component: _information_information_component__WEBPACK_IMPORTED_MODULE_28__["InformationComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] },
-    { path: 'quiz-test/:key', component: _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__["QuizTestComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] },
-    { path: 'material/:key', component: _material_material_component__WEBPACK_IMPORTED_MODULE_18__["MaterialComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]] }
+    { path: 'quiz-test/:key', component: _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__["QuizTestComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]], runGuardsAndResolvers: 'always' },
+    { path: 'material/:key', component: _material_material_component__WEBPACK_IMPORTED_MODULE_18__["MaterialComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]], runGuardsAndResolvers: 'always' }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -203,7 +203,7 @@ var AppModule = /** @class */ (function () {
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModule"].forRoot(),
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(appRoutes, { enableTracing: true })
+                _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(appRoutes, { onSameUrlNavigation: 'reload', enableTracing: true })
             ],
             providers: [_core_auth_service__WEBPACK_IMPORTED_MODULE_26__["AuthService"], _core_auth_guard__WEBPACK_IMPORTED_MODULE_27__["AuthGuard"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
@@ -566,7 +566,7 @@ module.exports = "button{\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form #materialForm=\"ngForm\" (ngSubmit)=\"onSubmit(materialForm)\">\n  <input type=\"hidden\" name=\"key\" #key=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.key\">\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Title</label>\n      <input class=\"form-control\" name=\"title\" #title=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.title\" placeholder=\"Title\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>1st text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text1\" #text1=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text1\"\n        placeholder=\"1st Text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>2nd text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text2\" #text2=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text2\"\n        placeholder=\"2nd text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>3rd text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text3\" #text3=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text3\"\n        placeholder=\"3d text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>4th text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text4\" #text4=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text4\"\n        placeholder=\"4th text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>5th text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text5\" #text5=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text5\"\n        placeholder=\"5th text\" required></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>1st image</label>\n      <input class=\"form-control\" name=\"image1\" #image1=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image1\" placeholder=\"1st image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>2nd image</label>\n      <input class=\"form-control\" name=\"image2\" #image2=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image2\" placeholder=\"2nd image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>3rd image</label>\n      <input class=\"form-control\" name=\"image3\" #image3=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image3\" placeholder=\"3rd image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>4th image</label>\n      <input class=\"form-control\" name=\"image4\" #image4=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image4\" placeholder=\"4th image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>5th image</label>\n      <input class=\"form-control\" name=\"image5\" #image5=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image5\" placeholder=\"5th image\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Level</label>\n      <input type=\"number\" class=\"form-control\" name=\"level\" #level=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.level\"\n        placeholder=\"Level\" required>\n    </div>\n  </div>\n  <br>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg\" [disabled]=\"!materialForm.valid\">\n      <i class=\"fa fa-floppy-o\"></i> Submit</button>\n    <button type=\"button\" class=\"btn btn-danger btn-lg\" *ngIf=\"materialService.selectedMaterial.key!=null\" (click)=\"onDelete(materialForm)\">\n      <i class=\"fa fa-trash\"></i> Delete</button>\n    <button type=\"button\" class=\"btn btn-dark btn-lg\" (click)=\"resetForm(materialForm)\">\n      <i class=\"fa fa-undo\"></i> Reset</button>\n  </div>\n</form>"
+module.exports = "<form #materialForm=\"ngForm\" (ngSubmit)=\"onSubmit(materialForm)\">\n  <input type=\"hidden\" name=\"key\" #key=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.key\">\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Title</label>\n      <input class=\"form-control\" name=\"title\" #title=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.title\" placeholder=\"Title\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>1st text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text1\" #text1=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text1\"\n        placeholder=\"1st Text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>2nd text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text2\" #text2=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text2\"\n        placeholder=\"2nd text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>3rd text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text3\" #text3=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text3\"\n        placeholder=\"3d text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>4th text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text4\" #text4=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text4\"\n        placeholder=\"4th text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>5th text</label>\n      <textarea rows=\"4\" class=\"form-control\" name=\"text5\" #text5=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.text5\"\n        placeholder=\"5th text\"></textarea>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>1st image</label>\n      <input class=\"form-control\" name=\"image1\" #image1=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image1\" placeholder=\"1st image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>2nd image</label>\n      <input class=\"form-control\" name=\"image2\" #image2=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image2\" placeholder=\"2nd image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>3rd image</label>\n      <input class=\"form-control\" name=\"image3\" #image3=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image3\" placeholder=\"3rd image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>4th image</label>\n      <input class=\"form-control\" name=\"image4\" #image4=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image4\" placeholder=\"4th image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>5th image</label>\n      <input class=\"form-control\" name=\"image5\" #image5=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.image5\" placeholder=\"5th image\">\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Level</label>\n      <input type=\"number\" class=\"form-control\" name=\"level\" #level=\"ngModel\" [(ngModel)]=\"materialService.selectedMaterial.level\"\n        placeholder=\"Level\" required>\n    </div>\n  </div>\n  <br>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg\" [disabled]=\"!materialForm.valid\">\n      <i class=\"fa fa-floppy-o\"></i> Submit</button>\n    <button type=\"button\" class=\"btn btn-danger btn-lg\" *ngIf=\"materialService.selectedMaterial.key!=null\" (click)=\"onDelete(materialForm)\">\n      <i class=\"fa fa-trash\"></i> Delete</button>\n    <button type=\"button\" class=\"btn btn-dark btn-lg\" (click)=\"resetForm(materialForm)\">\n      <i class=\"fa fa-undo\"></i> Reset</button>\n  </div>\n</form>"
 
 /***/ }),
 
@@ -742,7 +742,7 @@ module.exports = "button{\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form #quizForm=\"ngForm\" (ngSubmit)=\"onSubmit(quizForm)\">\n  <input type=\"hidden\" name=\"key\" #key=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.key\">\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Question</label>\n      <input class=\"form-control\" name=\"question\" #question=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.question\" placeholder=\"Question\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 1</label>\n      <input class=\"form-control\" name=\"answer1\" #answer1=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer1\" placeholder=\"Answer 1\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 2</label>\n      <input class=\"form-control\" name=\"answer2\" #answer2=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer2\" placeholder=\"Answer 2\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 3</label>\n      <input class=\"form-control\" name=\"answer3\" #answer3=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer3\" placeholder=\"Answer 3\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 4</label>\n      <input class=\"form-control\" name=\"answer4\" #answer4=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer4\" placeholder=\"Answer 4\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Right Answer</label>\n      <input class=\"form-control\" name=\"rightAnswer\" #rightAnswer=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.rightAnswer\"\n        placeholder=\"Right Answer\" required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Points</label>\n      <input type=\"number\" class=\"form-control\" name=\"points\" #points=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.points\" placeholder=\"Points\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Level</label>\n      <input type=\"number\" class=\"form-control\" name=\"level\" #level=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.level\" placeholder=\"Level\"\n        required>\n    </div>\n  </div>\n  <br>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg\" [disabled]=\"!quizForm.valid\">\n      <i class=\"fa fa-floppy-o\"></i> Submit</button>\n    <button type=\"button\" class=\"btn btn-danger btn-lg\" *ngIf=\"quizService.selectedQuiz.key!=null\" (click)=\"onDelete(quizForm)\">\n      <i class=\"fa fa-trash\"></i> Delete</button>\n    <button type=\"button\" class=\"btn btn-dark btn-lg\" (click)=\"resetForm(quizForm)\">\n      <i class=\"fa fa-undo\"></i> Reset</button>\n  </div>\n</form>"
+module.exports = "<form #quizForm=\"ngForm\" (ngSubmit)=\"onSubmit(quizForm)\">\n  <input type=\"hidden\" name=\"key\" #key=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.key\">\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Question</label>\n      <input class=\"form-control\" name=\"question\" #question=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.question\" placeholder=\"Question\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 1</label>\n      <input class=\"form-control\" name=\"answer1\" #answer1=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer1\" placeholder=\"Answer 1\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 2</label>\n      <input class=\"form-control\" name=\"answer2\" #answer2=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer2\" placeholder=\"Answer 2\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 3</label>\n      <input class=\"form-control\" name=\"answer3\" #answer3=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer3\" placeholder=\"Answer 3\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Answer 4</label>\n      <input class=\"form-control\" name=\"answer4\" #answer4=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.answer4\" placeholder=\"Answer 4\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Right Answer</label>\n      <input class=\"form-control\" name=\"rightAnswer\" #rightAnswer=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.rightAnswer\"\n        placeholder=\"Right Answer\" required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Next Quiz ID</label>\n      <input class=\"form-control\" name=\"nextQuiz\" #nextQuiz=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.nextQuiz\" placeholder=\"Next Quiz ID\" required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Points</label>\n      <input type=\"number\" class=\"form-control\" name=\"points\" #points=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.points\" placeholder=\"Points\"\n        required>\n    </div>\n  </div>\n  <div class=\"control-group\">\n    <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n      <label>Level</label>\n      <input type=\"number\" class=\"form-control\" name=\"level\" #level=\"ngModel\" [(ngModel)]=\"quizService.selectedQuiz.level\" placeholder=\"Level\"\n        required>\n    </div>\n  </div>\n  <br>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg\" [disabled]=\"!quizForm.valid\">\n      <i class=\"fa fa-floppy-o\"></i> Submit</button>\n    <button type=\"button\" class=\"btn btn-danger btn-lg\" *ngIf=\"quizService.selectedQuiz.key!=null\" (click)=\"onDelete(quizForm)\">\n      <i class=\"fa fa-trash\"></i> Delete</button>\n    <button type=\"button\" class=\"btn btn-dark btn-lg\" (click)=\"resetForm(quizForm)\">\n      <i class=\"fa fa-undo\"></i> Reset</button>\n  </div>\n</form>"
 
 /***/ }),
 
@@ -795,7 +795,8 @@ var QuizFormComponent = /** @class */ (function () {
             answer4: '',
             rightAnswer: '',
             points: 0,
-            level: 0
+            level: 0,
+            nextQuiz: ''
         };
     };
     QuizFormComponent.prototype.onDelete = function (form) {
@@ -1041,7 +1042,8 @@ var QuizService = /** @class */ (function () {
             answer4: quiz.answer4,
             rightAnswer: quiz.rightAnswer,
             points: quiz.points,
-            level: quiz.level
+            level: quiz.level,
+            nextQuiz: quiz.nextQuiz
         });
     };
     QuizService.prototype.updateQuiz = function (emp) {
@@ -1053,7 +1055,8 @@ var QuizService = /** @class */ (function () {
             answer4: emp.answer4,
             rightAnswer: emp.rightAnswer,
             points: emp.points,
-            level: emp.level
+            level: emp.level,
+            nextQuiz: emp.nextQuiz
         });
     };
     QuizService.prototype.deleteQuiz = function (key) {
@@ -1673,7 +1676,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<app-header></app-header>\n<section class=\"mb-0\">\n  <div class=\"container\" *ngIf=\"materialElement\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Let's Study</h2>\n    <br>\n    <br>\n    <h3 class=\"text-secondary mb-0\">{{materialElement.title}}</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image1\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image1\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image2\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image2\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{materialElement.text1}}</p>\n        <p class=\"lead\">{{materialElement.text2}}</p>\n      </div>\n      <div class=\"col-lg-12 text-center\">\n        <img [src]=\"materialElement.image3\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image3\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-6 ml-auto\">\n        <p class=\"lead\">{{materialElement.text3}}</p>\n      </div>\n      <div class=\"col-lg-6 mr-auto\">\n        <p class=\"lead\">{{materialElement.text4}}</p>\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image4\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image4\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img [src]=\"materialElement.image5\" width=\"300px\" class=\"img-responsive img-rounded\" [alt]=\"materialElement.image5\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p class=\"lead\">{{materialElement.text5}}</p>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n<app-header></app-header>\n<section class=\"mb-0\">\n  <div class=\"container\" *ngIf=\"materialElement\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Let's Study</h2>\n    <br>\n    <br>\n    <h3 class=\"text-secondary mb-0\">{{materialElement.title}}</h3>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-6 text-center\">\n        <img *ngIf=\"materialElement.image1!==''\" [src]=\"materialElement.image1\" width=\"300px\" class=\"img-responsive img-rounded\"\n          [alt]=\"materialElement.image1\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img *ngIf=\"materialElement.image2!==''\" [src]=\"materialElement.image2\" width=\"300px\" class=\"img-responsive img-rounded\"\n          [alt]=\"materialElement.image2\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p *ngIf=\"materialElement.text1!==''\" class=\"lead\">{{materialElement.text1}}</p>\n        <p *ngIf=\"materialElement.text2!==''\" class=\"lead\">{{materialElement.text2}}</p>\n      </div>\n      <div class=\"col-lg-12 text-center\">\n        <img *ngIf=\"materialElement.image3!==''\" [src]=\"materialElement.image3\" width=\"300px\" class=\"img-responsive img-rounded\"\n          [alt]=\"materialElement.image3\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-6 ml-auto\">\n        <p *ngIf=\"materialElement.text3!==''\" class=\"lead\">{{materialElement.text3}}</p>\n      </div>\n      <div class=\"col-lg-6 mr-auto\">\n        <p *ngIf=\"materialElement.text4!==''\" class=\"lead\">{{materialElement.text4}}</p>\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img *ngIf=\"materialElement.image4!==''\" [src]=\"materialElement.image4\" width=\"300px\" class=\"img-responsive img-rounded\"\n          [alt]=\"materialElement.image4\">\n      </div>\n      <div class=\"col-lg-6 text-center\">\n        <img *ngIf=\"materialElement.image5!==''\" [src]=\"materialElement.image5\" width=\"300px\" class=\"img-responsive img-rounded\"\n          [alt]=\"materialElement.image5\">\n      </div>\n      <div class=\"col-lg-12\">\n        <p *ngIf=\"materialElement.text5!==''\" class=\"lead\">{{materialElement.text5}}</p>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -2097,7 +2100,7 @@ module.exports = "#quiz-test {\r\n    padding: 50px;\r\n    border-width:5px;  \
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<app-header></app-header>\n<section class=\"mb-0\">\n  <div class=\"container\" *ngIf=\"quizElement\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">{{quizElement.level}} Level - {{quizElement.points}} Points</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-2 text-center\"></div>\n      <div class=\"col-lg-8  text-center\" id=\"quiz-test\">\n        <p class=\"lead\">{{quizElement.question}}</p>\n      </div>\n      <div class=\"col-lg-2 text-center\"></div>\n    </div>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 text-center\">\n        <p class=\"lead text-danger\">{{errorMessage}}</p>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 1, 'btn-outline-dark': right!==1}\" (click)=\"checkAnswer(quizElement.answer1, 1, quizElement)\">{{quizElement.answer1}}</button>\n      </div>\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 2, 'btn-outline-dark': right!==2}\" (click)=\"checkAnswer(quizElement.answer2, 2, quizElement)\">{{quizElement.answer2}}</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 3, 'btn-outline-dark': right!==3}\" (click)=\"checkAnswer(quizElement.answer3, 3, quizElement)\">{{quizElement.answer3}}</button>\n      </div>\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 4, 'btn-outline-dark': right!==4}\" (click)=\"checkAnswer(quizElement.answer4, 4, quizElement)\">{{quizElement.answer4}}</button>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n<app-header></app-header>\n<section class=\"mb-0\">\n  <div class=\"container\" *ngIf=\"quizElement\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">{{quizElement.level}} Level - {{quizElement.points}} Points</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-2 text-center\"></div>\n      <div class=\"col-lg-8  text-center\" id=\"quiz-test\">\n        <p class=\"lead\">{{quizElement.question}}</p>\n      </div>\n      <div class=\"col-lg-2 text-center\"></div>\n    </div>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 text-center\">\n        <p class=\"lead text-danger\">{{errorMessage}}\n          <a routerLink=\"/quiz-test/{{quizElement.nextQuiz}}\" *ngIf=\"answerButton\">Next Quiz</a>\n        </p>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 1, 'btn-outline-dark': right!==1}\" (click)=\"checkAnswer(quizElement.answer1, 1, quizElement)\">{{quizElement.answer1}}</button>\n      </div>\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 2, 'btn-outline-dark': right!==2}\" (click)=\"checkAnswer(quizElement.answer2, 2, quizElement)\">{{quizElement.answer2}}</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 3, 'btn-outline-dark': right!==3}\" (click)=\"checkAnswer(quizElement.answer3, 3, quizElement)\">{{quizElement.answer3}}</button>\n      </div>\n      <div class=\"text-center col-lg-6 mt-4\">\n        <button class=\"btn btn-xl\" [ngClass]=\"{'btn-success': right === 4, 'btn-outline-dark': right!==4}\" (click)=\"checkAnswer(quizElement.answer4, 4, quizElement)\">{{quizElement.answer4}}</button>\n      </div>\n    </div>\n  </div>\n</section>\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -2114,10 +2117,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dashboard/services/quiz.service */ "./src/app/dashboard/services/quiz.service.ts");
-/* harmony import */ var _core_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/user */ "./src/app/core/user.ts");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
+/* harmony import */ var _dashboard_services_quiz__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dashboard/services/quiz */ "./src/app/dashboard/services/quiz.ts");
+/* harmony import */ var _core_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../core/user */ "./src/app/core/user.ts");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2133,20 +2137,53 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var QuizTestComponent = /** @class */ (function () {
-    function QuizTestComponent(route, quizService, firebase) {
+    function QuizTestComponent(route, router, quizService, firebase) {
+        var _this = this;
         this.route = route;
+        this.router = router;
         this.quizService = quizService;
         this.firebase = firebase;
-        this.user = new _core_user__WEBPACK_IMPORTED_MODULE_3__["User"];
-        this.tempUser = new _core_user__WEBPACK_IMPORTED_MODULE_3__["User"];
+        this.user = new _core_user__WEBPACK_IMPORTED_MODULE_4__["User"];
+        this.tempUser = new _core_user__WEBPACK_IMPORTED_MODULE_4__["User"];
+        this.quizElement = new _dashboard_services_quiz__WEBPACK_IMPORTED_MODULE_3__["Quiz"];
         this.errorMessage = '';
         this.counter = 0;
         this.userPoints = 0;
         this.userLevel = 0;
-        this.usersList = this.firebase.list('users');
+        this.nextQuiz = "";
+        this.answerButton = false;
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            if (e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"]) {
+                _this.initEverything();
+            }
+        });
     }
     QuizTestComponent.prototype.ngOnInit = function () {
+        this.init();
+    };
+    QuizTestComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    QuizTestComponent.prototype.initEverything = function () {
+        this.user = new _core_user__WEBPACK_IMPORTED_MODULE_4__["User"];
+        this.tempUser = new _core_user__WEBPACK_IMPORTED_MODULE_4__["User"];
+        this.quizElement = new _dashboard_services_quiz__WEBPACK_IMPORTED_MODULE_3__["Quiz"];
+        this.right = 0;
+        this.errorMessage = '';
+        this.counter = 0;
+        this.userPoints = 0;
+        this.userLevel = 0;
+        this.nextQuiz = "";
+        this.answerButton = false;
+        this.init();
+    };
+    QuizTestComponent.prototype.init = function () {
+        this.usersList = this.firebase.list('users');
         var urlKey = this.route.snapshot.params['key'];
         this.getSingleQuiz(urlKey);
         this.retriveData();
@@ -2171,6 +2208,9 @@ var QuizTestComponent = /** @class */ (function () {
                 this.errorMessage = "This is the right answer! You have already answer this right.";
             }
             else {
+                if (quiz.nextQuiz !== "End") {
+                    this.answerButton = true;
+                }
                 this.errorMessage = "Well done! You gain " + quiz.points + " points!";
                 this.updatePointsAndLevel(this.user, quiz.points, quiz.level);
                 this.counter++;
@@ -2183,7 +2223,7 @@ var QuizTestComponent = /** @class */ (function () {
     QuizTestComponent.prototype.retriveData = function () {
         var _this = this;
         this.users = this.getData();
-        var user = firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().currentUser;
+        var user = firebase_app__WEBPACK_IMPORTED_MODULE_5__["auth"]().currentUser;
         this.users.snapshotChanges().subscribe(function (item) {
             item.forEach(function (element) {
                 var y = element.payload.toJSON();
@@ -2219,8 +2259,9 @@ var QuizTestComponent = /** @class */ (function () {
             providers: [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__["QuizService"]]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
             _dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__["QuizService"],
-            angularfire2_database__WEBPACK_IMPORTED_MODULE_5__["AngularFireDatabase"]])
+            angularfire2_database__WEBPACK_IMPORTED_MODULE_6__["AngularFireDatabase"]])
     ], QuizTestComponent);
     return QuizTestComponent;
 }());
