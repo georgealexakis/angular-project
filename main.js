@@ -1574,7 +1574,7 @@ module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"login\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Είσοδος</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"loginForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryLogin(loginForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Είσοδος</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-info btn-xl col-lg-12 fb\" (click)=\"tryFacebookLogin()\">\n          <i class=\"fa fa-facebook\" aria-hidden=\"true\"></i> Είσοδος με facebook</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleLogin()\">\n          <i class=\"fa fa-google\" aria-hidden=\"true\"></i> Είσοδος με Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>Δεν έχετε λογαριασμό ακόμα;\n          <a routerLink=\"/register\">Δημιουργία λογαριασμού.</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section class=\"login\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Είσοδος</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"loginForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Διεύθυνση Email</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Κωδικός Πρόσβασης</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryLogin(loginForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Είσοδος</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-info btn-xl col-lg-12 fb\" (click)=\"tryFacebookLogin()\">\n          <i class=\"fa fa-facebook\" aria-hidden=\"true\"></i> Είσοδος με Facebook</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-xl col-lg-12\" (click)=\"tryGoogleLogin()\">\n          <i class=\"fa fa-google\" aria-hidden=\"true\"></i> Είσοδος με Google</button>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>Δεν έχετε λογαριασμό ακόμα;\n          <a routerLink=\"/register\">Δημιουργία λογαριασμού.</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -1862,20 +1862,30 @@ var MaterialTileComponent = /** @class */ (function () {
     function MaterialTileComponent() {
         this.index = 0;
         this.imageList = [
-            "assets/img/portfolio/algebra.png",
-            "assets/img/portfolio/statistics.png",
-            "assets/img/portfolio/teacher.png",
-            "assets/img/portfolio/maths.png",
-            "assets/img/portfolio/cabin.png",
-            "assets/img/portfolio/cake.png",
-            "assets/img/portfolio/circus.png",
-            "assets/img/portfolio/game.png",
-            "assets/img/portfolio/safe.png",
-            "assets/img/portfolio/submarine.png"
+            "assets/img/portfolio/1.png",
+            "assets/img/portfolio/2.png",
+            "assets/img/portfolio/3.png",
+            "assets/img/portfolio/4.png",
+            "assets/img/portfolio/5.png",
+            "assets/img/portfolio/6.png",
+            "assets/img/portfolio/7.png",
+            "assets/img/portfolio/8.png",
+            "assets/img/portfolio/9.png",
+            "assets/img/portfolio/10.png",
+            "assets/img/portfolio/11.png",
+            "assets/img/portfolio/12.png",
+            "assets/img/portfolio/13.png",
+            "assets/img/portfolio/14.png",
+            "assets/img/portfolio/15.png",
+            "assets/img/portfolio/16.png",
+            "assets/img/portfolio/17.png",
+            "assets/img/portfolio/18.png",
+            "assets/img/portfolio/19.png",
+            "assets/img/portfolio/20.png"
         ];
     }
     MaterialTileComponent.prototype.ngOnInit = function () {
-        this.index = this.getRandomInt(0, 9);
+        this.index = this.getRandomInt(0, 19);
     };
     MaterialTileComponent.prototype.getRandomInt = function (min, max) {
         min = Math.ceil(min);
@@ -2042,20 +2052,30 @@ var QuizTileComponent = /** @class */ (function () {
         this.quizService = quizService;
         this.index = 0;
         this.imageList = [
-            "assets/img/portfolio/algebra.png",
-            "assets/img/portfolio/statistics.png",
-            "assets/img/portfolio/teacher.png",
-            "assets/img/portfolio/maths.png",
-            "assets/img/portfolio/cabin.png",
-            "assets/img/portfolio/cake.png",
-            "assets/img/portfolio/circus.png",
-            "assets/img/portfolio/game.png",
-            "assets/img/portfolio/safe.png",
-            "assets/img/portfolio/submarine.png"
+            "assets/img/portfolio/1.png",
+            "assets/img/portfolio/2.png",
+            "assets/img/portfolio/3.png",
+            "assets/img/portfolio/4.png",
+            "assets/img/portfolio/5.png",
+            "assets/img/portfolio/6.png",
+            "assets/img/portfolio/7.png",
+            "assets/img/portfolio/8.png",
+            "assets/img/portfolio/9.png",
+            "assets/img/portfolio/10.png",
+            "assets/img/portfolio/11.png",
+            "assets/img/portfolio/12.png",
+            "assets/img/portfolio/13.png",
+            "assets/img/portfolio/14.png",
+            "assets/img/portfolio/15.png",
+            "assets/img/portfolio/16.png",
+            "assets/img/portfolio/17.png",
+            "assets/img/portfolio/18.png",
+            "assets/img/portfolio/19.png",
+            "assets/img/portfolio/20.png"
         ];
     }
     QuizTileComponent.prototype.ngOnInit = function () {
-        this.index = this.getRandomInt(0, 9);
+        this.index = this.getRandomInt(0, 19);
     };
     QuizTileComponent.prototype.getRandomInt = function (min, max) {
         min = Math.ceil(min);
@@ -2290,7 +2310,7 @@ module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"register\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Εγγραφή</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"registerForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Email Address</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Password</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <p class=\"lead text-success\">{{successMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryRegister(registerForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Εγγραφή</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>Έχετε ήδη λογαριασμό;\n          <a routerLink=\"/\">Είσοδος.</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section class=\"register\">\n  <div class=\"container\">\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Εγγραφή</h2>\n    <hr class=\"star-dark mb-5\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <form [formGroup]=\"registerForm\">\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Διεύθυνση Email</label>\n              <input class=\"form-control\" id=\"email\" type=\"email\" formControlName=\"email\" placeholder=\"Email Address\" required=\"required\">\n            </div>\n          </div>\n          <div class=\"control-group\">\n            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\">\n              <label>Κωδικός Πρόσβασης</label>\n              <input class=\"form-control\" id=\"password\" type=\"password\" formControlName=\"password\" placeholder=\"Password\" required=\"required\">\n            </div>\n          </div>\n          <p class=\"lead text-danger\">{{errorMessage}}</p>\n          <p class=\"lead text-success\">{{successMessage}}</p>\n          <br>\n          <div class=\"form-group\">\n            <button type=\"submit\" (click)=\"tryRegister(registerForm.value)\" class=\"btn btn-primary btn-xl col-lg-12\">\n              <i class=\"fa fa-user\" aria-hidden=\"true\"></i> Εγγραφή</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 mx-auto\">\n        <p>Έχετε ήδη λογαριασμό;\n          <a routerLink=\"/\">Είσοδος.</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
