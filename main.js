@@ -2239,7 +2239,7 @@ var QuizTestComponent = /** @class */ (function () {
             }
         }
         else {
-            this.errorMessage = "Πρέπει να διαβάσεεις το υλικό επιπέδου " + quiz.level + ". Μην τα παρατάς!";
+            this.errorMessage = "You should read the learning material of level " + quiz.level + ". Do not give up!";
         }
     };
     QuizTestComponent.prototype.retriveData = function () {
