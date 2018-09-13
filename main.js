@@ -2227,13 +2227,13 @@ var QuizTestComponent = /** @class */ (function () {
         if (answer === this.quizElement.rightAnswer) {
             this.right = x;
             if (this.counter > 0) {
-                this.errorMessage = "Αυτή είναι η σωστή ερώτηση! Έχεις ήδη απάντηση σωστά.";
+                this.errorMessage = "That's the right answer! You have already answered correctly.";
             }
             else {
                 if (quiz.nextQuiz !== "End") {
                     this.answerButton = true;
                 }
-                this.errorMessage = "Μπράβο! Κέρδισες " + quiz.points + " πόντους!";
+                this.errorMessage = "Well done! You won " + quiz.points + " points!";
                 this.updatePointsAndLevel(this.user, quiz.points, quiz.level);
                 this.counter++;
             }
@@ -2444,7 +2444,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\georg\Έγγραφα\Angular\project-app\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\georg\Έγγραφα\Angular\quiz-game\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -5466,7 +5466,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\georg\Έγγραφα\Angular\project-app\src\polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! C:\Users\georg\Έγγραφα\Angular\quiz-game\src\polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })
