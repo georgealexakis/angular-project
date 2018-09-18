@@ -99,27 +99,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_fire_database__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/fire/database */ "./node_modules/@angular/fire/database/index.js");
 /* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
-/* harmony import */ var _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./quiz-levels/quiz-levels.component */ "./src/app/quiz-levels/quiz-levels.component.ts");
-/* harmony import */ var _quiz_levels_material_tile_material_tile_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./quiz-levels/material-tile/material-tile.component */ "./src/app/quiz-levels/material-tile/material-tile.component.ts");
-/* harmony import */ var _quiz_levels_quiz_tile_quiz_tile_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./quiz-levels/quiz-tile/quiz-tile.component */ "./src/app/quiz-levels/quiz-tile/quiz-tile.component.ts");
-/* harmony import */ var _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./quiz-test/quiz-test.component */ "./src/app/quiz-test/quiz-test.component.ts");
-/* harmony import */ var _material_material_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./material/material.component */ "./src/app/material/material.component.ts");
-/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var _dashboard_quiz_form_quiz_form_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./dashboard/quiz-form/quiz-form.component */ "./src/app/dashboard/quiz-form/quiz-form.component.ts");
-/* harmony import */ var _dashboard_quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./dashboard/quiz-list/quiz-list.component */ "./src/app/dashboard/quiz-list/quiz-list.component.ts");
-/* harmony import */ var _dashboard_material_form_material_form_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./dashboard/material-form/material-form.component */ "./src/app/dashboard/material-form/material-form.component.ts");
-/* harmony import */ var _dashboard_material_list_material_list_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./dashboard/material-list/material-list.component */ "./src/app/dashboard/material-list/material-list.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
-/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./core/auth.service */ "./src/app/core/auth.service.ts");
-/* harmony import */ var _core_auth_guard__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./core/auth.guard */ "./src/app/core/auth.guard.ts");
-/* harmony import */ var _information_information_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./information/information.component */ "./src/app/information/information.component.ts");
-/* harmony import */ var _dashboard_user_user_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./dashboard/user/user.component */ "./src/app/dashboard/user/user.component.ts");
-/* harmony import */ var _dashboard_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./dashboard/statistics/statistics.component */ "./src/app/dashboard/statistics/statistics.component.ts");
+/* harmony import */ var _app_routing__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.routing */ "./src/app/app.routing.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./quiz-levels/quiz-levels.component */ "./src/app/quiz-levels/quiz-levels.component.ts");
+/* harmony import */ var _quiz_levels_material_tile_material_tile_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./quiz-levels/material-tile/material-tile.component */ "./src/app/quiz-levels/material-tile/material-tile.component.ts");
+/* harmony import */ var _quiz_levels_quiz_tile_quiz_tile_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./quiz-levels/quiz-tile/quiz-tile.component */ "./src/app/quiz-levels/quiz-tile/quiz-tile.component.ts");
+/* harmony import */ var _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./quiz-test/quiz-test.component */ "./src/app/quiz-test/quiz-test.component.ts");
+/* harmony import */ var _material_material_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./material/material.component */ "./src/app/material/material.component.ts");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _dashboard_quiz_form_quiz_form_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./dashboard/quiz-form/quiz-form.component */ "./src/app/dashboard/quiz-form/quiz-form.component.ts");
+/* harmony import */ var _dashboard_quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./dashboard/quiz-list/quiz-list.component */ "./src/app/dashboard/quiz-list/quiz-list.component.ts");
+/* harmony import */ var _dashboard_material_form_material_form_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./dashboard/material-form/material-form.component */ "./src/app/dashboard/material-form/material-form.component.ts");
+/* harmony import */ var _dashboard_material_list_material_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./dashboard/material-list/material-list.component */ "./src/app/dashboard/material-list/material-list.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
+/* harmony import */ var _information_information_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./information/information.component */ "./src/app/information/information.component.ts");
+/* harmony import */ var _dashboard_user_user_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./dashboard/user/user.component */ "./src/app/dashboard/user/user.component.ts");
+/* harmony import */ var _dashboard_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./dashboard/statistics/statistics.component */ "./src/app/dashboard/statistics/statistics.component.ts");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./core/auth.service */ "./src/app/core/auth.service.ts");
+/* harmony import */ var _core_auth_guard__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./core/auth.guard */ "./src/app/core/auth.guard.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -156,40 +157,32 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-var appRoutes = [
-    { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_23__["LoginComponent"] },
-    { path: 'register', component: _register_register_component__WEBPACK_IMPORTED_MODULE_24__["RegisterComponent"] },
-    { path: 'quiz-levels', component: _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_13__["QuizLevelsComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_26__["AuthGuard"]] },
-    { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_18__["DashboardComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_26__["AuthGuard"]] },
-    { path: 'information', component: _information_information_component__WEBPACK_IMPORTED_MODULE_27__["InformationComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_26__["AuthGuard"]] },
-    { path: 'quiz-test/:key', component: _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_16__["QuizTestComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_26__["AuthGuard"]], runGuardsAndResolvers: 'always' },
-    { path: 'material/:key', component: _material_material_component__WEBPACK_IMPORTED_MODULE_17__["MaterialComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_26__["AuthGuard"]], runGuardsAndResolvers: 'always' }
-];
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
-                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__["NavbarComponent"],
-                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_18__["DashboardComponent"],
-                _dashboard_quiz_form_quiz_form_component__WEBPACK_IMPORTED_MODULE_19__["QuizFormComponent"],
-                _dashboard_quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_20__["QuizListComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_11__["HeaderComponent"],
-                _footer_footer_component__WEBPACK_IMPORTED_MODULE_12__["FooterComponent"],
-                _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_13__["QuizLevelsComponent"],
-                _material_material_component__WEBPACK_IMPORTED_MODULE_17__["MaterialComponent"],
-                _quiz_levels_material_tile_material_tile_component__WEBPACK_IMPORTED_MODULE_14__["MaterialTileComponent"],
-                _quiz_levels_quiz_tile_quiz_tile_component__WEBPACK_IMPORTED_MODULE_15__["QuizTileComponent"],
-                _dashboard_material_list_material_list_component__WEBPACK_IMPORTED_MODULE_22__["MaterialListComponent"],
-                _dashboard_material_form_material_form_component__WEBPACK_IMPORTED_MODULE_21__["MaterialFormComponent"],
-                _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_16__["QuizTestComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_23__["LoginComponent"],
-                _register_register_component__WEBPACK_IMPORTED_MODULE_24__["RegisterComponent"],
-                _information_information_component__WEBPACK_IMPORTED_MODULE_27__["InformationComponent"],
-                _dashboard_user_user_component__WEBPACK_IMPORTED_MODULE_28__["UserComponent"],
-                _dashboard_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_29__["StatisticsComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
+                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_11__["NavbarComponent"],
+                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_19__["DashboardComponent"],
+                _dashboard_quiz_form_quiz_form_component__WEBPACK_IMPORTED_MODULE_20__["QuizFormComponent"],
+                _dashboard_quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_21__["QuizListComponent"],
+                _header_header_component__WEBPACK_IMPORTED_MODULE_12__["HeaderComponent"],
+                _footer_footer_component__WEBPACK_IMPORTED_MODULE_13__["FooterComponent"],
+                _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_14__["QuizLevelsComponent"],
+                _material_material_component__WEBPACK_IMPORTED_MODULE_18__["MaterialComponent"],
+                _quiz_levels_material_tile_material_tile_component__WEBPACK_IMPORTED_MODULE_15__["MaterialTileComponent"],
+                _quiz_levels_quiz_tile_quiz_tile_component__WEBPACK_IMPORTED_MODULE_16__["QuizTileComponent"],
+                _dashboard_material_list_material_list_component__WEBPACK_IMPORTED_MODULE_23__["MaterialListComponent"],
+                _dashboard_material_form_material_form_component__WEBPACK_IMPORTED_MODULE_22__["MaterialFormComponent"],
+                _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_17__["QuizTestComponent"],
+                _login_login_component__WEBPACK_IMPORTED_MODULE_24__["LoginComponent"],
+                _register_register_component__WEBPACK_IMPORTED_MODULE_25__["RegisterComponent"],
+                _information_information_component__WEBPACK_IMPORTED_MODULE_26__["InformationComponent"],
+                _dashboard_user_user_component__WEBPACK_IMPORTED_MODULE_27__["UserComponent"],
+                _dashboard_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_28__["StatisticsComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -200,15 +193,54 @@ var AppModule = /** @class */ (function () {
                 _angular_fire__WEBPACK_IMPORTED_MODULE_4__["AngularFireModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(appRoutes, { onSameUrlNavigation: 'reload', enableTracing: true })
+                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_app_routing__WEBPACK_IMPORTED_MODULE_9__["AppRoutes"], { onSameUrlNavigation: 'reload', enableTracing: true })
             ],
-            providers: [_core_auth_service__WEBPACK_IMPORTED_MODULE_25__["AuthService"], _core_auth_guard__WEBPACK_IMPORTED_MODULE_26__["AuthGuard"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
+            providers: [_core_auth_service__WEBPACK_IMPORTED_MODULE_29__["AuthService"], _core_auth_guard__WEBPACK_IMPORTED_MODULE_30__["AuthGuard"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
 }());
 
+
+
+/***/ }),
+
+/***/ "./src/app/app.routing.ts":
+/*!********************************!*\
+  !*** ./src/app/app.routing.ts ***!
+  \********************************/
+/*! exports provided: AppRoutes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutes", function() { return AppRoutes; });
+/* harmony import */ var _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./quiz-levels/quiz-levels.component */ "./src/app/quiz-levels/quiz-levels.component.ts");
+/* harmony import */ var _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./quiz-test/quiz-test.component */ "./src/app/quiz-test/quiz-test.component.ts");
+/* harmony import */ var _material_material_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./material/material.component */ "./src/app/material/material.component.ts");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
+/* harmony import */ var _information_information_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./information/information.component */ "./src/app/information/information.component.ts");
+/* harmony import */ var _core_auth_guard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./core/auth.guard */ "./src/app/core/auth.guard.ts");
+
+
+
+
+
+
+
+
+var AppRoutes = [
+    { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"] },
+    { path: 'register', component: _register_register_component__WEBPACK_IMPORTED_MODULE_5__["RegisterComponent"] },
+    { path: 'quiz-levels', component: _quiz_levels_quiz_levels_component__WEBPACK_IMPORTED_MODULE_0__["QuizLevelsComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]] },
+    { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["DashboardComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]] },
+    { path: 'information', component: _information_information_component__WEBPACK_IMPORTED_MODULE_6__["InformationComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]] },
+    { path: 'quiz-test/:key', component: _quiz_test_quiz_test_component__WEBPACK_IMPORTED_MODULE_1__["QuizTestComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]], runGuardsAndResolvers: 'always' },
+    { path: 'material/:key', component: _material_material_component__WEBPACK_IMPORTED_MODULE_2__["MaterialComponent"], canActivate: [_core_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]], runGuardsAndResolvers: 'always' }
+];
 
 
 /***/ }),
