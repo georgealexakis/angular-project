@@ -282,8 +282,9 @@ var AuthGuard = /** @class */ (function () {
     AuthGuard.prototype.canActivate = function () {
         var _this = this;
         return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["from"])(this.auth.authState).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["take"])(1), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (state) { return !!state; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function (authenticated) {
-            if (!authenticated)
+            if (!authenticated) {
                 _this.router.navigate(['/']);
+            }
         }));
     };
     AuthGuard = __decorate([
@@ -329,9 +330,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var AuthService = /** @class */ (function () {
-    function AuthService(afAuth, firebase) {
+    function AuthService(afAuth, afDb) {
         this.afAuth = afAuth;
-        this.firebase = firebase;
+        this.afDb = afDb;
         this.user = new _user__WEBPACK_IMPORTED_MODULE_4__["User"];
     }
     AuthService.prototype.doFacebookLogin = function () {
@@ -342,8 +343,8 @@ var AuthService = /** @class */ (function () {
                 .signInWithPopup(provider)
                 .then(function (res) {
                 resolve(res);
-                var provider = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
-                _this.writeUserDataGF(provider);
+                var prov = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
+                _this.writeUserDataGF(prov);
             }, function (error) {
                 console.log(error);
                 reject(error);
@@ -358,8 +359,8 @@ var AuthService = /** @class */ (function () {
                 .signInWithPopup(provider)
                 .then(function (res) {
                 resolve(res);
-                var provider = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
-                _this.writeUserDataGF(provider);
+                var prov = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
+                _this.writeUserDataGF(prov);
             }, function (error) {
                 console.log(error);
                 reject(error);
@@ -374,8 +375,8 @@ var AuthService = /** @class */ (function () {
                     displayName: provider.displayName,
                     email: provider.email,
                     photoURL: provider.photoURL,
-                    loginProvider: "google-facebook",
-                    userRole: "student",
+                    loginProvider: 'google-facebook',
+                    userRole: 'student',
                     points: 0,
                     level: 0
                 };
@@ -394,7 +395,7 @@ var AuthService = /** @class */ (function () {
             else {
                 console.log('User ada added!');
             }
-            console.log("Ada's data: ", snapshot.val());
+            console.log('Data of Ada: ', snapshot.val());
         });
     };
     AuthService.prototype.doRegister = function (value) {
@@ -410,11 +411,11 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.writeUserData = function (userId, email) {
         firebase_app__WEBPACK_IMPORTED_MODULE_3__["database"]().ref('users/' + userId).set({
-            displayName: "",
+            displayName: '',
             email: email,
-            photoURL: "assets/img/portfolio/avatar.png",
-            loginProvider: "anonymous",
-            userRole: "student",
+            photoURL: 'assets/img/portfolio/avatar.png',
+            loginProvider: 'anonymous',
+            userRole: 'student',
             points: 0,
             level: 0
         });
@@ -526,10 +527,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent(quizService, materialService, firebase) {
+    function DashboardComponent(quizService, materialService, afDb) {
         this.quizService = quizService;
         this.materialService = materialService;
-        this.firebase = firebase;
+        this.afDb = afDb;
         this.user = new _core_user__WEBPACK_IMPORTED_MODULE_3__["User"];
         this.getUser();
     }
@@ -538,12 +539,12 @@ var DashboardComponent = /** @class */ (function () {
     };
     DashboardComponent.prototype.getUser = function () {
         var _this = this;
-        this.users = this.firebase.list('users');
+        this.users = this.afDb.list('users');
         var user = firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().currentUser;
         this.users.snapshotChanges().subscribe(function (item) {
             item.forEach(function (element) {
                 var y = element.payload.toJSON();
-                y["uid"] = element.key;
+                y['uid'] = element.key;
                 if (element.key === user.uid) {
                     _this.user = y;
                 }
@@ -621,28 +622,31 @@ var MaterialFormComponent = /** @class */ (function () {
         this.resetForm();
     };
     MaterialFormComponent.prototype.onSubmit = function (form) {
-        if (form.value.key == null)
+        if (form.value.key == null) {
             this.materialService.insertMaterial(form.value);
-        else
+        }
+        else {
             this.materialService.updateMaterial(form.value);
+        }
         this.resetForm(form);
     };
     MaterialFormComponent.prototype.resetForm = function (form) {
-        if (form != null)
+        if (form != null) {
             form.reset();
+        }
         this.materialService.selectedMaterial = {
             key: null,
-            title: "",
-            text1: "",
-            text2: "",
-            text3: "",
-            text4: "",
-            text5: "",
-            image1: "",
-            image2: "",
-            image3: "",
-            image4: "",
-            image5: "",
+            title: '',
+            text1: '',
+            text2: '',
+            text3: '',
+            text4: '',
+            text5: '',
+            image1: '',
+            image2: '',
+            image3: '',
+            image4: '',
+            image5: '',
             level: 0
         };
     };
@@ -721,7 +725,7 @@ var MaterialListComponent = /** @class */ (function () {
             _this.materiallist = [];
             item.forEach(function (element) {
                 var y = element.payload.toJSON();
-                y["key"] = element.key;
+                y['key'] = element.key;
                 _this.materiallist.push(y);
             });
         });
@@ -797,26 +801,29 @@ var QuizFormComponent = /** @class */ (function () {
         this.resetForm();
     };
     QuizFormComponent.prototype.onSubmit = function (form) {
-        if (form.value.key == null)
+        if (form.value.key == null) {
             this.quizService.insertQuiz(form.value);
-        else
+        }
+        else {
             this.quizService.updateQuiz(form.value);
+        }
         this.resetForm(form);
     };
     QuizFormComponent.prototype.resetForm = function (form) {
-        if (form != null)
+        if (form != null) {
             form.reset();
+        }
         this.quizService.selectedQuiz = {
             key: null,
-            question: "",
-            answer1: "",
-            answer2: "",
-            answer3: "",
-            answer4: "",
-            rightAnswer: "",
+            question: '',
+            answer1: '',
+            answer2: '',
+            answer3: '',
+            answer4: '',
+            rightAnswer: '',
             points: 0,
             level: 0,
-            nextQuiz: ""
+            nextQuiz: ''
         };
     };
     QuizFormComponent.prototype.onDelete = function (form) {
@@ -894,7 +901,7 @@ var QuizListComponent = /** @class */ (function () {
             _this.quizlist = [];
             item.forEach(function (element) {
                 var y = element.payload.toJSON();
-                y["key"] = element.key;
+                y['key'] = element.key;
                 _this.quizlist.push(y);
             });
         });
@@ -1174,7 +1181,7 @@ var StatisticsComponent = /** @class */ (function () {
             _this.userList = [];
             item.forEach(function (element) {
                 var y = element.payload.toJSON();
-                y["uid"] = element.key;
+                y['uid'] = element.key;
                 _this.userList.push(y);
             });
         });
@@ -1245,16 +1252,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var UserComponent = /** @class */ (function () {
-    function UserComponent(firebase) {
-        this.firebase = firebase;
-        this.successMessage = "";
+    function UserComponent(afDb) {
+        this.afDb = afDb;
+        this.successMessage = '';
         this.user = new _core_user__WEBPACK_IMPORTED_MODULE_2__["User"];
         this.tempUser = new _core_user__WEBPACK_IMPORTED_MODULE_2__["User"];
-        this.user.providerId = "";
-        this.user.uid = "";
-        this.user.displayName = "";
-        this.user.email = "";
-        this.user.photoURL = "assets/img/portfolio/avatar.png";
+        this.user.providerId = '';
+        this.user.uid = '';
+        this.user.displayName = '';
+        this.user.email = '';
+        this.user.photoURL = 'assets/img/portfolio/avatar.png';
         this.user.points = 0;
         this.user.level = 0;
     }
@@ -1263,7 +1270,7 @@ var UserComponent = /** @class */ (function () {
         this.resetForm();
     };
     UserComponent.prototype.getData = function () {
-        this.users = this.firebase.list('users');
+        this.users = this.afDb.list('users');
         return this.users;
     };
     UserComponent.prototype.retrivePointsAndLevel = function () {
@@ -1273,7 +1280,7 @@ var UserComponent = /** @class */ (function () {
         x.snapshotChanges().subscribe(function (item) {
             item.forEach(function (element) {
                 var y = element.payload.toJSON();
-                y["uid"] = element.key;
+                y['uid'] = element.key;
                 if (element.key === id) {
                     _this.tempUser = y;
                 }
@@ -1317,14 +1324,15 @@ var UserComponent = /** @class */ (function () {
                 displayName: form.value.displayName,
                 photoURL: form.value.photoURL
             }).then(function () {
-                console.log("Success");
+                console.log('Success');
             }).catch(function (error) {
                 console.log(error);
             });
-            this.successMessage = "Ενημερώθηκε επιτυχώς!";
+            this.successMessage = 'Successfully updated!';
         }
-        else
+        else {
             this.resetForm(form);
+        }
     };
     UserComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1401,7 +1409,7 @@ var FooterComponent = /** @class */ (function () {
             .then(function (res) {
             _this.router.navigate(['/']);
         }, function (error) {
-            console.log("Logout error", error);
+            console.log('Logout error', error);
         });
     };
     FooterComponent.prototype.goBack = function () {
@@ -1473,10 +1481,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var HeaderComponent = /** @class */ (function () {
     function HeaderComponent() {
-        this.uid = "";
-        this.name = "";
-        this.email = "";
-        this.photoUrl = "";
+        this.uid = '';
+        this.name = '';
+        this.email = '';
+        this.photoUrl = '';
     }
     HeaderComponent.prototype.ngOnInit = function () {
         var user = firebase_app__WEBPACK_IMPORTED_MODULE_1__["auth"]().currentUser;
@@ -1554,10 +1562,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var InformationComponent = /** @class */ (function () {
     function InformationComponent() {
-        this.infoText1 = "User Register/Login: Anyone in the app must first sign in to the app. This is accomplished in three different ways: a) creating an account by email and password, b) Facebook login, and c) Google Account login. Once register, you should login with credentials to gain access to the application.";
-        this.infoText2 = "Learning Material: The first category of the user's options is the class of educational material or material to study. In this section, there is educational material to read in order to understand the basic concepts of mathematics and to be able to answer quiz-game questions. More specifically, the student learns, mathematical operations and their attributes (addition, subtraction, multiplication, division), operator priorities in a mathematical equation, and the methodology of how it can easily solve a mathematical problem.";
-        this.infoText3 = "Quizzes: Next category is with questions. In this class, the student, through the theory of constructivism learning, controls the knowledge he has acquired from what he has read in the class of material for study. So through a serious game, the student is asked simple questions and problems that make him think and use his knowledge, as well as evaluate himself. Also the student is rewarded after each correct answer with some points that vary according to the difficulty level of the question. In the event of an error, the application prompts the student to consult the relevant module of the theory that the question is based on in order to see the error and correct it.";
-        this.infoText4 = "Teacher's Dashboard: By choosing the control panel, the teacher can easily add training material through simple steps, or modify the existing one. It can also add a new question, delete another, or make any changes to the wording, answers, and score.";
+        // tslint:disable-next-line:max-line-length
+        this.infoText1 = 'User Register/Login: Anyone in the app must first sign in to the app. This is accomplished in three different ways: a) creating an account by email and password, b) Facebook login, and c) Google Account login. Once register, you should login with credentials to gain access to the application.';
+        // tslint:disable-next-line:max-line-length
+        this.infoText2 = 'Learning Material: The first category of the user options is the class of educational material or material to study. In this section, there is educational material to read in order to understand the basic concepts of mathematics and to be able to answer quiz-game questions. More specifically, the student learns, mathematical operations and their attributes (addition, subtraction, multiplication, division), operator priorities in a mathematical equation, and the methodology of how it can easily solve a mathematical problem.';
+        // tslint:disable-next-line:max-line-length
+        this.infoText3 = 'Quizzes: Next category is with questions. In this class, the student, through the theory of constructivism learning, controls the knowledge he has acquired from what he has read in the class of material for study. So through a serious game, the student is asked simple questions and problems that make him think and use his knowledge, as well as evaluate himself. Also the student is rewarded after each correct answer with some points that vary according to the difficulty level of the question. In the event of an error, the application prompts the student to consult the relevant module of the theory that the question is based on in order to see the error and correct it.';
+        // tslint:disable-next-line:max-line-length
+        this.infoText4 = 'Teacher Dashboard: By choosing the control panel, the teacher can easily add training material through simple steps, or modify the existing one. It can also add a new question, delete another, or make any changes to the wording, answers, and score.';
     }
     InformationComponent.prototype.ngOnInit = function () {
     };
@@ -1745,7 +1757,7 @@ var MaterialComponent = /** @class */ (function () {
         x.snapshotChanges().subscribe(function (item) {
             item.forEach(function (element) {
                 var y = element.payload.toJSON();
-                y["key"] = element.key;
+                y['key'] = element.key;
                 if (element.key === urlKey) {
                     _this.materialElement = y;
                 }
@@ -1882,26 +1894,26 @@ var MaterialTileComponent = /** @class */ (function () {
     function MaterialTileComponent() {
         this.index = 0;
         this.imageList = [
-            "assets/img/portfolio/1.png",
-            "assets/img/portfolio/2.png",
-            "assets/img/portfolio/3.png",
-            "assets/img/portfolio/4.png",
-            "assets/img/portfolio/5.png",
-            "assets/img/portfolio/6.png",
-            "assets/img/portfolio/7.png",
-            "assets/img/portfolio/8.png",
-            "assets/img/portfolio/9.png",
-            "assets/img/portfolio/10.png",
-            "assets/img/portfolio/11.png",
-            "assets/img/portfolio/12.png",
-            "assets/img/portfolio/13.png",
-            "assets/img/portfolio/14.png",
-            "assets/img/portfolio/15.png",
-            "assets/img/portfolio/16.png",
-            "assets/img/portfolio/17.png",
-            "assets/img/portfolio/18.png",
-            "assets/img/portfolio/19.png",
-            "assets/img/portfolio/20.png"
+            'assets/img/portfolio/1.png',
+            'assets/img/portfolio/2.png',
+            'assets/img/portfolio/3.png',
+            'assets/img/portfolio/4.png',
+            'assets/img/portfolio/5.png',
+            'assets/img/portfolio/6.png',
+            'assets/img/portfolio/7.png',
+            'assets/img/portfolio/8.png',
+            'assets/img/portfolio/9.png',
+            'assets/img/portfolio/10.png',
+            'assets/img/portfolio/11.png',
+            'assets/img/portfolio/12.png',
+            'assets/img/portfolio/13.png',
+            'assets/img/portfolio/14.png',
+            'assets/img/portfolio/15.png',
+            'assets/img/portfolio/16.png',
+            'assets/img/portfolio/17.png',
+            'assets/img/portfolio/18.png',
+            'assets/img/portfolio/19.png',
+            'assets/img/portfolio/20.png'
         ];
     }
     MaterialTileComponent.prototype.ngOnInit = function () {
@@ -1990,7 +2002,7 @@ var QuizLevelsComponent = /** @class */ (function () {
             _this.quizList = [];
             item.forEach(function (element) {
                 var q1 = element.payload.toJSON();
-                q1["key"] = element.key;
+                q1['key'] = element.key;
                 _this.quizList.push(q1);
             });
         });
@@ -1999,7 +2011,7 @@ var QuizLevelsComponent = /** @class */ (function () {
             _this.materialList = [];
             item.forEach(function (element) {
                 var ml = element.payload.toJSON();
-                ml["key"] = element.key;
+                ml['key'] = element.key;
                 _this.materialList.push(ml);
             });
         });
@@ -2011,7 +2023,8 @@ var QuizLevelsComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./quiz-levels.component.css */ "./src/app/quiz-levels/quiz-levels.component.css")],
             providers: [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"], _dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"]]
         }),
-        __metadata("design:paramtypes", [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"], _dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"]])
+        __metadata("design:paramtypes", [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"],
+            _dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"]])
     ], QuizLevelsComponent);
     return QuizLevelsComponent;
 }());
@@ -2072,26 +2085,26 @@ var QuizTileComponent = /** @class */ (function () {
         this.quizService = quizService;
         this.index = 0;
         this.imageList = [
-            "assets/img/portfolio/1.png",
-            "assets/img/portfolio/2.png",
-            "assets/img/portfolio/3.png",
-            "assets/img/portfolio/4.png",
-            "assets/img/portfolio/5.png",
-            "assets/img/portfolio/6.png",
-            "assets/img/portfolio/7.png",
-            "assets/img/portfolio/8.png",
-            "assets/img/portfolio/9.png",
-            "assets/img/portfolio/10.png",
-            "assets/img/portfolio/11.png",
-            "assets/img/portfolio/12.png",
-            "assets/img/portfolio/13.png",
-            "assets/img/portfolio/14.png",
-            "assets/img/portfolio/15.png",
-            "assets/img/portfolio/16.png",
-            "assets/img/portfolio/17.png",
-            "assets/img/portfolio/18.png",
-            "assets/img/portfolio/19.png",
-            "assets/img/portfolio/20.png"
+            'assets/img/portfolio/1.png',
+            'assets/img/portfolio/2.png',
+            'assets/img/portfolio/3.png',
+            'assets/img/portfolio/4.png',
+            'assets/img/portfolio/5.png',
+            'assets/img/portfolio/6.png',
+            'assets/img/portfolio/7.png',
+            'assets/img/portfolio/8.png',
+            'assets/img/portfolio/9.png',
+            'assets/img/portfolio/10.png',
+            'assets/img/portfolio/11.png',
+            'assets/img/portfolio/12.png',
+            'assets/img/portfolio/13.png',
+            'assets/img/portfolio/14.png',
+            'assets/img/portfolio/15.png',
+            'assets/img/portfolio/16.png',
+            'assets/img/portfolio/17.png',
+            'assets/img/portfolio/18.png',
+            'assets/img/portfolio/19.png',
+            'assets/img/portfolio/20.png'
         ];
     }
     QuizTileComponent.prototype.ngOnInit = function () {
@@ -2182,20 +2195,20 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var QuizTestComponent = /** @class */ (function () {
-    function QuizTestComponent(route, router, quizService, firebase) {
+    function QuizTestComponent(route, router, quizService, afDb) {
         var _this = this;
         this.route = route;
         this.router = router;
         this.quizService = quizService;
-        this.firebase = firebase;
+        this.afDb = afDb;
         this.user = new _core_user__WEBPACK_IMPORTED_MODULE_4__["User"];
         this.tempUser = new _core_user__WEBPACK_IMPORTED_MODULE_4__["User"];
         this.quizElement = new _dashboard_services_quiz__WEBPACK_IMPORTED_MODULE_3__["Quiz"];
-        this.errorMessage = "";
+        this.errorMessage = '';
         this.counter = 0;
         this.userPoints = 0;
         this.userLevel = 0;
-        this.nextQuiz = "";
+        this.nextQuiz = '';
         this.answerButton = false;
         this.navigationSubscription = this.router.events.subscribe(function (e) {
             if (e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"]) {
@@ -2220,12 +2233,12 @@ var QuizTestComponent = /** @class */ (function () {
         this.counter = 0;
         this.userPoints = 0;
         this.userLevel = 0;
-        this.nextQuiz = "";
+        this.nextQuiz = '';
         this.answerButton = false;
         this.init();
     };
     QuizTestComponent.prototype.init = function () {
-        this.usersList = this.firebase.list('users');
+        this.usersList = this.afDb.list('users');
         var urlKey = this.route.snapshot.params['key'];
         this.getSingleQuiz(urlKey);
         this.retriveData();
@@ -2236,7 +2249,7 @@ var QuizTestComponent = /** @class */ (function () {
         x.snapshotChanges().subscribe(function (item) {
             item.forEach(function (element) {
                 var y = element.payload.toJSON();
-                y["key"] = element.key;
+                y['key'] = element.key;
                 if (element.key === urlKey) {
                     _this.quizElement = y;
                 }
@@ -2247,19 +2260,19 @@ var QuizTestComponent = /** @class */ (function () {
         if (answer === this.quizElement.rightAnswer) {
             this.right = x;
             if (this.counter > 0) {
-                this.errorMessage = "That's the right answer! You have already answered correctly.";
+                this.errorMessage = 'That is the right answer! You have already answered correctly.';
             }
             else {
-                if (quiz.nextQuiz !== "End") {
+                if (quiz.nextQuiz !== 'End') {
                     this.answerButton = true;
                 }
-                this.errorMessage = "Well done! You won " + quiz.points + " points!";
+                this.errorMessage = 'Well done! You won ' + quiz.points + ' points!';
                 this.updatePointsAndLevel(this.user, quiz.points, quiz.level);
                 this.counter++;
             }
         }
         else {
-            this.errorMessage = "You should read the learning material of level " + quiz.level + ". Do not give up!";
+            this.errorMessage = 'You should read the learning material of level ' + quiz.level + '. Do not give up!';
         }
     };
     QuizTestComponent.prototype.retriveData = function () {
@@ -2269,7 +2282,7 @@ var QuizTestComponent = /** @class */ (function () {
         this.users.snapshotChanges().subscribe(function (item) {
             item.forEach(function (element) {
                 var y = element.payload.toJSON();
-                y["uid"] = element.key;
+                y['uid'] = element.key;
                 if (element.key === user.uid) {
                     _this.user = y;
                 }
@@ -2277,7 +2290,7 @@ var QuizTestComponent = /** @class */ (function () {
         });
     };
     QuizTestComponent.prototype.getData = function () {
-        this.usersList = this.firebase.list('users');
+        this.usersList = this.afDb.list('users');
         return this.usersList;
     };
     QuizTestComponent.prototype.updatePointsAndLevel = function (user, points, level) {
@@ -2378,17 +2391,17 @@ var RegisterComponent = /** @class */ (function () {
         this.authService.doRegister(value)
             .then(function (res) {
             console.log(res);
-            _this.errorMessage = "";
-            _this.successMessage = "Ο λογαριασμός σας έχει δημιουργηθεί";
+            _this.errorMessage = '';
+            _this.successMessage = 'Your account has been created.';
         }, function (err) {
             console.log(err);
             _this.errorMessage = err.message;
-            _this.successMessage = "";
+            _this.successMessage = '';
         });
     };
     RegisterComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'register',
+            selector: 'app-register',
             template: __webpack_require__(/*! ./register.component.html */ "./src/app/register/register.component.html"),
             styles: [__webpack_require__(/*! ./register.component.css */ "./src/app/register/register.component.css")]
         }),
