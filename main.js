@@ -390,12 +390,12 @@ var AuthService = /** @class */ (function () {
                 console.log('Transaction failed abnormally!', error);
             }
             else if (!committed) {
-                console.log('We aborted the transaction (because ada already exists).');
+                console.log('We aborted the transaction (because user already exists).');
             }
             else {
-                console.log('User ada added!');
+                console.log('User added!');
             }
-            console.log('Data of Ada: ', snapshot.val());
+            console.log('Data of user: ', snapshot.val());
         });
     };
     AuthService.prototype.doRegister = function (value) {
