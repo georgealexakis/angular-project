@@ -722,16 +722,16 @@ var MaterialListComponent = /** @class */ (function () {
         var _this = this;
         var x = this.materialService.getData();
         x.snapshotChanges().subscribe(function (item) {
-            _this.materiallist = [];
+            _this.materialList = [];
             item.forEach(function (element) {
                 var y = element.payload.toJSON();
                 y['key'] = element.key;
-                _this.materiallist.push(y);
+                _this.materialList.push(y);
             });
         });
     };
-    MaterialListComponent.prototype.onItemClick = function (emp) {
-        this.materialService.selectedMaterial = Object.assign({}, emp);
+    MaterialListComponent.prototype.onItemClick = function (material) {
+        this.materialService.selectedMaterial = Object.assign({}, material);
     };
     MaterialListComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -898,16 +898,16 @@ var QuizListComponent = /** @class */ (function () {
         var _this = this;
         var x = this.quizService.getData();
         x.snapshotChanges().subscribe(function (item) {
-            _this.quizlist = [];
+            _this.quizList = [];
             item.forEach(function (element) {
                 var y = element.payload.toJSON();
                 y['key'] = element.key;
-                _this.quizlist.push(y);
+                _this.quizList.push(y);
             });
         });
     };
-    QuizListComponent.prototype.onItemClick = function (emp) {
-        this.quizService.selectedQuiz = Object.assign({}, emp);
+    QuizListComponent.prototype.onItemClick = function (quiz) {
+        this.quizService.selectedQuiz = Object.assign({}, quiz);
     };
     QuizListComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1424,7 +1424,8 @@ var FooterComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./footer.component.html */ "./src/app/footer/footer.component.html"),
             styles: [__webpack_require__(/*! ./footer.component.css */ "./src/app/footer/footer.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _core_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _core_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"]])
     ], FooterComponent);
     return FooterComponent;
 }());
