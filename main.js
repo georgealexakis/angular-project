@@ -687,7 +687,7 @@ module.exports = ".list-group-item{\r\n    height: 81px;\r\n}\r\ndiv {\r\n    he
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"list-group hover\">\n  <div>\n    <li class=\"form-group list-group-item\" *ngFor=\"let material of materiallist\" (click)=\"onItemClick(material)\">\n      <p>{{material.title}} - Learning material for level {{material.level}}</p>\n    </li>\n  </div>\n</ul>"
+module.exports = "<ul class=\"list-group hover\">\n  <div>\n    <li class=\"form-group list-group-item\" *ngFor=\"let material of materialList\" (click)=\"onItemClick(material)\">\n      <p>{{material.title}} - Learning material for level {{material.level}}</p>\n    </li>\n  </div>\n</ul>"
 
 /***/ }),
 
@@ -863,7 +863,7 @@ module.exports = ".list-group-item{\r\n    height: 81px;\r\n    padding-top: 0re
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"list-group hover\">\n  <div>\n    <li class=\"form-group quiz list-group-item\" *ngFor=\"let quiz of quizlist\" (click)=\"onItemClick(quiz)\">\n      <p>{{quiz.question}} - ( {{quiz.answer1}} - {{quiz.answer2}} - {{quiz.answer3}} - {{quiz.answer4}} )\n        <br>Right Answer: {{quiz.rightAnswer}} - Points: {{quiz.points}} - Level: {{quiz.level}}\n      </p>\n    </li>\n  </div>\n</ul>"
+module.exports = "<ul class=\"list-group hover\">\n  <div>\n    <li class=\"form-group quiz list-group-item\" *ngFor=\"let quiz of quizList\" (click)=\"onItemClick(quiz)\">\n      <p>{{quiz.question}} - ( {{quiz.answer1}} - {{quiz.answer2}} - {{quiz.answer3}} - {{quiz.answer4}} )\n        <br>Right Answer: {{quiz.rightAnswer}} - Points: {{quiz.points}} - Level: {{quiz.level}}\n      </p>\n    </li>\n  </div>\n</ul>"
 
 /***/ }),
 
