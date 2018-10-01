@@ -490,7 +490,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<section>\n  <div class=\"container\">\n    <br>\n    <br>\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Dashboard</h2>\n    <br>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 mx-auto\">\n        <app-user></app-user>\n      </div>\n    </div>\n    <ng-template [ngIf]=\"user.userRole === 'teacher'\">\n      <br>\n      <br>\n      <h3 class=\"text-secondary mb-0\">Students Statistics</h3>\n      <br>\n      <div class=\"row\">\n        <div class=\"col-lg-12 mx-auto\">\n          <app-statistics></app-statistics>\n        </div>\n      </div>\n      <br>\n      <h3 class=\"text-secondary mb-0\">Questions</h3>\n      <br>\n      <div class=\"row\">\n        <div class=\"col-lg-6 mx-auto\">\n          <app-quiz-form></app-quiz-form>\n        </div>\n        <div class=\"col-lg-6 mx-auto\">\n          <app-quiz-list></app-quiz-list>\n        </div>\n      </div>\n      <br>\n      <h3 class=\"text-secondary mb-0\">Learning Material</h3>\n      <br>\n      <div class=\"row\">\n        <div class=\"col-lg-6 mx-auto\">\n          <app-material-form></app-material-form>\n        </div>\n        <div class=\"col-lg-6 mx-auto\">\n          <app-material-list></app-material-list>\n        </div>\n      </div>\n    </ng-template>\n  </div>\n</section>\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n<section>\n  <div class=\"container\">\n    <br>\n    <br>\n    <h2 class=\"text-center text-uppercase text-secondary mb-0\">Dashboard</h2>\n    <br>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 mx-auto\">\n        <app-user></app-user>\n      </div>\n    </div>\n    <ng-template [ngIf]=\"user.userRole === 'teacher' || user.userRole === 'administrator'\">\n      <br>\n      <br>\n      <h3 class=\"text-secondary mb-0\">Students Statistics</h3>\n      <br>\n      <div class=\"row\">\n        <div class=\"col-lg-12 mx-auto\">\n          <app-statistics></app-statistics>\n        </div>\n      </div>\n      <br>\n      <h3 class=\"text-secondary mb-0\">Questions</h3>\n      <br>\n      <div class=\"row\">\n        <div class=\"col-lg-6 mx-auto\">\n          <app-quiz-form></app-quiz-form>\n        </div>\n        <div class=\"col-lg-6 mx-auto\">\n          <app-quiz-list></app-quiz-list>\n        </div>\n      </div>\n      <br>\n      <h3 class=\"text-secondary mb-0\">Learning Material</h3>\n      <br>\n      <div class=\"row\">\n        <div class=\"col-lg-6 mx-auto\">\n          <app-material-form></app-material-form>\n        </div>\n        <div class=\"col-lg-6 mx-auto\">\n          <app-material-list></app-material-list>\n        </div>\n      </div>\n    </ng-template>\n  </div>\n</section>\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -1138,7 +1138,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"table-responsive\">\n  <table class=\"table table-bordered table-hover\">\n    <thead>\n      <tr>\n        <th>ID</th>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Points</th>\n        <th>Level</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let user of userList\">\n        <td>{{user.uid}}</td>\n        <td *ngIf=\"user.displayName !== '' else emtpyName\">{{user.displayName}}</td>\n        <ng-template #emtpyName>\n          <td>-</td>\n        </ng-template>\n        <td>{{user.email}}</td>\n        <td>{{user.points}}</td>\n        <td>{{user.level}}</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<div class=\"table-responsive\">\n  <table class=\"table table-bordered table-hover\">\n    <thead>\n      <tr>\n        <th>ID</th>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Points</th>\n        <th>Level</th>\n        <th>Role</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let user of userList\">\n        <td><small>{{user.uid}}</small></td>\n        <td *ngIf=\"user.displayName !== '' else emtpyName\"><small>{{user.displayName}}</small></td>\n        <ng-template #emtpyName>\n          <td><small>-</small></td>\n        </ng-template>\n        <td><small>{{user.email}}</small></td>\n        <td><small>{{user.points}}</small></td>\n        <td><small>{{user.level}}</small></td>\n        <td *ngIf=\"loggedInUser.userRole === 'administrator' else displayRole\">\n          <div class=\"custom-control custom-radio custom-control-inline\">\n            <input type=\"radio\" [id]=\"user.uid + '.student'\" [name]=\"user.uid\" [checked]=\"user.userRole=='student'\"\n              class=\"custom-control-input\" (click)=\"updateUserRole(user.uid, 'student')\">\n            <label class=\"custom-control-label\" [for]=\"user.uid + '.student'\"><small>Student</small></label>\n          </div>\n          <div class=\"custom-control custom-radio custom-control-inline\">\n            <input type=\"radio\" [id]=\"user.uid + '.teacher'\" [name]=\"user.uid\" [checked]=\"user.userRole=='teacher'\"\n              class=\"custom-control-input\" (click)=\"updateUserRole(user.uid, 'teacher')\">\n            <label class=\"custom-control-label\" [for]=\"user.uid + '.teacher'\"><small>Teacher</small></label>\n          </div>\n          <div class=\"custom-control custom-radio custom-control-inline\">\n            <input type=\"radio\" [id]=\"user.uid + '.admin'\" [name]=\"user.uid\" [checked]=\"user.userRole=='administrator'\"\n              class=\"custom-control-input\" (click)=\"updateUserRole(user.uid, 'administrator')\">\n            <label class=\"custom-control-label\" [for]=\"user.uid + '.admin'\"><small>Admin</small></label>\n          </div>\n        </td>\n        <ng-template #displayRole>\n          <td><small>{{user.userRole}}</small></td>\n        </ng-template>\n      </tr>\n    </tbody>\n  </table>\n</div>"
 
 /***/ }),
 
@@ -1154,6 +1154,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StatisticsComponent", function() { return StatisticsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_fire_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/database */ "./node_modules/@angular/fire/database/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _core_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../core/user */ "./src/app/core/user.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1165,25 +1168,37 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
+
 var StatisticsComponent = /** @class */ (function () {
-    function StatisticsComponent(firebase) {
-        this.firebase = firebase;
-        this.users = this.firebase.list('users');
+    function StatisticsComponent(afDb) {
+        this.afDb = afDb;
+        this.loggedInUser = new _core_user__WEBPACK_IMPORTED_MODULE_3__["User"];
+        this.users = this.afDb.list('users');
     }
     StatisticsComponent.prototype.getData = function () {
-        this.users = this.firebase.list('users');
+        this.users = this.afDb.list('users');
         return this.users;
     };
     StatisticsComponent.prototype.ngOnInit = function () {
         var _this = this;
         var x = this.getData();
+        var user = firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().currentUser;
         x.snapshotChanges().subscribe(function (item) {
             _this.userList = [];
             item.forEach(function (element) {
                 var y = element.payload.toJSON();
                 y['uid'] = element.key;
                 _this.userList.push(y);
+                if (element.key === user.uid) {
+                    _this.loggedInUser = y;
+                }
             });
+        });
+    };
+    StatisticsComponent.prototype.updateUserRole = function (userId, role) {
+        firebase_app__WEBPACK_IMPORTED_MODULE_2__["database"]().ref('users/' + userId).update({
+            userRole: role
         });
     };
     StatisticsComponent = __decorate([
@@ -1319,7 +1334,7 @@ var UserComponent = /** @class */ (function () {
     };
     UserComponent.prototype.onSubmit = function (form) {
         var user = firebase_app__WEBPACK_IMPORTED_MODULE_1__["auth"]().currentUser;
-        if (form.value.key == null) {
+        if (form.value) {
             user.updateProfile({
                 displayName: form.value.displayName,
                 photoURL: form.value.photoURL
@@ -1328,11 +1343,18 @@ var UserComponent = /** @class */ (function () {
             }).catch(function (error) {
                 console.log('Error: ' + error);
             });
+            this.updateUserData(user.uid, form.value.displayName, form.value.photoURL);
             this.successMessage = 'Successfully updated!';
         }
         else {
             this.resetForm(form);
         }
+    };
+    UserComponent.prototype.updateUserData = function (userId, displayName, photoURL) {
+        firebase_app__WEBPACK_IMPORTED_MODULE_1__["database"]().ref('users/' + userId).update({
+            displayName: displayName,
+            photoURL: photoURL
+        });
     };
     UserComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
