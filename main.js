@@ -1254,7 +1254,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var UserComponent = /** @class */ (function () {
     function UserComponent(afDb) {
         this.afDb = afDb;
-        this.successMessage = '';
         this.user = new _core_user__WEBPACK_IMPORTED_MODULE_2__["User"];
         this.tempUser = new _core_user__WEBPACK_IMPORTED_MODULE_2__["User"];
         this.user.providerId = '';
@@ -1264,6 +1263,7 @@ var UserComponent = /** @class */ (function () {
         this.user.photoURL = 'assets/img/portfolio/avatar.png';
         this.user.points = 0;
         this.user.level = 0;
+        this.successMessage = '';
     }
     UserComponent.prototype.ngOnInit = function () {
         this.retrivePointsAndLevel();
@@ -1326,7 +1326,7 @@ var UserComponent = /** @class */ (function () {
             }).then(function () {
                 console.log('Success');
             }).catch(function (error) {
-                console.log(error);
+                console.log('Error: ' + error);
             });
             this.successMessage = 'Successfully updated!';
         }
@@ -1404,10 +1404,10 @@ var FooterComponent = /** @class */ (function () {
     FooterComponent.prototype.ngOnInit = function () {
     };
     FooterComponent.prototype.logout = function () {
-        var _this = this;
+        this.router.navigate(['/']);
         this.authService.doLogout()
             .then(function (res) {
-            _this.router.navigate(['/']);
+            console.log('Logout OK');
         }, function (error) {
             console.log('Logout error', error);
         });
@@ -1893,7 +1893,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var MaterialTileComponent = /** @class */ (function () {
     function MaterialTileComponent() {
-        this.index = 0;
         this.imageList = [
             'assets/img/portfolio/1.png',
             'assets/img/portfolio/2.png',
@@ -1916,6 +1915,7 @@ var MaterialTileComponent = /** @class */ (function () {
             'assets/img/portfolio/19.png',
             'assets/img/portfolio/20.png'
         ];
+        this.index = 0;
     }
     MaterialTileComponent.prototype.ngOnInit = function () {
         this.index = this.getRandomInt(0, 19);
@@ -2084,7 +2084,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var QuizTileComponent = /** @class */ (function () {
     function QuizTileComponent(quizService) {
         this.quizService = quizService;
-        this.index = 0;
         this.imageList = [
             'assets/img/portfolio/1.png',
             'assets/img/portfolio/2.png',
@@ -2107,6 +2106,7 @@ var QuizTileComponent = /** @class */ (function () {
             'assets/img/portfolio/19.png',
             'assets/img/portfolio/20.png'
         ];
+        this.index = 0;
     }
     QuizTileComponent.prototype.ngOnInit = function () {
         this.index = this.getRandomInt(0, 19);
