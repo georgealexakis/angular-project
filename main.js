@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -479,7 +479,7 @@ var User = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9kYXNoYm9hcmQuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -555,8 +555,8 @@ var DashboardComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-dashboard',
             template: __webpack_require__(/*! ./dashboard.component.html */ "./src/app/dashboard/dashboard.component.html"),
-            styles: [__webpack_require__(/*! ./dashboard.component.css */ "./src/app/dashboard/dashboard.component.css")],
-            providers: [_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"], _services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"]]
+            providers: [_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"], _services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"]],
+            styles: [__webpack_require__(/*! ./dashboard.component.css */ "./src/app/dashboard/dashboard.component.css")]
         }),
         __metadata("design:paramtypes", [_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"],
             _services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"],
@@ -576,7 +576,7 @@ var DashboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "button{\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}"
+module.exports = "button{\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL21hdGVyaWFsLWZvcm0vbWF0ZXJpYWwtZm9ybS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGlCQUFpQjtBQUNyQiIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9tYXRlcmlhbC1mb3JtL21hdGVyaWFsLWZvcm0uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImJ1dHRvbntcclxuICAgIG1hcmdpbi1sZWZ0OiA1cHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDVweDtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -676,7 +676,7 @@ var MaterialFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".list-group-item{\r\n    height: 81px;\r\n}\r\ndiv {\r\n    height: 810px;\r\n    overflow: auto;\r\n}"
+module.exports = ".list-group-item{\r\n    height: 81px;\r\n}\r\ndiv {\r\n    height: 810px;\r\n    overflow: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL21hdGVyaWFsLWxpc3QvbWF0ZXJpYWwtbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtBQUNoQjtBQUNBO0lBQ0ksYUFBYTtJQUNiLGNBQWM7QUFDbEIiLCJmaWxlIjoic3JjL2FwcC9kYXNoYm9hcmQvbWF0ZXJpYWwtbGlzdC9tYXRlcmlhbC1saXN0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubGlzdC1ncm91cC1pdGVte1xyXG4gICAgaGVpZ2h0OiA4MXB4O1xyXG59XHJcbmRpdiB7XHJcbiAgICBoZWlnaHQ6IDgxMHB4O1xyXG4gICAgb3ZlcmZsb3c6IGF1dG87XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -755,7 +755,7 @@ var MaterialListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "button{\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}"
+module.exports = "button{\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL3F1aXotZm9ybS9xdWl6LWZvcm0uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtJQUNoQixpQkFBaUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9kYXNoYm9hcmQvcXVpei1mb3JtL3F1aXotZm9ybS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYnV0dG9ue1xyXG4gICAgbWFyZ2luLWxlZnQ6IDVweDtcclxuICAgIG1hcmdpbi1yaWdodDogNXB4O1xyXG59Il19 */"
 
 /***/ }),
 
@@ -852,7 +852,7 @@ var QuizFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".list-group-item{\r\n    height: 81px;\r\n    padding-top: 0rem;\r\n}\r\ndiv {\r\n    height: 650px;\r\n    overflow: auto;\r\n}\r\n.quiz{\r\n    overflow: hidden;\r\n}"
+module.exports = ".list-group-item{\r\n    height: 81px;\r\n    padding-top: 0rem;\r\n}\r\ndiv {\r\n    height: 650px;\r\n    overflow: auto;\r\n}\r\n.quiz{\r\n    overflow: hidden;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL3F1aXotbGlzdC9xdWl6LWxpc3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7SUFDWixpQkFBaUI7QUFDckI7QUFDQTtJQUNJLGFBQWE7SUFDYixjQUFjO0FBQ2xCO0FBQ0E7SUFDSSxnQkFBZ0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9kYXNoYm9hcmQvcXVpei1saXN0L3F1aXotbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxpc3QtZ3JvdXAtaXRlbXtcclxuICAgIGhlaWdodDogODFweDtcclxuICAgIHBhZGRpbmctdG9wOiAwcmVtO1xyXG59XHJcbmRpdiB7XHJcbiAgICBoZWlnaHQ6IDY1MHB4O1xyXG4gICAgb3ZlcmZsb3c6IGF1dG87XHJcbn1cclxuLnF1aXp7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -1127,7 +1127,7 @@ var Quiz = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9zdGF0aXN0aWNzL3N0YXRpc3RpY3MuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -1223,7 +1223,7 @@ var StatisticsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  max-width: 25rem;\r\n  text-align: center;\r\n}\r\n@media (min-width: 992px) {\r\n  .card{\r\n    margin: auto;\r\n  }  \r\n}\r\n.info{\r\n  max-width: 30rem;\r\n  box-shadow: none;\r\n  border: none;\r\n  text-align: left;\r\n  margin: 5px;\r\n}\r\n.card-group {\r\n  padding: 50px;\r\n  border-width:5px;  \r\n  border-style: dashed;\r\n  border-color: #2C3E50;\r\n}"
+module.exports = ".card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  max-width: 25rem;\r\n  text-align: center;\r\n}\r\n@media (min-width: 992px) {\r\n  .card{\r\n    margin: auto;\r\n  }  \r\n}\r\n.info{\r\n  max-width: 30rem;\r\n  box-shadow: none;\r\n  border: none;\r\n  text-align: left;\r\n  margin: 5px;\r\n}\r\n.card-group {\r\n  padding: 50px;\r\n  border-width:5px;  \r\n  border-style: dashed;\r\n  border-color: #2C3E50;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL3VzZXIvdXNlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMENBQTBDO0VBQzFDLGdCQUFnQjtFQUNoQixrQkFBa0I7QUFDcEI7QUFDQTtFQUNFO0lBQ0UsWUFBWTtFQUNkO0FBQ0Y7QUFDQTtFQUNFLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsWUFBWTtFQUNaLGdCQUFnQjtFQUNoQixXQUFXO0FBQ2I7QUFDQTtFQUNFLGFBQWE7RUFDYixnQkFBZ0I7RUFDaEIsb0JBQW9CO0VBQ3BCLHFCQUFxQjtBQUN2QiIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC91c2VyL3VzZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jYXJkIHtcclxuICBib3gtc2hhZG93OiAwIDRweCA4cHggMCByZ2JhKDAsIDAsIDAsIDAuMik7XHJcbiAgbWF4LXdpZHRoOiAyNXJlbTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuQG1lZGlhIChtaW4td2lkdGg6IDk5MnB4KSB7XHJcbiAgLmNhcmR7XHJcbiAgICBtYXJnaW46IGF1dG87XHJcbiAgfSAgXHJcbn1cclxuLmluZm97XHJcbiAgbWF4LXdpZHRoOiAzMHJlbTtcclxuICBib3gtc2hhZG93OiBub25lO1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIG1hcmdpbjogNXB4O1xyXG59XHJcbi5jYXJkLWdyb3VwIHtcclxuICBwYWRkaW5nOiA1MHB4O1xyXG4gIGJvcmRlci13aWR0aDo1cHg7ICBcclxuICBib3JkZXItc3R5bGU6IGRhc2hlZDtcclxuICBib3JkZXItY29sb3I6ICMyQzNFNTA7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -1378,7 +1378,7 @@ var UserComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "button{\r\n    color: #fff;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\nbutton:hover{\r\n    color: #18BC9C;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\nbutton:active{\r\n    color: #18BC9C;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\n.foot{\r\n    font-size: 40px;\r\n}\r\n@media (min-width: 992px) {\r\n    .foot{\r\n        font-size: 60px;\r\n    }  \r\n}"
+module.exports = "button{\r\n    color: #fff;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\nbutton:hover{\r\n    color: #18BC9C;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\nbutton:active{\r\n    color: #18BC9C;\r\n    background-color:#2C3E50;\r\n    border-color: #2C3E50;\r\n}\r\n.foot{\r\n    font-size: 40px;\r\n}\r\n@media (min-width: 992px) {\r\n    .foot{\r\n        font-size: 60px;\r\n    }  \r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVztJQUNYLHdCQUF3QjtJQUN4QixxQkFBcUI7QUFDekI7QUFDQTtJQUNJLGNBQWM7SUFDZCx3QkFBd0I7SUFDeEIscUJBQXFCO0FBQ3pCO0FBQ0E7SUFDSSxjQUFjO0lBQ2Qsd0JBQXdCO0lBQ3hCLHFCQUFxQjtBQUN6QjtBQUNBO0lBQ0ksZUFBZTtBQUNuQjtBQUNBO0lBQ0k7UUFDSSxlQUFlO0lBQ25CO0FBQ0oiLCJmaWxlIjoic3JjL2FwcC9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJidXR0b257XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IzJDM0U1MDtcclxuICAgIGJvcmRlci1jb2xvcjogIzJDM0U1MDtcclxufVxyXG5idXR0b246aG92ZXJ7XHJcbiAgICBjb2xvcjogIzE4QkM5QztcclxuICAgIGJhY2tncm91bmQtY29sb3I6IzJDM0U1MDtcclxuICAgIGJvcmRlci1jb2xvcjogIzJDM0U1MDtcclxufVxyXG5idXR0b246YWN0aXZle1xyXG4gICAgY29sb3I6ICMxOEJDOUM7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiMyQzNFNTA7XHJcbiAgICBib3JkZXItY29sb3I6ICMyQzNFNTA7XHJcbn1cclxuLmZvb3R7XHJcbiAgICBmb250LXNpemU6IDQwcHg7XHJcbn1cclxuQG1lZGlhIChtaW4td2lkdGg6IDk5MnB4KSB7XHJcbiAgICAuZm9vdHtcclxuICAgICAgICBmb250LXNpemU6IDYwcHg7XHJcbiAgICB9ICBcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -1463,7 +1463,7 @@ var FooterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -1547,7 +1547,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2luZm9ybWF0aW9uL2luZm9ybWF0aW9uLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -1618,7 +1618,7 @@ var InformationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\r\n}\r\n.success{\r\n  color: green;\r\n}\r\n.login{\r\n  padding-top: 0.5rem;\r\n  padding-bottom: 0.5rem;\r\n}\r\n@media (min-width: 992px) {\r\n  .login{\r\n    padding-top: 2rem;\r\n    padding-bottom: 3rem;\r\n  }\r\n}\r\n.fb{\r\n  background-color: #3B5998;\r\n  border-color: #3B5998;\r\n}"
+module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\r\n}\r\n.success{\r\n  color: green;\r\n}\r\n.login{\r\n  padding-top: 0.5rem;\r\n  padding-bottom: 0.5rem;\r\n}\r\n@media (min-width: 992px) {\r\n  .login{\r\n    padding-top: 2rem;\r\n    padding-bottom: 3rem;\r\n  }\r\n}\r\n.fb{\r\n  background-color: #3B5998;\r\n  border-color: #3B5998;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtBQUNsQjtBQUNBO0VBQ0UsVUFBVTtBQUNaO0FBQ0E7RUFDRSxZQUFZO0FBQ2Q7QUFDQTtFQUNFLG1CQUFtQjtFQUNuQixzQkFBc0I7QUFDeEI7QUFDQTtFQUNFO0lBQ0UsaUJBQWlCO0lBQ2pCLG9CQUFvQjtFQUN0QjtBQUNGO0FBQ0E7RUFDRSx5QkFBeUI7RUFDekIscUJBQXFCO0FBQ3ZCIiwiZmlsZSI6InNyYy9hcHAvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5yb3d7XHJcbiAgbWFyZ2luLXRvcDogMTBweDtcclxufVxyXG4uZXJyb3J7XHJcbiAgY29sb3I6IHJlZDtcclxufVxyXG4uc3VjY2Vzc3tcclxuICBjb2xvcjogZ3JlZW47XHJcbn1cclxuLmxvZ2lue1xyXG4gIHBhZGRpbmctdG9wOiAwLjVyZW07XHJcbiAgcGFkZGluZy1ib3R0b206IDAuNXJlbTtcclxufVxyXG5AbWVkaWEgKG1pbi13aWR0aDogOTkycHgpIHtcclxuICAubG9naW57XHJcbiAgICBwYWRkaW5nLXRvcDogMnJlbTtcclxuICAgIHBhZGRpbmctYm90dG9tOiAzcmVtO1xyXG4gIH1cclxufVxyXG4uZmJ7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogIzNCNTk5ODtcclxuICBib3JkZXItY29sb3I6ICMzQjU5OTg7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -1722,7 +1722,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hdGVyaWFsL21hdGVyaWFsLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -1791,8 +1791,8 @@ var MaterialComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-material',
             template: __webpack_require__(/*! ./material.component.html */ "./src/app/material/material.component.html"),
-            styles: [__webpack_require__(/*! ./material.component.css */ "./src/app/material/material.component.css")],
-            providers: [_dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_3__["MaterialService"]]
+            providers: [_dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_3__["MaterialService"]],
+            styles: [__webpack_require__(/*! ./material.component.css */ "./src/app/material/material.component.css")]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
             _dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_3__["MaterialService"],
@@ -1812,7 +1812,7 @@ var MaterialComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#mainNav{\r\n    border-bottom: 5px solid #18BC9C;\r\n}\r\n.navbar{\r\n    padding-top: 0rem !important;\r\n    padding-bottom: 0rem !important;\r\n}"
+module.exports = "#mainNav{\r\n    border-bottom: 5px solid #18BC9C;\r\n}\r\n.navbar{\r\n    padding-top: 0rem !important;\r\n    padding-bottom: 0rem !important;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0NBQWdDO0FBQ3BDO0FBQ0E7SUFDSSw0QkFBNEI7SUFDNUIsK0JBQStCO0FBQ25DIiwiZmlsZSI6InNyYy9hcHAvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI21haW5OYXZ7XHJcbiAgICBib3JkZXItYm90dG9tOiA1cHggc29saWQgIzE4QkM5QztcclxufVxyXG4ubmF2YmFye1xyXG4gICAgcGFkZGluZy10b3A6IDByZW0gIWltcG9ydGFudDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAwcmVtICFpbXBvcnRhbnQ7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -1875,7 +1875,7 @@ var NavbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3F1aXotbGV2ZWxzL21hdGVyaWFsLXRpbGUvbWF0ZXJpYWwtdGlsZS5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -1973,7 +1973,7 @@ var MaterialTileComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".col-lg-3, .col-6{\r\n    padding: 0px;\r\n}\r\n@media (min-width: 992px) {\r\n    .col-lg-3, .col-6{\r\n        padding-right: 15px;\r\n        padding-left: 15px;\r\n    }\r\n  }"
+module.exports = ".col-lg-3, .col-6{\r\n    padding: 0px;\r\n}\r\n@media (min-width: 992px) {\r\n    .col-lg-3, .col-6{\r\n        padding-right: 15px;\r\n        padding-left: 15px;\r\n    }\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcXVpei1sZXZlbHMvcXVpei1sZXZlbHMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7QUFDaEI7QUFDQTtJQUNJO1FBQ0ksbUJBQW1CO1FBQ25CLGtCQUFrQjtJQUN0QjtFQUNGIiwiZmlsZSI6InNyYy9hcHAvcXVpei1sZXZlbHMvcXVpei1sZXZlbHMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb2wtbGctMywgLmNvbC02e1xyXG4gICAgcGFkZGluZzogMHB4O1xyXG59XHJcbkBtZWRpYSAobWluLXdpZHRoOiA5OTJweCkge1xyXG4gICAgLmNvbC1sZy0zLCAuY29sLTZ7XHJcbiAgICAgICAgcGFkZGluZy1yaWdodDogMTVweDtcclxuICAgICAgICBwYWRkaW5nLWxlZnQ6IDE1cHg7XHJcbiAgICB9XHJcbiAgfSJdfQ== */"
 
 /***/ }),
 
@@ -2043,8 +2043,8 @@ var QuizLevelsComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-quiz-levels',
             template: __webpack_require__(/*! ./quiz-levels.component.html */ "./src/app/quiz-levels/quiz-levels.component.html"),
-            styles: [__webpack_require__(/*! ./quiz-levels.component.css */ "./src/app/quiz-levels/quiz-levels.component.css")],
-            providers: [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"], _dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"]]
+            providers: [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"], _dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"]],
+            styles: [__webpack_require__(/*! ./quiz-levels.component.css */ "./src/app/quiz-levels/quiz-levels.component.css")]
         }),
         __metadata("design:paramtypes", [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_1__["QuizService"],
             _dashboard_services_material_service__WEBPACK_IMPORTED_MODULE_2__["MaterialService"]])
@@ -2063,7 +2063,7 @@ var QuizLevelsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3F1aXotbGV2ZWxzL3F1aXotdGlsZS9xdWl6LXRpbGUuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -2167,7 +2167,7 @@ var QuizTileComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#quiz-test {\r\n    padding: 50px;\r\n    border-width:5px;  \r\n    border-style: dashed;\r\n    border-color: #2C3E50;\r\n}\r\nbutton{\r\n    width: 15em;\r\n    height: auto;\r\n}"
+module.exports = "#quiz-test {\r\n    padding: 50px;\r\n    border-width:5px;  \r\n    border-style: dashed;\r\n    border-color: #2C3E50;\r\n}\r\nbutton{\r\n    width: 15em;\r\n    height: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcXVpei10ZXN0L3F1aXotdGVzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksYUFBYTtJQUNiLGdCQUFnQjtJQUNoQixvQkFBb0I7SUFDcEIscUJBQXFCO0FBQ3pCO0FBQ0E7SUFDSSxXQUFXO0lBQ1gsWUFBWTtBQUNoQiIsImZpbGUiOiJzcmMvYXBwL3F1aXotdGVzdC9xdWl6LXRlc3QuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNxdWl6LXRlc3Qge1xyXG4gICAgcGFkZGluZzogNTBweDtcclxuICAgIGJvcmRlci13aWR0aDo1cHg7ICBcclxuICAgIGJvcmRlci1zdHlsZTogZGFzaGVkO1xyXG4gICAgYm9yZGVyLWNvbG9yOiAjMkMzRTUwO1xyXG59XHJcbmJ1dHRvbntcclxuICAgIHdpZHRoOiAxNWVtO1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -2333,8 +2333,8 @@ var QuizTestComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-quiz-test',
             template: __webpack_require__(/*! ./quiz-test.component.html */ "./src/app/quiz-test/quiz-test.component.html"),
-            styles: [__webpack_require__(/*! ./quiz-test.component.css */ "./src/app/quiz-test/quiz-test.component.css")],
-            providers: [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__["QuizService"]]
+            providers: [_dashboard_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__["QuizService"]],
+            styles: [__webpack_require__(/*! ./quiz-test.component.css */ "./src/app/quiz-test/quiz-test.component.css")]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
@@ -2355,7 +2355,7 @@ var QuizTestComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\r\n}\r\n.success{\r\n  color: green;\r\n}\r\n.register{\r\n  padding-top: 1rem;\r\n  padding-bottom: 1rem;\r\n}\r\n@media (min-width: 992px) {\r\n  .register{\r\n    padding-top: 2rem;\r\n    padding-bottom: 3rem;\r\n  }\r\n}"
+module.exports = ".row{\r\n  margin-top: 10px;\r\n}\r\n.error{\r\n  color: red;\r\n}\r\n.success{\r\n  color: green;\r\n}\r\n.register{\r\n  padding-top: 1rem;\r\n  padding-bottom: 1rem;\r\n}\r\n@media (min-width: 992px) {\r\n  .register{\r\n    padding-top: 2rem;\r\n    padding-bottom: 3rem;\r\n  }\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcmVnaXN0ZXIvcmVnaXN0ZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtBQUNsQjtBQUNBO0VBQ0UsVUFBVTtBQUNaO0FBQ0E7RUFDRSxZQUFZO0FBQ2Q7QUFDQTtFQUNFLGlCQUFpQjtFQUNqQixvQkFBb0I7QUFDdEI7QUFDQTtFQUNFO0lBQ0UsaUJBQWlCO0lBQ2pCLG9CQUFvQjtFQUN0QjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvcmVnaXN0ZXIvcmVnaXN0ZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5yb3d7XHJcbiAgbWFyZ2luLXRvcDogMTBweDtcclxufVxyXG4uZXJyb3J7XHJcbiAgY29sb3I6IHJlZDtcclxufVxyXG4uc3VjY2Vzc3tcclxuICBjb2xvcjogZ3JlZW47XHJcbn1cclxuLnJlZ2lzdGVye1xyXG4gIHBhZGRpbmctdG9wOiAxcmVtO1xyXG4gIHBhZGRpbmctYm90dG9tOiAxcmVtO1xyXG59XHJcbkBtZWRpYSAobWluLXdpZHRoOiA5OTJweCkge1xyXG4gIC5yZWdpc3RlcntcclxuICAgIHBhZGRpbmctdG9wOiAycmVtO1xyXG4gICAgcGFkZGluZy1ib3R0b206IDNyZW07XHJcbiAgfVxyXG59Il19 */"
 
 /***/ }),
 
